@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Admin - Create New Event</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
+        <script src="https://use.fontawesome.com/releases/v5.1.0/js/all.js"></script>
+        <style>
+            .combined {
+                padding-right: 50px;
+            }
+        </style>
+    </head>
+
+    <body>
+
+        <nav class="navbar" role="navigation" aria-label="main navigation">
+            <div class="navbar-brand">
+              <a class="navbar-item" href="#">
+                <img src="../Logo/Fiesta.PNG" width="112" height="28">
+              </a>
+          
+              <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+              </a>
+            </div>
+          
+            <div id="navbarBasicExample" class="navbar-menu">
+              <div class="navbar-start">
+                <a class="navbar-item">
+                  View Students
+                </a>
+          
+                <a class="navbar-item">
+                  News
+                </a>
+          
+                <div class="navbar-item has-dropdown is-hoverable">
+                  <a class="navbar-link">
+                    More
+                  </a>
+          
+                  <div class="navbar-dropdown">
+                    <a class="navbar-item">
+                      About
+                    </a>
+                    <a class="navbar-item">
+                      Add Events
+                    </a>
+                    <a class="navbar-item">
+                      Contact
+                    </a>
+                    <hr class="navbar-divider">
+                    <a class="navbar-item">
+                      Report an issue
+                    </a>
+                  </div>
+                </div>
+              </div>
+          
+              <div class="navbar-end">
+                <div class="navbar-item">
+                  <div class="buttons">
+                    <a class="button is-primary">
+                      <strong>Sign up</strong>
+                    </a>
+                    <a class="button is-light">
+                      Log in
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </nav>
+        
+        <div class="container">
+            <div class="field">
+                <label class="label">Event Name</label>
+                <div class="control">
+                  <input class="input" type="text" placeholder="Event Name" required>
+                </div>
+              </div>
+
+              <div class="field">
+                <label class="label">Event Description</label>
+                <div class="control">
+                  <textarea class="textarea" placeholder="Description" required></textarea>
+                </div>
+              </div>
+              
+              <div class="field is-horizontal">
+                <div class="field-body combined">
+                    <div class="field">
+                        <label class="label">Type of participation</label>
+                        <div class="control">
+                            <div class="select">
+                                <select>
+                                <option>Solo participation</option>
+                                <option>Team participation</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+                  
+                  <div class="field-body combined">
+                    <div class="field">
+                        <label class="label">Start Date of Event</label>
+                        <input class="input" type="datetime-local" id="start_date_time" required>
+                    </div>
+                  </div>
+                 
+                  <div class="field-body combined">
+                    <div class="field">
+                        <label class="label">End Date of Event</label>
+                        <input class="input" type="datetime-local" id="end_date_time" required>
+                    </div>
+                  </div>
+              </div>
+
+              <div class="field is-horizontal combined">
+                  <div class="field-body combined">
+                    <div class="field">
+                        <label class="label">Venue of Event</label>
+                        <input class="input" type="text" placeholder="Venue" required>
+                    </div>
+                  </div>
+                  
+                  <div class="field-body combined">
+                    <div class="field">
+                        <label class="label">Max. No. of Participants</label>
+                        <input class="input" type="text" placeholder="Number of participants" required>
+                    </div>
+                  </div>
+                  
+                  <div class="field-body combined">
+                    <div class="field">
+                        <label class="label">Registration Link</label>
+                        <input class="input" type="url" placeholder="Enter URL here" required>
+                    </div>
+                  </div>
+              </div>
+              
+
+              <div class="field">
+                <div class="field is-horizontal">
+                    <div class="field-label is-normal">
+                      <label class="label">Organizer</label>
+                    </div>
+                    <div class="field-body">
+                      <div class="field">
+                        <p class="control has-icons-left">
+                            <span class="select">
+                            <select required>
+                                <option selected>Amrita Vishwa Vidyapeetham</option>
+                                <option>Others</option>
+                            </select>
+                            </span>
+                            <span class="icon is-small is-left">
+                            <i class="fas fa-user-circle"></i>
+                            </span>
+                        </p>
+                      </div>
+                      
+                      <div class="field">
+                        <p class="control has-icons-left">
+                            <span class="select">
+                            <select>
+                                <option selected>Coimbatore</option>
+                                <option>Amritapuri</option>
+                                <option>Bangalore</option>
+                                <option>Chennai</option>
+                            </select>
+                            </span>
+                            <span class="icon is-small is-left">
+                            <i class="fas fa-globe"></i>
+                            </span>
+                        </p>
+                    </div>
+                    </div>
+                  </div>
+                  <div class="field is-horizontal">
+                    <div class="field-label is-normal">
+                        <label class="label">If Others, please specify the address</label>
+                      </div>
+                    <div class="field-body">
+                        <div class="field">
+                            <p class="control has-icons-left">
+                                <div class="control has-icons-left">
+                                    <input class="input" type="text" placeholder="Address">
+                                    <span class="icon is-small is-left">
+                                        <i class="fas fa-address-card"></i>
+                                    </span>
+                                </div>
+                              </p>
+                        </div>
+                      </div>
+                  </div>
+                  <div class="field is-horizontal">
+                      <div class="field-label is-normal">
+                            <label class="label">Contact Name</label>
+                      </div>
+                      <div class="field-body">
+                          <div class="field control has-icons-left">
+                            <input class="input" type="text" placeholder="Contact Name" required multiple>
+                            <span class="icon is-small is-left">
+                                <i class="fas fa-user-circle"></i>
+                            </span>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="field is-horizontal">
+                    <div class="field-label is-normal">
+                        <label class="label">Contact Email</label>
+                    </div>
+                    <div class="field-body">
+                        <div class="field">
+                            <div class="control has-icons-left has-icons-right">
+                              <input class="input" type="email" placeholder="Contact Email" multiple required>
+                              <span class="icon is-small is-left">
+                                <i class="fas fa-envelope"></i>
+                              </span>
+                              <span class="icon is-small is-right">
+                                <i class="fas fa-exclamation-triangle"></i>
+                              </span>
+                            </div>
+                          </div>
+                    </div>
+                  </div>
+                  <div class="field is-horizontal">
+                    <div class="field-label is-normal">
+                        <label class="label">Contact Phone</label>
+                    </div>
+                    <div class="field-body">
+                        <div class="field is-expanded">
+                            <div class="field has-addons">
+                              <p class="control">
+                                <a class="button is-static">
+                                  +91
+                                </a>
+                              </p>
+                              <p class="control is-expanded">
+                                <input class="input" type="tel" pattern="[0-9]{10}" placeholder="Contact Number" required>
+                              </p>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+                  <div class="field is-horizontal">
+                    <div class="field-label is-normal">
+                        <label class="label">Other Contact Details</label>
+                      </div>
+                    <div class="field-body">
+                        <div class="field">
+                            <div class="control">
+                              <textarea class="textarea" placeholder="Details" required></textarea>
+                            </div>
+                          </div>
+                    </div>
+                  </div>
+              </div>
+              
+              <div class="field">
+                  <label class="label">Upload Poster</label>
+                  <div class="file has-name">
+                    <label class="file-label">
+                      <input class="file-input" type="file" name="resume">
+                      <span class="file-cta">
+                        <span class="file-icon">
+                          <i class="fas fa-upload"></i>
+                        </span>
+                        <span class="file-label">
+                          Choose a file…
+                        </span>
+                      </span>
+                      <span class="file-name">
+                        Filename
+                      </span>
+                    </label>
+                  </div>
+              </div>            
+              
+              <div class="field is-grouped is-grouped-centered">
+                <p class="control">
+                  <a class="button is-primary">
+                    Create
+                  </a>
+                </p>
+                <p class="control">
+                  <a class="button is-light">
+                    Reset
+                  </a>
+                </p>
+              </div>
+        </div>
+        
+    </body>
+</html>
