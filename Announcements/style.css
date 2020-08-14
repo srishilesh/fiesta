@@ -2,3 +2,7 @@
     height: 25em;
     overflow-y: auto;
 }
+
+.view-event {
+    text-decoration: none;
+}
