@@ -6,7 +6,12 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Admin - Create New Event</title>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
+        <link href="css/jquery.tagit.css" rel="stylesheet" type="text/css">
+        <link href="css/tagit.ui-zendesk.css" rel="stylesheet" type="text/css">
         <script src="https://use.fontawesome.com/releases/v5.1.0/js/all.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.12/jquery-ui.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="js/tag-it.js" type="text/javascript" charset="utf-8"></script>
         <style>
             .combined {
                 padding-right: 50px;
@@ -77,6 +82,18 @@
             </div>
           </nav>
         
+          <section class="hero is-info">
+            <div class="hero-body">
+              <div class="container is-center">
+                <h1 class="title ">
+                  Create New Event
+                </h1>
+                <h2 class="subtitle">
+                  To create a new event, fill all the required inputs
+                </h2>
+              </div>
+            </div>
+          </section>
         <div class="container">
             <div class="field">
                 <label class="label">Event Name</label>
@@ -92,56 +109,42 @@
                 </div>
               </div>
               
-              <div class="field is-horizontal">
-                <div class="field-body combined">
-                    <div class="field">
-                        <label class="label">Type of participation</label>
-                        <div class="control">
-                            <div class="select">
-                                <select>
-                                <option>Solo participation</option>
-                                <option>Team participation</option>
-                                </select>
-                            </div>
-                        </div>
+              <div class="columns">
+                <div class="column">
+                    <label class="label">Type of participation</label>
+                    <div class="select">
+                        <select name="participation" style="width:370px;">
+                        <option>Solo participation</option>
+                        <option>Team participation</option>
+                        </select>
                     </div>
                   </div>
                   
-                  <div class="field-body combined">
-                    <div class="field">
-                        <label class="label">Start Date of Event</label>
-                        <input class="input" type="datetime-local" id="start_date_time" required>
-                    </div>
+                  <div class="column">
+                    <label class="label">Start Date of Event</label>
+                    <input class="input" type="datetime-local" id="start_date_time" required>                    
                   </div>
                  
-                  <div class="field-body combined">
-                    <div class="field">
-                        <label class="label">End Date of Event</label>
-                        <input class="input" type="datetime-local" id="end_date_time" required>
-                    </div>
+                  <div class="column">
+                    <label class="label">End Date of Event</label>
+                    <input class="input" type="datetime-local" id="end_date_time" required>
                   </div>
               </div>
 
-              <div class="field is-horizontal combined">
-                  <div class="field-body combined">
-                    <div class="field">
-                        <label class="label">Venue of Event</label>
-                        <input class="input" type="text" placeholder="Venue" required>
-                    </div>
+              <div class="columns">
+                  <div class="column">
+                    <label class="label">Venue of Event</label>
+                    <input class="input" type="text" placeholder="Venue" required>
                   </div>
                   
-                  <div class="field-body combined">
-                    <div class="field">
-                        <label class="label">Max. No. of Participants</label>
-                        <input class="input" type="text" placeholder="Number of participants" required>
-                    </div>
+                  <div class="column">
+                    <label class="label">Max. No. of Participants</label>
+                    <input class="input" type="text" placeholder="Number of participants" required>
                   </div>
                   
-                  <div class="field-body combined">
-                    <div class="field">
-                        <label class="label">Registration Link</label>
-                        <input class="input" type="url" placeholder="Enter URL here" required>
-                    </div>
+                  <div class="column">
+                    <label class="label">Registration Link</label>
+                    <input class="input" type="url" placeholder="Enter URL here" required>
                   </div>
               </div>
               
@@ -223,9 +226,6 @@
                               <input class="input" type="email" placeholder="Contact Email" multiple required>
                               <span class="icon is-small is-left">
                                 <i class="fas fa-envelope"></i>
-                              </span>
-                              <span class="icon is-small is-right">
-                                <i class="fas fa-exclamation-triangle"></i>
                               </span>
                             </div>
                           </div>
