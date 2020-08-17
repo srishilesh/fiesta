@@ -6,17 +6,69 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Admin - Create New Event</title>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
-        <link href="css/jquery.tagit.css" rel="stylesheet" type="text/css">
-        <link href="css/tagit.ui-zendesk.css" rel="stylesheet" type="text/css">
         <script src="https://use.fontawesome.com/releases/v5.1.0/js/all.js"></script>
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js" type="text/javascript" charset="utf-8"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.12/jquery-ui.min.js" type="text/javascript" charset="utf-8"></script>
         <script src="js/tag-it.js" type="text/javascript" charset="utf-8"></script>
-        <style>
-            .combined {
-                padding-right: 50px;
-            }
-        </style>
+        <link href="../_static/master.css" rel="stylesheet" type="text/css">
+        <link href="../_static/subpage.css" rel="stylesheet" type="text/css">
+        <link href="../_static/examples.css" rel="stylesheet" type="text/css">
+        <link href="../css/jquery.tagit.css" rel="stylesheet" type="text/css">
+        <link href="../css/tagit.ui-zendesk.css" rel="stylesheet" type="text/css">
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../js/tag-it.js" type="text/javascript" charset="utf-8"></script>
+        <script>
+            $(function(){
+                var sampleTags = ['singing','dancing','sports','cultural','drama','indoor','outdoor','drawing'];
+
+                $('#singleFieldTags').tagit({
+                    availableTags: sampleTags,
+                    singleField: true,
+                    singleFieldNode: $('#mySingleField')
+                });
+    
+
+                $('#myULTags').tagit({
+                    availableTags: sampleTags,
+                    itemName: 'item',
+                    fieldName: 'tags'
+                });
+    
+                var eventTags = $('#eventTags');
+    
+                var addEvent = function(text) {
+                    $('#events_container').append(text + '<br>');
+                };
+    
+                eventTags.tagit({
+                    availableTags: sampleTags,
+                    beforeTagAdded: function(evt, ui) {
+                        if (!ui.duringInitialization) {
+                            addEvent('beforeTagAdded: ' + eventTags.tagit('tagLabel', ui.tag));
+                        }
+                    },
+                    afterTagAdded: function(evt, ui) {
+                        if (!ui.duringInitialization) {
+                            addEvent('afterTagAdded: ' + eventTags.tagit('tagLabel', ui.tag));
+                        }
+                    },
+                    beforeTagRemoved: function(evt, ui) {
+                        addEvent('beforeTagRemoved: ' + eventTags.tagit('tagLabel', ui.tag));
+                    },
+                    afterTagRemoved: function(evt, ui) {
+                        addEvent('afterTagRemoved: ' + eventTags.tagit('tagLabel', ui.tag));
+                    },
+                    onTagClicked: function(evt, ui) {
+                        addEvent('onTagClicked: ' + eventTags.tagit('tagLabel', ui.tag));
+                    },
+                    onTagExists: function(evt, ui) {
+                        addEvent('onTagExists: ' + eventTags.tagit('tagLabel', ui.existingTag));
+                    }
+                });
+                
+            });
+        </script>    
     </head>
 
     <body>
@@ -108,6 +160,14 @@
                   <textarea class="textarea" placeholder="Description" required></textarea>
                 </div>
               </div>
+
+              <div class="field">
+                  <label class="label">Add Event Tags</label>
+                    <div class="control" id="wrapper">
+                        <input hidden name="tags" id="mySingleField">
+                        <ul id="singleFieldTags"></ul>
+                    </div>
+              </div>
               
               <div class="columns">
                 <div class="column">
@@ -139,7 +199,7 @@
                   
                   <div class="column">
                     <label class="label">Max. No. of Participants</label>
-                    <input class="input" type="text" placeholder="Number of participants" required>
+                    <input class="input" type="number" placeholder="Number of participants" required>
                   </div>
                   
                   <div class="column">
