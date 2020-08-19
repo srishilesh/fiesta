@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Announcements</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
+    <script src="https://use.fontawesome.com/releases/v5.1.0/js/all.js"></script>
+    <script language="javascript" type="text/javascript">
+        let form = document.getElementById("myForm")
+        function validate() {
+            if (document.getElementById("update").checked) {
+                let txt = document.getElementById("message").value
+                if(txt == null || txt == undefined || txt == "") {
+                    alert("Fil the message area")
+                    return false
+                }
+                else {
+                    return true
+                }
+            } else if (document.getElementById("delete").checked) {
+                var r = confirm("Are you sure to delete?");
+                if (r == true) {
+                    return true
+                } else {
+                    return false
+                }
+            } else {
+                alert("Please select update / delete option")
+                return false
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div class="container column is-6 box mt-3">
+        <p class="title">Modify the Announcement</p>
+        <form id="myForm" action="#" method="post" onsubmit="return validate()">
+            <div class="field">
+                <label class="label">Announcement ID</label>
+                <div>
+                    <input class="input" placeholder="132" required>
+                </div>
+            </div>
+            <div class="field">
+                <label class="label">Message</label>
+                <div class="control">
+                    <textarea id="message" class="textarea" placeholder="Textarea"></textarea>
+                </div>
+            </div>
+            <div class="field">
+                <label class="radio">
+                    <input type="radio" id="update" name="option">
+                    Update Announcement
+                </label>
+                <br>    
+                <label class="radio">
+                    <input type="radio" id="delete" name="option">
+                    <span class="has-text-danger">Delete Announcement</span>
+                </label>
+            </div>
+            <div class="field">
+                <div class="control">
+                    <button type="submit" class="button is-succes">Submit</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>
