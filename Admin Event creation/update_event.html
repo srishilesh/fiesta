@@ -4,7 +4,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Admin - Create New Event</title>
+        <title>Admin - Update Event</title>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
         <script src="https://use.fontawesome.com/releases/v5.1.0/js/all.js"></script>
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js" type="text/javascript" charset="utf-8"></script>
@@ -32,7 +32,7 @@
                 $('#myULTags').tagit({
                     availableTags: sampleTags,
                     itemName: 'item',
-                    fieldName: 'tags'
+                    fieldName: 'event_tags'
                 });
     
                 var eventTags = $('#eventTags');
@@ -138,7 +138,7 @@
             <div class="hero-body">
               <div class="container is-center">
                 <h1 class="title ">
-                  Create New Event
+                  Update Event
                 </h1>
                 <h2 class="subtitle">
                   To create a new event, fill all the required inputs
@@ -150,21 +150,21 @@
             <div class="field">
                 <label class="label">Event Name</label>
                 <div class="control">
-                  <input class="input" name="event_name" type="text" placeholder="Event Name" required>
+                  <input class="input" type="text" placeholder="Event Name" name="event_name" disabled>
                 </div>
               </div>
 
               <div class="field">
                 <label class="label">Event Description</label>
                 <div class="control">
-                  <textarea class="textarea" name="event_desc" placeholder="Description" required></textarea>
+                  <textarea class="textarea" placeholder="Description" name="event_desc" required></textarea>
                 </div>
               </div>
 
               <div class="field">
                   <label class="label">Add Event Tags</label>
                     <div class="control" id="wrapper">
-                        <input hidden name="event_tags" id="mySingleField">
+                        <input hidden name="event_tags" id="mySingleField" required>
                         <ul id="singleFieldTags"></ul>
                     </div>
               </div>
@@ -173,7 +173,7 @@
                 <div class="column">
                     <label class="label">Type of participation</label>
                     <div class="select">
-                        <select name="event_type_participation" style="width:370px;">
+                        <select name="event_type_participation" style="width:370px;" required>
                         <option>Solo participation</option>
                         <option>Team participation</option>
                         </select>
@@ -204,7 +204,7 @@
                   
                   <div class="column">
                     <label class="label">Registration Link</label>
-                    <input class="input" name="event_registration_link" type="url" placeholder="Enter URL here" required>
+                    <input class="input" name="event_registration_link" type="url" placeholder="Enter URL here">
                   </div>
               </div>
               
@@ -283,7 +283,7 @@
                     <div class="field-body">
                         <div class="field">
                             <div class="control has-icons-left has-icons-right">
-                              <input class="input" name="event_organizer_email" type="email" placeholder="Contact Email" multiple required>
+                              <input class="input" type="email" name="event_organizer_email" placeholder="Contact Email" multiple required>
                               <span class="icon is-small is-left">
                                 <i class="fas fa-envelope"></i>
                               </span>
@@ -304,7 +304,7 @@
                                 </a>
                               </p>
                               <p class="control is-expanded">
-                                <input class="input" name="event_organizer_phone" type="tel" pattern="[0-9]{10}" placeholder="Contact Number" required>
+                                <input class="input" type="tel" name="event_organizer_phone" pattern="[0-9]{10}" placeholder="Contact Number" required>
                               </p>
                             </div>
                         </div>
@@ -347,7 +347,7 @@
               <div class="field is-grouped is-grouped-centered">
                 <p class="control">
                   <a class="button is-primary">
-                    Create
+                    Update
                   </a>
                 </p>
                 <p class="control">
