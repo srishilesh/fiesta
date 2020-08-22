@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Students Profile</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
+        <script src="https://use.fontawesome.com/releases/v5.1.0/js/all.js"></script>
+        
+    </head>
+
+    <body class="has-background-info">
+
+        <nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+            <a class="navbar-item" href="#">
+        <img src="../Logo/Fiesta.PNG" width="112" height="28">
+            </a>
+            <a id="navbar-burger" role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="menubar">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
+        </div>
+
+    <div id="navbarBasicExample" class="navbar-menu">
+      <div class="navbar-start">
+        <a class="navbar-item">
+          View Students
+        </a>
+  
+        <a class="navbar-item">
+          News
+        </a>
+  
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link">
+            More
+          </a>
+  
+          <div class="navbar-dropdown">
+            <a class="navbar-item">
+              About
+            </a>
+            <a class="navbar-item">
+              Add Events
+            </a>
+            <a class="navbar-item">
+              Contact
+            </a>
+            <hr class="navbar-divider">
+            <a class="navbar-item">
+              Report an issue
+            </a>
+          </div>
+        </div>
+        </div>
+        
+    </div>
+    </nav>
+
+    <!-- STUDENT DETAILS -->
+    <section id="details" class="section container is-centered ">
+        <div class="notification" style="margin: 3% 5% 0.1% 5%;"><h2 class="subtitle is-2">Student details</h2>
+
+
+
+<div class="field is-horizontal">
+  <div class="field-label is-normal">
+    <label class="label">Student</label>
+  </div>
+  <div class="field-body">
+
+    <div class="field">
+      <p class="control is-expanded has-icons-left">
+        <input class="input" type="text" placeholder="Name">
+        <span class="icon is-small is-left">
+          <i class="fas fa-user"></i>
+        </span>
+      </p>
+    </div>
+
+    <div class="field">
+      <p class="control is-expanded has-icons-left ">
+        <input class="input" type="date" placeholder="Date of brith">
+        <span class="icon is-small is-left">
+          <i class="fas fa-birthday-cake"></i>
+        </span>
+      </p>
+    </div>
+  </div>
+</div>
+
+
+<div class="field is-horizontal">
+      <div class="field-label is-normal">
+      <label class="label">Registration number</label>
+      </div>
+      <div class="field-body">
+        <div class="field">
+          <div class="control">
+            <p class="control is-expanded">
+              <input class="input" type="text" placeholder="Registration number">
+            </p>
+          </div>
+        </div>
+      </div>
+</div>
+
+<div class="field is-horizontal">
+      <div class="field-label is-normal">
+      <label class="label">Year of graduation</label>
+      </div>
+      <div class="field-body">
+        <div class="field">
+          <div class="control">
+            <p class="control is-expanded">
+              <input class="input" type="month" placeholder="Select the month and year of graduation">
+            </p>
+          </div>
+          <p class="help">Select month and year</p>
+        </div>
+      </div>
+</div>
+
+
+<div class="field is-horizontal">
+  <div class="field-label is-normal">
+    <label class="label">Department</label>
+  </div>
+  <div class="field-body">
+    <div class="field is-narrow">
+      <div class="control">
+        <div class="select is-fullwidth">
+          <select>
+            <option>Computer Science & Engineering</option>
+            <option>Electrical & Electronics Engineering </option>
+            <option>Electronics & Communication Engineering</option>
+            <option>Mechanical Engineering</option>
+            <option>Chemical Engineering</option>
+            <option>Aerospace Engineering</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="field is-horizontal">
+  <div class="field-label">
+    <label class="label">Available for upcoming events?</label>
+  </div>
+  <div class="field-body">
+    <div class="field is-narrow">
+      <div class="control">
+        <label class="radio">
+          <input type="radio" name="member">
+          Yes
+        </label>
+        <label class="radio">
+          <input type="radio" name="member">
+          No
+        </label>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="field is-horizontal">
+  <div class="field-label is-normal">
+    <label class="label">Extracurricular activities</label>
+  </div>
+  <div class="field-body">
+    <div class="field">
+      <div class="control">
+        <input class="input" type="text" placeholder="e.g. Tennis Football Basketball (Enter with spaces)">
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="field is-horizontal">
+  <div class="field-label is-normal">
+    <label class="label">About myself</label>
+  </div>
+  <div class="field-body">
+    <div class="field">
+      <div class="control">
+        <textarea class="textarea" placeholder="Tell us more about you :) "></textarea>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="field is-horizontal">
+  <div class="field-label">
+    <!-- Left empty for spacing -->
+  </div>
+      <div class="field is-grouped is-grouped-right">
+      <input class="button is-black is-medium" type='submit'>
+      <input class="button is-light is-medium" type='reset'>
+      </div>
+</div>
+
+        </div>
+    </section> 
+      <footer class="footer">
+        <div class="container">
+          <div class="columns">
+            <div class="column is-4 has-text-centered is-hidden-tablet"><a class="title is-3" href="#">ⓕⓘⓔⓢⓣⓐ</a></div>
+            <div class="column is-4">
+              <div class="level"><a class="level-item" href="#">News</a><a class="level-item" href="#">About us</a></div>
+            </div>
+            <div class="column is-4 has-text-centered is-hidden-mobile"><a class="title is-3" href="#">ⓕⓘⓔⓢⓣⓐ</a></div>
+            <div class="column is-4 has-text-right">
+              <div class="level"><a class="level-item" href="#">Contact us</a><a class="level-item" href="#">Visit us</a></div>
+            </div>
+          </div>
+          
+          <p class="subtitle has-text-centered is-6">&copy; 2020 Fiesta. All rights reserved.</p>
+          <!--
+          <div class="has-text-centered">
+              <figure class="image is-128x128 is-inline-block"><img class="level-item" src="avv.jpg">
+              </figure>
+          </div>
+           -->
+        </div>
+      </footer>
+    </body>
+</html>
+
+
+
+
