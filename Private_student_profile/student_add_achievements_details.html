@@ -7,6 +7,17 @@
         <title>Students Profile</title>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
         <script src="https://use.fontawesome.com/releases/v5.1.0/js/all.js"></script>
+        <style type="text/css">
+          .event_name:invalid, .event_date:invalid, .location:invalid, .team_size:invalid, 
+           .proof_link:invalid, .specialization:invalid, .stu_id:invalid,
+           .leader_name:invalid, .leader_mail:invalid{
+            border: 1px solid #ff4d4d;
+                  }
+          textarea:invalid {
+            border: 1px solid #ff4d4d;
+                  }
+        </style>
+        <!-- After connecting backend, show red boxes only after submit button gets clicked -->
     </head>
 
     <body class="has-background-info">
@@ -72,7 +83,11 @@
 
     <div class="field">
       <p class="control is-expanded has-icons-left">
-        <input class="input" type="text" placeholder="Name of the event">
+        <input class="input event_name" id="event_name" type="text" placeholder="Name of the event" 
+        pattern="[a-zA-Z0-9\s]+" required="true">
+        <span class="icon is-small is-left">
+          <i class="fas fa-file-signature"></i>
+        </span>
       </p>
     </div>
     <div class="field-label is-normal">
@@ -80,7 +95,7 @@
   </div>
     <div class="field">
       <p class="control is-expanded has-icons-left ">
-        <input class="input" type="date">
+        <input class="input event_date" id="event_date" type="date" required="true">
         <span class="icon is-small is-left">
           <i class="fas fa-calendar-alt"></i>
         </span>
@@ -99,7 +114,10 @@
 
     <div class="field">
       <p class="control is-expanded has-icons-left">
-        <input class="input" type="text" placeholder="Where did it take place?">
+        <input class="input location" id="location" type="text" placeholder="Where did it take place?"
+        pattern="[a-zA-Z\s]+"
+        required="true">
+
         <span class="icon is-small is-left">
         <i class="fas fa-map-marker-alt"></i>
       </span>
@@ -110,7 +128,7 @@
     </div>
     <div class="field">
       <p class="control is-expanded has-icons-left ">
-        <input class="input" type="number" min="1" max="15">
+        <input class="input team_size" id="team_size" type="number" min="1" max="15" required="true">
         <span class="icon is-small is-left">
           <i class="fas fa-user-friends"></i>
         </span>
@@ -127,11 +145,11 @@
     <div class="field is-narrow">
       <div class="control">
         <label class="radio">
-          <input type="radio" name="member">
+          <input type="radio" name="partipation">
           Winner
         </label>
         <label class="radio">
-          <input type="radio" name="member">
+          <input type="radio" name="participation" checked>
           Just participated
         </label>
       </div>
@@ -141,23 +159,33 @@
 
 <div class="field is-horizontal">
       <div class="field-label is-normal">
-      <label class="label">Proof of participation/winner</label>
+      <label class="label">Proof of participation</label>
       </div>
       <div class="field-body">
         <div class="field">
           <div class="control">
-            <p class="control is-expanded">
-              <input class="input" type="url" placeholder="Enter the link here (Eg: Upload certificates to your Google drive and paste link)">
+            <p class="control is-expanded has-icons-left"> 
+
+              <!--The <input type="url"> defines a field for entering a URL.
+              The input value is automatically validated before the form 
+              can be submitted. -->
+
+
+              <input class="input proof_link" id="proof_link" type="url" 
+              placeholder="Enter the link here (Eg: Upload certificates to your Google drive and paste link)" required="true">
+              <span class="icon is-small is-left">
+                <i class="fas fa-globe"></i>
+              </span>
             </p>
           </div>
 
-            <p class="help is-danger">Link will be checked and appropriate proof not found, submission will not be considered.</p>
+            <p class="help is-danger">Link will be checked and if appropriate proof not found, submission will not be considered.</p>
 
         </div>
       </div>
 </div>
 
-
+<!-- Each achievement has atmost 1 specialization -->
 <div class="field is-horizontal">
   <div class="field-label is-normal">
     <label class="label">Specialization</label>
@@ -166,18 +194,23 @@
 
     <div class="field">
       <p class="control is-expanded has-icons-left ">
-        <input class="input" type="text" placeholder="Eg: Football/ Cricket/ Basketball">
+        <input class="input specialization" id="specialization"type="text" 
+        placeholder="Eg: Football/ Cricket/ Basketball" 
+        pattern="[A-Za-z]+" required="true">
         <span class="icon is-small is-left">
-          <i class="fas fa-cricket"></i>
+          <i class="fas fa-chess-queen"></i>
         </span>
       </p>
+      <p class="help is-info">Each achievement has atmost 1 specialization</p>
     </div>
 
     <div class="field">
       <p class="control is-expanded has-icons-left ">
-        <input class="input" type="email" placeholder="Enter team leader's name">
+        <input class="input stu_id" id="stu_id" type="number" placeholder="Your student ID" 
+        pattern="[0-9]+" required="true">
+
         <span class="icon is-small is-left">
-          <i class="fas fa-envelope"></i>
+          <i class="fas fa-hashtag"></i>
         </span>
       </p>
     </div>
@@ -192,7 +225,8 @@
 
     <div class="field">
       <p class="control is-expanded has-icons-left ">
-        <input class="input" type="text" placeholder="Fill in your name if it's a solo participation">
+        <input class="input leader_name" id="leader_name" type="text" placeholder="Fill in your name if it's a solo participation"
+        pattern="[A-Za-z\s]+" required="true">
         <span class="icon is-small is-left">
           <i class="fas fa-user"></i>
         </span>
@@ -201,7 +235,8 @@
 
     <div class="field">
       <p class="control is-expanded has-icons-left ">
-        <input class="input" type="email" placeholder="Enter team leader's id or e-mail(College/Primary)">
+        <input class="input leader_mail" id="leader_mail" type="email" placeholder="Enter team leader's id or e-mail(College/Primary)"
+        required="true">
         <span class="icon is-small is-left">
           <i class="fas fa-envelope"></i>
         </span>
@@ -217,7 +252,7 @@
   <div class="field-body">
     <div class="field">
       <div class="control">
-        <textarea class="textarea" placeholder="Tell us more about the event :) "></textarea>
+        <textarea class="textarea" placeholder="Tell us more about the event :) " required="true"></textarea>
       </div>
     </div>
   </div>
