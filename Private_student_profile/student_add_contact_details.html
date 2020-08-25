@@ -7,6 +7,17 @@
         <title>Students Profile</title>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
         <script src="https://use.fontawesome.com/releases/v5.1.0/js/all.js"></script>
+        <style type="text/css">
+          .college_mail:invalid, .primary_mail:invalid, 
+          .primary_phone:invalid, 
+          .alternate_phone:invalid, 
+          .media1:invalid, .media2:invalid, .media3:invalid
+           {
+            border: 1px solid #ff4d4d;
+           }
+          
+        </style>
+        <!-- After connecting backend, show red boxes only after submit button gets clicked -->
     </head>
 
     <body class="has-background-info">
@@ -61,7 +72,7 @@
 
     <!--CONTACT STUDENTS -->
     <section id="contact" class="section container is-centered">
-        <div class="notification" style="margin: 15% 5% 10% 5%;"><h2 class="subtitle is-2"> Contact details</h2>
+        <div class="notification" style="margin: 3% 5% 0.1% 5%;"><h2 class="subtitle is-2"> Contact details</h2>
 
 
 
@@ -73,7 +84,8 @@
 
     <div class="field">
       <p class="control is-expanded has-icons-left ">
-        <input class="input" type="email" placeholder="Primary E-mail">
+        <input class="input primary_mail" id="primary_mail" type="email" 
+        placeholder="Primary E-mail" required>
         <span class="icon is-small is-left">
           <i class="fas fa-envelope"></i>
         </span>
@@ -82,7 +94,8 @@
 
     <div class="field">
       <p class="control is-expanded has-icons-left ">
-        <input class="input" type="email" placeholder="College E-mail">
+        <input class="input college_mail" id="college_mail" type="email" 
+        placeholder="College E-mail" required>
         <span class="icon is-small is-left">
           <i class="fas fa-envelope"></i>
         </span>
@@ -105,7 +118,9 @@
           </a>
         </p>
         <p class="control is-expanded">
-          <input class="input" type="tel" placeholder="Your phone number">
+          <input class="input primary_phone" id="primary_phone" type="tel" 
+          placeholder="Your phone number[10 digits]" 
+          pattern="[1-9]{9}[0-9]" required>
         </p>
       </div>
       <p class="help">Do not enter the first zero</p>
@@ -119,7 +134,9 @@
           </a>
         </p>
         <p class="control is-expanded">
-          <input class="input" type="tel" placeholder="Alternate phone number">
+          <input class="input alternate_phone" id="alternate_phone" type="tel" 
+          placeholder="Alternate phone number[10 digits]"
+          pattern="[1-9]{9}[0-9]" required>
         </p>
       </div>
       <p class="help">Do not enter the first zero</p>
@@ -127,6 +144,61 @@
   </div>
 </div>
 
+
+<div class="field is-horizontal">
+  <div class="field-label is-normal">
+    <label class="label">Socail Media #1</label>
+  </div>
+  <div class="field-body">
+
+    <div class="field">
+      <p class="control is-expanded has-icons-left">
+            <input class="input media1" id="media1" type="url" 
+            placeholder="copy & paste the link of your profile"
+            required>
+        <span class="icon is-small is-left">
+          <i class="fas fa-user-circle"></i>
+        </span>
+      </p>
+    </div>
+  </div>
+</div>
+<div class="field is-horizontal">
+  <div class="field-label is-normal">
+    <label class="label">Socail Media #2</label>
+  </div>
+  <div class="field-body">
+
+    <div class="field">
+      <p class="control is-expanded has-icons-left">
+            <input class="input media2" id="media2" type="url" 
+            placeholder="copy & paste the link of your profile"
+            required>
+        <span class="icon is-small is-left">
+          <i class="fas fa-user-circle"></i>
+        </span>
+      </p>
+    </div>
+  </div>
+</div>
+<div class="field is-horizontal">
+  <div class="field-label is-normal">
+    <label class="label">Socail Media #3</label>
+  </div>
+  <div class="field-body">
+
+    <div class="field">
+      <p class="control is-expanded has-icons-left">
+            <input class="input media3" id="media3" type="url" 
+            placeholder="copy & paste the link of your profile"
+            required>
+        <span class="icon is-small is-left">
+          <i class="fas fa-user-circle"></i>
+        </span>
+      </p>
+    </div>
+  </div>
+</div>
 
 
 <div class="field is-horizontal">
@@ -146,6 +218,8 @@
       </p>
       </div>
 </div>
+
+
 
         </div>
     </section>
