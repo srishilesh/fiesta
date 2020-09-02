@@ -1,114 +1,71 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Admin Dashboard</title>
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Dashboard</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
 </head>
 <style>
-	body {
-		margin: 0;
-	}
+  #ahe1 {
+    padding-left: 5%;
+  }
 </style>
 
 <body>
-	<nav class="navbar" role="navigation" aria-label="main navigation">
-		<div class="navbar-brand">
-			<a class="navbar-item" href="../admin_dashboard/admin_dashboard.html">
-				<img src="../Logo/Fiesta.PNG" width="112" height="28">
+  <nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="../student_dashboard/student_dashboard.html">
+        <img src="../../Logo/Fiesta.PNG" width="112" height="28">
+      </a>
+    </div>
+    <div id="navbarBasicExample" class="navbar-menu">
+      <div class="navbar-start">
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link">
+            Profile page
+          </a>
+
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="../Public_student_profile/Profile_Page.html">
+              View Profile
+            </a>
+            <a class="navbar-item" href="../Private_student_profile/student_add_personal_details.html">
+              Edit Profile - Personal
 			</a>
-		</div>
+			<a class="navbar-item" href="../Private_student_profile/student_add_achievements_details.html">
+				Edit Profile - Achievement
+			</a>
+			<a class="navbar-item" href="../Private_student_profile/student_add_contact_details.html">
+				Edit Profile - Contact
+			</a>  
 
-		<div id="navbarBasicExample" class="navbar-menu">
-			<div class="navbar-start">
+          </div>
+        </div>
 
-				<div class="navbar-item has-dropdown is-hoverable">
-					<a class="navbar-link">
-						Announcements
-					</a>
+        <a class="navbar-item" href="../Search/search_tags.html">
+          Search
+        </a>
 
-					<div class="navbar-dropdown">
-						<a class="navbar-item" href="../Announcements/Create_announcement.html">
-							Create New Announcement
-						</a>
-						<a class="navbar-item" href="../Announcements/delete_update.html">
-							Update/Delete Announcement
-						</a>
-						<a class="navbar-item" href="../Announcements/Latest_News.html">
-							Latest News
-						</a>
-
-					</div>
-				</div>
-
-				<div class="navbar-item has-dropdown is-hoverable">
-					<a class="navbar-link">
-						Events
-					</a>
-
-					<div class="navbar-dropdown">
-						<!-- <a class="navbar-item">
-							View Events
-						</a> -->
-						<a class="navbar-item" href="../Events/create_event.html">
-							Create New Event
-						</a>
-						<a class="navbar-item" href="../Events/update_winners.html">
-							Update Event Winners
-						</a>
-						<a class="navbar-item" href="../Events/update_event.html">
-							Update Event Details
-						</a>
-						<a class="navbar-item" href="../admin_dashboard/admin_view-events.html">
-							View All Events
-						</a>
-						<a class="navbar-item" href="../admin_dashboard/admin_view-students.html">
-							View Student Registrations
-						</a>
-
-					</div>
-				</div>
-				<div class="navbar-item has-dropdown is-hoverable">
-					<a class="navbar-link">
-						Generate Report
-					</a>
-
-					<div class="navbar-dropdown">
-						
-						<a class="navbar-item" href="../Generate Report/generate_report_based_on_input.html">
-							Based on Input
-						</a>
-						<a class="navbar-item" href="../Generate Report/generate_report_based_on_duration.html">
-							Based on Duration
-						</a>
-						
-
-					</div>
-			</div>
-				<a class="navbar-item" href="../Search/search_tags.html">
-					Search
-				</a>
-				<a class="navbar-item" href="../Leaderboard/leaderboard_table.html">
-					Leaderboard
-				</a>
-				
-			</div>
-
-			<div class="navbar-end">
+        <a class="navbar-item" href="../Leaderboard/leaderboard_table.html">
+          Leaderboard
+        </a>
+      </div>
+      <div class="navbar-end">
 				<div class="navbar-item">
 					<div class="buttons">
-						<p id="ha"><b>Hello Admin:) &ensp;&ensp; </b></p>
-						<a href="../Landing_page/home_page.html" id="ab1" class="button is-danger">
+						<p id="ha"><b>Hello Sanjay:) &ensp;&ensp; </b></p>
+						<a href="../../Landing_page/home_page.html" id="ab1" class="button is-danger">
 							<strong>LOG OUT</strong>
 						</a>
 					</div>
 				</div>
 			</div>
-		</div>
-	</nav>
-	<div class="columns container">
+    </div>
+  </nav>
+
+  <div class="columns container">
 		<div class="column is-9 ml-4">
 			<h1 class="title is-1">Upcoming events</h1>
 			<div class="card mt-3">
@@ -144,8 +101,8 @@
 					</div>
 				</div>
 				<footer class="card-footer">
-					
-					<a href="../Events/view_event.html" class="card-footer-item has-text-success has-text-weight-bold">View Event</a>
+					<a href="../Students Event Registration/event_registration_team.html" class="card-footer-item has-text-success has-text-weight-bold">Apply</a>
+					<a href="../Student Events/view_event.html" class="card-footer-item has-text-success has-text-weight-bold">View Event</a>
 				</footer>
 			</div>
 			<div class="card mt-3">
@@ -181,8 +138,8 @@
 					</div>
 				</div>
 				<footer class="card-footer">
-					
-					<a href="../Events/view_event_winners.html" class="card-footer-item has-text-success has-text-weight-bold">View Event</a>
+					<a href="" class="card-footer-item has-text-success has-text-weight-bold">Apply</a>
+					<a href="../Student Events/view_event_winners.html" class="card-footer-item has-text-success has-text-weight-bold">View Event</a>
 				</footer>
 			</div>
 			<div class="card mt-3">
@@ -218,8 +175,8 @@
 					</div>
 				</div>
 				<footer class="card-footer">
-					
-					<a href="../Events/view_event.html" class="card-footer-item has-text-success has-text-weight-bold">View Event</a>
+					<a href="" class="card-footer-item has-text-success has-text-weight-bold">Apply</a>
+					<a href="../Student Events/view_event.html" class="card-footer-item has-text-success has-text-weight-bold">View Event</a>
 				</footer>
 			</div>
 			<div class="card mt-3">
@@ -255,8 +212,8 @@
 					</div>
 				</div>
 				<footer class="card-footer">
-					
-					<a href="../Events/view_event.html" class="card-footer-item has-text-success has-text-weight-bold">View Event</a>
+					<a href="" class="card-footer-item has-text-success has-text-weight-bold">Apply</a>
+					<a href="../Student Events/view_event.html" class="card-footer-item has-text-success has-text-weight-bold">View Event</a>
 				</footer>
 			</div>
 			<div class="card mt-3">
@@ -292,6 +249,7 @@
 					</div>
 				</div>
 				<footer class="card-footer">
+          <a href="" class="card-footer-item has-text-success has-text-weight-bold">Apply</a>
 					<a href="#" class="card-footer-item has-text-success has-text-weight-bold">View Event</a>
 				</footer>
 			</div>
@@ -311,7 +269,7 @@
 							et dictum <a>felis venenatis</a> efficitur. Sit amet,
 							consectetur adipiscing elit</p>
 						<br>
-						<a href="../Events/view_event.html"><span class="tag is-warning">Go to Event</span></a>
+						<a href="../Student Events/view_event.html"><span class="tag is-warning">Go to Event</span></a>
 						<span class="is-primary is-link is-light ann_id ">1</span>
 
 					</div>
@@ -322,7 +280,7 @@
 							Amritapuri Campus, promotes partnership between industry, academia and the government to
 							foster...</p>
 						<br>
-						<a href="../Events/view_event.html"><span class="tag is-warning">Go to event</span></a>
+						<a href="../Student Events/view_event.html"><span class="tag is-warning">Go to event</span></a>
 						<span class="is-primary is-link is-light ann_id ">2</span>
 					</div>
 					<div class="notification is-link">
@@ -334,7 +292,7 @@
 							amet,
 							consectetur adipiscing elit</p>
 						<br>
-						<a href="../Events/view_event.html"><span class="tag is-warning">Go to event</span></a>
+						<a href="../Student Events/view_event.html"><span class="tag is-warning">Go to event</span></a>
 						<span class="is-primary is-link is-light ann_id ">3</span>
 					</div>
 					<div class="notification is-link">
@@ -345,14 +303,13 @@
 							Achieving
 							New Heights in Educational Institutions) in 2000 as a part of its Technology...</p>
 						<br>
-						<a href="../Events/view_event.html"><span class="tag is-warning">Go to event</span></a>
+						<a href="../Student Events/view_event.html"><span class="tag is-warning">Go to event</span></a>
 						<span class="is-primary is-link is-light ann_id ">4</span>
 					</div>
 				</div>
 			</article>
 		</div>
 	</div>
-
 </body>
 
 </html>

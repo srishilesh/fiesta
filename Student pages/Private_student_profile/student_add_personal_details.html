@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Edit Profile - Personal</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
+        <script src="https://use.fontawesome.com/releases/v5.1.0/js/all.js"></script>
+        <style type="text/css">
+          .name:invalid, .stu_id:invalid, .reg_no:invalid, .year_of_stud:invalid,
+          .dept:invalid, .dob:invalid, .no_of_skills:invalid, .about_myself:invalid {
+            border: 1px solid #ff4d4d;
+                  }
+          textarea:invalid {
+            border: 1px solid #ff4d4d;
+                  }
+        </style>
+        <!-- After connecting backend, show red boxes only after submit button gets clicked -->
+    </head>
+
+    <body class="has-background-info">
+
+      <nav class="navbar" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+          <a class="navbar-item" href="../student_dashboard/student_dashboard.html">
+            <img src="../../Logo/Fiesta.PNG" width="112" height="28">
+          </a>
+        </div>
+        <div id="navbarBasicExample" class="navbar-menu">
+          <div class="navbar-start">
+            <div class="navbar-item has-dropdown is-hoverable">
+              <a class="navbar-link">
+                Profile page
+              </a>
+    
+              <div class="navbar-dropdown">
+                <a class="navbar-item" href="../Public_student_profile/Profile_Page.html">
+                  View Profile
+                </a>
+                <a class="navbar-item" href="../Private_student_profile/student_add_personal_details.html">
+                  Edit Profile - Personal
+          </a>
+          <a class="navbar-item" href="../Private_student_profile/student_add_achievements_details.html">
+            Edit Profile - Achievement
+          </a>
+          <a class="navbar-item" href="../Private_student_profile/student_add_contact_details.html">
+            Edit Profile - Contact
+          </a>  
+    
+              </div>
+            </div>
+    
+            <a class="navbar-item" href="../Search/search_tags.html">
+              Search
+            </a>
+    
+            <a class="navbar-item" href="../Leaderboard/leaderboard_table.html">
+              Leaderboard
+            </a>
+          </div>
+          <div class="navbar-end">
+            <div class="navbar-item">
+              <div class="buttons">
+                <p id="ha"><b>Hello Sanjay:) &ensp;&ensp; </b></p>
+                <a href="../../Landing_page/home_page.html" id="ab1" class="button is-danger">
+                  <strong>LOG OUT</strong>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+    <!-- STUDENT DETAILS -->
+    <section id="details" class="section container is-centered ">
+        <div class="notification" style="margin: 3% 5% 0.1% 5%;"><h2 class="subtitle is-2">Student details</h2>
+
+
+
+<div class="field is-horizontal">
+  <div class="field-label is-normal">
+    <label class="label">Student</label>
+  </div>
+  <div class="field-body">
+
+    <div class="field">
+      <p class="control is-expanded has-icons-left">
+        <input class="input name" id="name" type="text" placeholder="Name" 
+        pattern="[a-zA-Z\s]+" required="true">
+        <span class="icon is-small is-left">
+          <i class="fas fa-user"></i>
+        </span>
+      </p>
+    </div>
+
+    <div class="field">
+      <p class="control is-expanded has-icons-left ">
+        <input class="input stu_id" id="stu_id" type="number" placeholder="Student ID"
+        required = "true">
+        <span class="icon is-small is-left">
+          <i class="fas fa-hashtag"></i>
+        </span>
+      </p>
+    </div>
+  </div>
+</div>
+
+
+<div class="field is-horizontal">
+      <div class="field-label is-normal">
+      <label class="label">Registration number</label>
+      </div>
+      <div class="field-body">
+        <div class="field">
+          <div class="control">
+            <p class="control is-expanded has-icons-left">
+              <input class="input reg_no" id="reg_no" type="text" placeholder="Registration number"
+              pattern="CB.EN.U4CSE[0-9][0-9][0-9][0-9][0-9]" required="true">
+              <span class="icon is-small is-left">
+                <i class="fas fa-id-card"></i>
+              </span>
+            </p>
+          </div>
+          <p class="help">Format: CB.EN.U4CSEXXXXX </p>
+        </div>
+      </div>
+</div>
+
+<div class="field is-horizontal">
+      <div class="field-label is-normal">
+      <label class="label">Year of study</label>
+      </div>
+      <div class="field-body">
+        <div class="field">
+          <div class="control">
+            <p class="control is-expanded">
+              <input class="input year_of_stud" id="year_of_stud"type="month" placeholder="Select the month and year of graduation"
+              required="true">
+            </p>
+          </div>
+          <p class="help">Select month and year</p>
+        </div>
+      </div>
+</div>
+
+
+<div class="field is-horizontal">
+  <div class="field-label is-normal">
+    <label class="label">Department</label>
+  </div>
+  <div class="field-body">
+    <div class="field is-narrow">
+      <div class="control">
+        <div class="select is-fullwidth">
+          <select class="dept" id="dept" required="true">
+            <option value="">Select one department</option>
+            <option>Computer Science & Engineering</option>
+            <option>Electrical & Electronics Engineering </option>
+            <option>Electronics & Communication Engineering</option>
+            <option>Mechanical Engineering</option>
+            <option>Chemical Engineering</option>
+            <option>Aerospace Engineering</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <div class="field">
+      <p class="control is-expanded has-icons-left ">
+        <input class="input dob" id="dob" type="date" placeholder="Date of brith" required="true">
+        <span class="icon is-small is-left">
+          <i class="fas fa-birthday-cake"></i>
+        </span>
+      </p>
+    </div>
+
+  </div>
+</div>
+
+<div class="field is-horizontal">
+  <div class="field-label">
+    <label class="label">Available for upcoming events?</label>
+  </div>
+  <div class="field-body">
+    <div class="field is-narrow">
+      <div class="control">
+        <label class="radio">
+          <input type="radio" name="available" id="available" checked>
+          Yes
+        </label>
+        <label class="radio">
+          <input type="radio" name="available" id="available">
+          No
+        </label>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Get input dynamically -->
+
+<div class="field is-horizontal">
+  <div class="field-label is-normal">
+    <label class="label">Number of Skills</label>
+  </div>
+  <div class="field-body">
+    <div class="field">
+      <div class="control level-item">
+        <!--<input class="input" type="text" placeholder="e.g. Tennis Football Basketball (Enter with spaces)">-->
+        <input name="no_of_skills" class="no_of_skills input is-" type="number" id="no_of_skills" required>
+        
+        </div>
+      </div>
+    </div>
+<button class="button is-primary" name="skills" onclick="addFields();">Add skills</button>
+</div>
+
+  <div class="field" id="create-container">
+  </div>
+
+
+<div class="field is-horizontal">
+  <div class="field-label is-normal">
+    <label class="label">About myself</label>
+  </div>
+  <div class="field-body">
+    <div class="field">
+      <div class="control">
+        <textarea class="textarea" id="about_myself" placeholder="Tell us more about you :) " required></textarea>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="field is-horizontal">
+  <div class="field-label">
+    <!-- Left empty for spacing -->
+  </div>
+      <div class="field is-grouped is-grouped-right">
+      <input class="button is-black is-medium" type='submit'>
+      <input class="button is-light is-medium" type='reset'>
+      </div>
+</div>
+
+        </div>
+    </section> 
+    <footer class="footer">
+      <div class="container">
+        <div class="columns">
+          <div class="column is-4 has-text-centered is-hidden-tablet"><a class="title is-3" href="#">ⓕⓘⓔⓢⓣⓐ</a></div>
+          <div class="column is-4">
+            <div class="level"><a class="level-item" href="#">About us</a></div>
+          </div>
+          <div class="column is-4 has-text-centered is-hidden-mobile"><a class="title is-3" href="#">ⓕⓘⓔⓢⓣⓐ</a></div>
+          <div class="column is-4 has-text-right">
+            <div class="level"><a class="level-item" href="../Contact Us/contactus.html">Contact us</a></div>
+          </div>
+        </div>
+        
+        <p class="subtitle has-text-centered is-6">&copy; 2020 Fiesta. All rights reserved.</p>
+        
+        <!-- Amrita LOGO -->
+        <!--
+        <div class="has-text-centered">
+            <figure class="image is-128x128 is-inline-block"><img class="level-item" src="avv.jpg">
+            </figure>
+        </div>
+         -->
+      </div>
+    </footer>
+
+      <script>
+              function addFields() {
+                debugger;
+                var number = document.getElementsByName("no_of_skills")[0].value;
+                var container = document.getElementById("create-container");
+                container.innerHTML = '';
+                for (i = 0; i < number; i++) {
+                        var skill = document.createTextNode("Skill " + (i + 1));
+                        var skill = document.createElement("label");
+                        skill.innerHTML = "Skill "+(i + 1);
+                        skill.className = "label subtitle is-6";
+                        container.appendChild(skill);
+                        var input = document.createElement("input");
+                        input.type = "text";
+                        input.name = "name" + i;
+                        input.className = "input";
+                        container.appendChild(input);
+                        container.appendChild(document.createElement("br"));
+                    }
+                }
+          </script>
+    </body>
+</html>
+
+
+
+

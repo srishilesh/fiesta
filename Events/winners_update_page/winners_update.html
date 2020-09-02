@@ -53,9 +53,9 @@
 
 </style>
 <body>
-  <nav class="navbar" role="navigation" aria-label="main navigation">
+    <nav class="navbar" role="navigation" aria-label="main navigation">
 		<div class="navbar-brand">
-			<a class="navbar-item" href="#">
+			<a class="navbar-item" href="../admin_dashboard/admin_dashboard.html">
 				<img src="../Logo/Fiesta.PNG" width="112" height="28">
 			</a>
 		</div>
@@ -100,22 +100,46 @@
 						<a class="navbar-item" href="../Events/update_event.html">
 							Update Event Details
 						</a>
+						<a class="navbar-item" href="../admin_dashboard/admin_view-events.html">
+							View All Events
+						</a>
+						<a class="navbar-item" href="../admin_dashboard/admin_view-students.html">
+							View Student Registrations
+						</a>
 
 					</div>
 				</div>
+				<div class="navbar-item has-dropdown is-hoverable">
+					<a class="navbar-link">
+						Generate Report
+					</a>
+
+					<div class="navbar-dropdown">
+						
+						<a class="navbar-item" href="../Generate Report/generate_report_based_on_input.html">
+							Based on Input
+						</a>
+						<a class="navbar-item" href="../Generate Report/generate_report_based_on_duration.html">
+							Based on Duration
+						</a>
+						
+
+					</div>
+			</div>
 				<a class="navbar-item" href="../Search/search_tags.html">
 					Search
 				</a>
 				<a class="navbar-item" href="../Leaderboard/leaderboard_table.html">
 					Leaderboard
 				</a>
+				
 			</div>
 
 			<div class="navbar-end">
 				<div class="navbar-item">
 					<div class="buttons">
 						<p id="ha"><b>Hello Admin:) &ensp;&ensp; </b></p>
-						<a id="ab1" class="button is-danger">
+						<a href="../Landing_page/home_page.html" id="ab1" class="button is-danger">
 							<strong>LOG OUT</strong>
 						</a>
 					</div>
