@@ -4,9 +4,10 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Students Profile</title>
+        <title>Students Profile - Achievements</title>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
         <script src="https://use.fontawesome.com/releases/v5.1.0/js/all.js"></script>
+        <!--
         <style type="text/css">
           .event_name:invalid, .event_date:invalid, .location:invalid, .team_size:invalid, 
            .proof_link:invalid, .specialization:invalid, .stu_id:invalid,
@@ -17,6 +18,7 @@
             border: 1px solid #ff4d4d;
                   }
         </style>
+        -->
         <!-- After connecting backend, show red boxes only after submit button gets clicked -->
     </head>
 
@@ -74,6 +76,7 @@
     <section id="achievements" class="section container is-centered">
         <div class="notification" style="margin: 3% 5% 1% 5%;"><h2 class="subtitle is-2"> Achievements</h2>
 
+<form name="achievement_details" method="post">
 
 <div class="field is-horizontal">
   <div class="field-label is-normal">
@@ -263,21 +266,25 @@
   <div class="field-label">
     <!-- Left empty for spacing -->
   </div>
-      <div class="field is-grouped is-grouped-right">
-      <p class="control">
-        <a class="button is-link is-medium">
-          Submit
-        </a>
-      </p>
-      <p class="control">
-        <a class="button is-light is-medium">
-          Cancel
-        </a>
-      </p>
-      </div>
+      <form action="" method="">
+          <div class="field" id="create-container">
+          </div>
+          <div class="field is-grouped is-grouped-right">
+            <p class="control">
+              <input type="submit" class="button is-link is-medium" value="Submit">
+            </p>
+            <p class="control">
+              <input type="reset" class="button is-link is-medium" value="Reset">
+            </p>
+          </div>
+      </form>
 </div>
+
+        </form>
         </div>
     </section>
+
+
     <footer class="footer">
         <div class="container">
           <div class="columns">
