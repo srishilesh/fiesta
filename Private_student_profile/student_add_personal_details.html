@@ -7,6 +7,7 @@
         <title>Students Profile</title>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
         <script src="https://use.fontawesome.com/releases/v5.1.0/js/all.js"></script>
+        <!--
         <style type="text/css">
           .name:invalid, .stu_id:invalid, .reg_no:invalid, .year_of_stud:invalid,
           .dept:invalid, .dob:invalid, .no_of_skills:invalid, .about_myself:invalid {
@@ -16,7 +17,29 @@
             border: 1px solid #ff4d4d;
                   }
         </style>
+        -->
         <!-- After connecting backend, show red boxes only after submit button gets clicked -->
+        <script>
+              function addFields() {
+                debugger;
+                var number = document.getElementsByName("no_of_skills")[0].value;
+                var container = document.getElementById("create-container");
+                container.innerHTML = '';
+                for (i = 0; i < number; i++) {
+                        var skill = document.createTextNode("Skill " + (i + 1));
+                        var skill = document.createElement("label");
+                        skill.innerHTML = "Skill "+(i + 1);
+                        skill.className = "label subtitle is-6";
+                        container.appendChild(skill);
+                        var input = document.createElement("input");
+                        input.type = "text";
+                        input.name = "name" + i;
+                        input.className = "input";
+                        container.appendChild(input);
+                        container.appendChild(document.createElement("br"));
+                    }
+                }
+          </script>
     </head>
 
     <body class="has-background-info">
@@ -73,7 +96,7 @@
     <section id="details" class="section container is-centered ">
         <div class="notification" style="margin: 3% 5% 0.1% 5%;"><h2 class="subtitle is-2">Student details</h2>
 
-
+<form name="personal_details" method="post">
 
 <div class="field is-horizontal">
   <div class="field-label is-normal">
@@ -234,14 +257,27 @@
   <div class="field-label">
     <!-- Left empty for spacing -->
   </div>
-      <div class="field is-grouped is-grouped-right">
-      <input class="button is-black is-medium" type='submit'>
-      <input class="button is-light is-medium" type='reset'>
-      </div>
+      <form action="" method="">
+          <div class="field" id="create-container">
+          </div>
+          <div class="field is-grouped is-grouped-right">
+            <p class="control">
+              <input type="submit" class="button is-link is-medium" value="Submit">
+            </p>
+            <p class="control">
+              <input type="reset" class="button is-link is-medium" value="Reset">
+            </p>
+          </div>
+      </form>
 </div>
 
+
+          </form>
         </div>
     </section> 
+
+
+
       <footer class="footer">
         <div class="container">
           <div class="columns">
@@ -265,27 +301,6 @@
         </div>
       </footer>
 
-      <script>
-              function addFields() {
-                debugger;
-                var number = document.getElementsByName("no_of_skills")[0].value;
-                var container = document.getElementById("create-container");
-                container.innerHTML = '';
-                for (i = 0; i < number; i++) {
-                        var skill = document.createTextNode("Skill " + (i + 1));
-                        var skill = document.createElement("label");
-                        skill.innerHTML = "Skill "+(i + 1);
-                        skill.className = "label subtitle is-6";
-                        container.appendChild(skill);
-                        var input = document.createElement("input");
-                        input.type = "text";
-                        input.name = "name" + i;
-                        input.className = "input";
-                        container.appendChild(input);
-                        container.appendChild(document.createElement("br"));
-                    }
-                }
-          </script>
     </body>
 </html>
 
