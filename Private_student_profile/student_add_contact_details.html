@@ -7,6 +7,7 @@
         <title>Students Profile</title>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
         <script src="https://use.fontawesome.com/releases/v5.1.0/js/all.js"></script>
+        <!--
         <style type="text/css">
           .college_mail:invalid, .primary_mail:invalid, 
           .primary_phone:invalid, 
@@ -17,6 +18,7 @@
            }
           
         </style>
+      -->
         <!-- After connecting backend, show red boxes only after submit button gets clicked -->
     </head>
 
@@ -74,7 +76,7 @@
     <section id="contact" class="section container is-centered">
         <div class="notification" style="margin: 3% 5% 0.1% 5%;"><h2 class="subtitle is-2"> Contact details</h2>
 
-
+<form name="contact_details" method="post">
 
 <div class="field is-horizontal">
   <div class="field-label is-normal">
@@ -120,10 +122,10 @@
         <p class="control is-expanded">
           <input class="input primary_phone" id="primary_phone" type="tel" 
           placeholder="Your phone number[10 digits]" 
-          pattern="[1-9]{9}[0-9]" required>
+          pattern="[0-9]{9}[0-9]{1}" maxlength="10" required>
         </p>
       </div>
-      <p class="help">Do not enter the first zero</p>
+      <p class="help">Do not enter the first zero. Enter ten digits number.</p>
     </div>
 
     <div class="field">
@@ -136,10 +138,10 @@
         <p class="control is-expanded">
           <input class="input alternate_phone" id="alternate_phone" type="tel" 
           placeholder="Alternate phone number[10 digits]"
-          pattern="[1-9]{9}[0-9]" required>
+          pattern="[0-9]{9}[0-9]{1}" maxlength="10" required>
         </p>
       </div>
-      <p class="help">Do not enter the first zero</p>
+      <p class="help">Do not enter the first zero. Enter ten digits number.</p>
     </div>
   </div>
 </div>
@@ -205,18 +207,18 @@
   <div class="field-label">
     <!-- Left empty for spacing -->
   </div>
-      <div class="field is-grouped is-grouped-right">
-      <p class="control">
-        <a class="button is-link is-medium">
-          Submit
-        </a>
-      </p>
-      <p class="control">
-        <a class="button is-light is-medium">
-          Cancel
-        </a>
-      </p>
-      </div>
+      <form action="" method="">
+          <div class="field" id="create-container">
+          </div>
+          <div class="field is-grouped is-grouped-right">
+            <p class="control">
+              <input type="submit" class="button is-link is-medium" value="Submit">
+            </p>
+            <p class="control">
+              <input type="reset" class="button is-link is-medium" value="Reset">
+            </p>
+          </div>
+      </form>
 </div>
 
 
@@ -247,7 +249,3 @@
       </footer>
     </body>
 </html>
-
-
-
-
