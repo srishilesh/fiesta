@@ -6,7 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Add Announcement</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
-    <script src="https://use.fontawesome.com/releases/v5.1.0/js/all.js"></script>
+	<script src="https://use.fontawesome.com/releases/v5.1.0/js/all.js"></script>
+	<script language="javascript" type="text/javascript">
+        function validate() {
+			ann = document.getElementById("ann").value
+			if(ann == null || ann == undefined || ann == "") {
+				alert("Please Enter Announcement")
+				return false;
+			}
+			else {
+				return true
+			}
+        }
+    </script>
 </head>
 
 <body>
@@ -106,11 +118,11 @@
 	</nav>
     <div class="container column is-6 box mt-3">
         <p class="title">Add new announcement!</p>
-        <form action="#" method="post">
+        <form id="myForm" action="#" method="post" onsubmit="return validate()">
             <div class="field">
                 <label class="label">Message</label>
                 <div class="control">
-                    <textarea class="textarea" placeholder="Textarea" required></textarea>
+					<textarea class="textarea" id="ann" name="ann" placeholder="Textarea"></textarea>
                 </div>
             </div>
 
