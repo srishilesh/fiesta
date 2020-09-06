@@ -6,7 +6,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Update Winners for Event</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
-    <script src="https://use.fontawesome.com/releases/v5.1.0/js/all.js"></script>
+	<script src="https://use.fontawesome.com/releases/v5.1.0/js/all.js"></script>
+	<script language="javascript" type="text/javascript">
+        let form = document.getElementById("myForm")
+        function validate() {
+			let id = document.getElementById("event_id")
+			if(id == null || id == undefined || id = "") {
+				alert("Enter the Event ID")
+				return false;
+			}
+            if (document.getElementById("update").checked) {
+                let txt = document.getElementById("message").value
+                if(txt == null || txt == undefined || txt == "") {
+                    alert("Fil the message area")
+                    return false
+                }
+                else {
+                    return true
+                }
+            } else if (document.getElementById("delete").checked) {
+                var r = confirm("Are you sure to delete?");
+                if (r == true) {
+                    return true
+                } else {
+                    return false
+                }
+            } else {
+                alert("Please select update / delete option")
+                return false
+            }
+        }
+    </script>
 </head>
 
 <body>
@@ -130,10 +160,10 @@
         
                 </div>
         
-                <form method="post" action="#">
+                <form id="myForm" action="#" method="post" onsubmit="return validate()">
                     <div class="field">
-                        <label class="label" for="the_name">Enter Event ID</label>
-                        <input type="text" name="name" id="the_name" class="input" required>
+                        <label class="label" for="event_id">Enter Event ID</label>
+                        <input type="text" name="event_id" id="event_id" class="input" required>
                     </div>
                     <div class="columns">
                         <div class="column field">

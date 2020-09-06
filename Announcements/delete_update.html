@@ -9,8 +9,18 @@
     <script src="https://use.fontawesome.com/releases/v5.1.0/js/all.js"></script>
     <script language="javascript" type="text/javascript">
         let form = document.getElementById("myForm")
+		let reg = /^\d+$/
         function validate() {
-            if (document.getElementById("update").checked) {
+			ann_id = document.getElementById("announce_id").value
+			if(ann_id == null || ann_id == undefined || ann_id == "") {
+				alert("Please Enter Announcement ID")
+				return false;
+			}
+			else if(reg.test(ann_id) === false) {
+				alert("Enter a Valid Announcement ID")
+				return false;
+			}
+            else if (document.getElementById("update").checked) {
                 let txt = document.getElementById("message").value
                 if(txt == null || txt == undefined || txt == "") {
                     alert("Fil the message area")
@@ -135,7 +145,7 @@
             <div class="field">
                 <label class="label">Announcement ID</label>
                 <div>
-                    <input class="input" placeholder="132" required>
+                    <input class="input" name="announce_id" id="announce_id" placeholder="132" required>
                 </div>
             </div>
             <div class="field">
