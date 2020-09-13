@@ -180,11 +180,17 @@
               </div>
             </div>
           </section>
+        <form action="" method="">
         <div class="container mb-4">
             <div class="field">
                 <label class="label">Event ID</label>
                 <div class="control">
-                  <input class="input" type="text" placeholder="132" name="event_name">
+                  <!-- <input class="input" type="text" placeholder="132" name="event_name"> -->
+                  <select class="input" name="event_name">
+                      <option>123</option>
+                      <option>234</option>
+                      <option>345</option>
+                  </select>
                 </div>
               </div>
 
@@ -380,17 +386,51 @@
               
               <div class="field is-grouped is-grouped-centered">
                 <p class="control">
-                  <a class="button is-primary">
+                  <!-- <a class="button is-primary">
                     Update
-                  </a>
+                  </a> -->
+                  <input type="submit" class="button is-primary" value="Update" onclick="validSubmission()">
                 </p>
                 <p class="control">
-                  <a class="button is-light">
+                  <!-- <a class="button is-light">
                     Reset
-                  </a>
+                  </a> -->
+                  <input type="reset" class="button is-light" value="Reset">
                 </p>
               </div>
         </div>
-        
+      </form>
+        <script>
+          function validSubmission() {
+            var email = document.getElementsByName('event_organizer_email')
+            var phone = document.getElementsByName('event_organizer_phone')
+            if (validateEmailAddress(email)) {
+              if (validPhone(phone)) {
+                alert('Form Submitted')
+              }
+            }
+          }
+      
+          function validateEmailAddress(email) {
+            var re =
+              /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+            if (!email.value.match(re)) {
+              alert("Invalid Email address")
+              email.focus()
+              return false
+            }
+            return true
+          }
+      
+          function validatePhone(phone) {
+            var re = /^([0|\+[0-9]{1,5})?([7-9][0-9]{9})$/
+            if (!phone.value.match(re)) {
+              alert("Invalid Phone number")
+              phone.focus()
+              return false
+            }
+            return true
+          }
+        </script>
     </body>
 </html>
