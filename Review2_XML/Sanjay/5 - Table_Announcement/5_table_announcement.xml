@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE announcements [
+	<!ELEMENT announcements (row)*>
+	<!ELEMENT row (announcement_id, announcement_title, announcement_message, event_id)>
+	<!ELEMENT announcement_id (#PCDATA)>
+	<!ELEMENT announcement_title (#PCDATA)>
+	<!ELEMENT announcement_message (#PCDATA)>
+	<!ELEMENT event_id (#PCDATA)>
+]>
+
+<announcements>
+	<row>
+		<announcement_id>1</announcement_id>
+		<announcement_title>Event Postponed</announcement_title>
+		<announcement_message>The FIFA gaming event that was supposed to be held on September 30 has been postponed to October 29th.</announcement_message>
+		<event_id>12</event_id>
+	</row>
+	<row>
+		<announcement_id>2</announcement_id>
+		<announcement_title>New Football match coming up!</announcement_title>
+		<announcement_message>Hey ballers! 29th Inter college football tournament is on the way. Follow the chanenl for more updates.</announcement_message>
+		<event_id>13</event_id>
+	</row>
+	<row>
+		<announcement_id>3</announcement_id>
+		<announcement_title>Winners announced</announcement_title>
+		<announcement_message>The winners of Cultural fest event are announced. Congrats to all!!</announcement_message>
+		<event_id>14</event_id>
+	</row>
+	<row>
+		<announcement_id>4</announcement_id>
+		<announcement_title>Event cancelled due to COVID-19</announcement_title>
+		<announcement_message>Unfortunately, the event 15 is cancelled due to the ongoing pandemic. Sorry for the inconviniences caused.</announcement_message>
+		<event_id>15</event_id>
+	</row>
+</announcements>

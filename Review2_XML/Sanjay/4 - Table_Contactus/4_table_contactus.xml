@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<!DOCTYPE contactus [
+	<!ELEMENT contactus (row)*>
+	<!ELEMENT row (contact_id, contact_name, contact_phone, contact_email, contact_message)>
+	<!ELEMENT contact_id (#PCDATA)>
+	<!ELEMENT contact_name (#PCDATA)>
+	<!ELEMENT contact_phone (#PCDATA)>
+	<!ELEMENT contact_email (#PCDATA)>
+	<!ELEMENT contact_message (#PCDATA)>
+]>
+
+
+<contactus>
+	<row>
+		<contact_id>1</contact_id>
+		<contact_name>Krishna Teja</contact_name>
+		<contact_phone>9878987656</contact_phone>
+		<contact_email>teja@gmail.com</contact_email>
+		<contact_message>Registration form is nopt working.</contact_message>
+	</row>
+	<row>
+		<contact_id>2</contact_id>
+		<contact_name>Ravi Varma</contact_name>
+		<contact_phone>9645678765</contact_phone>
+		<contact_email>ravi@yahoo.co.in</contact_email>
+		<contact_message>I am not able to register for solo events. It shows error.</contact_message>
+	</row>
+	<row>
+		<contact_id>3</contact_id>
+		<contact_name>Hari Krishna</contact_name>
+		<contact_phone>8907656564</contact_phone>
+		<contact_email>hari@gmail.com</contact_email>
+		<contact_message>Upcoming events are not updated.</contact_message>
+	</row>
+	<row>
+		<contact_id>4</contact_id>
+		<contact_name>Paul</contact_name>
+		<contact_phone>9877612342</contact_phone>
+		<contact_email>paul@amrita.edu</contact_email>
+		<contact_message>Can students from other colleges, register?</contact_message>
+	</row>
+</contactus>

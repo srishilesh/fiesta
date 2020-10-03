@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<!DOCTYPE event_winners [
+	<!ELEMENT event_winners (row)*>
+	<!ELEMENT row (event_id, team_id, position)>
+	<!ELEMENT event_id (#PCDATA)>
+	<!ELEMENT team_id (#PCDATA)>
+	<!ELEMENT position (#PCDATA)>
+]>
+
+<event_winners>
+	<row>	
+		<event_id>12</event_id>
+		<team_id>1</team_id>
+		<position>1</position>
+	</row>
+	<row>	
+		<event_id>12</event_id>
+		<team_id>2</team_id>
+		<position>2</position>
+	</row>
+	<row>	
+		<event_id>13</event_id>
+		<team_id>3</team_id>
+		<position>1</position>
+	</row>
+	<row>	
+		<event_id>14</event_id>
+		<team_id>4</team_id>
+		<position>1</position>
+	</row>
+	<row>	
+		<event_id>14</event_id>
+		<team_id>5</team_id>
+		<position>2</position>
+	</row>
+	<row>	
+		<event_id>14</event_id>
+		<team_id>6</team_id>
+		<position>3</position>
+	</row>
+</event_winners>
