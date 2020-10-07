@@ -1,0 +1,7 @@
+<!ELEMENT root (student_id, team_id, event_id, announcement_id, contact_id, news_id)>
+<!ELEMENT student_id (#PCDATA)>
+<!ELEMENT team_id (#PCDATA)>
+<!ELEMENT event_id (#PCDATA)>
+<!ELEMENT announcement_id (#PCDATA)>
+<!ELEMENT contact_id (#PCDATA)>
+<!ELEMENT news_id (#PCDATA)>

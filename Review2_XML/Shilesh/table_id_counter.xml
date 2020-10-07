@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<root>
+<!-- <!DOCTYPE root SYSTEM "table_id_counter_dtd.dtd">  -->
+<root xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="table_id_counter_xsd.xsd">
     <student_id>0</student_id>
     <team_id>0</team_id>
     <event_id>0</event_id>
     <announcement_id>0</announcement_id>
     <contact_id>0</contact_id>
-    <new_id>0</new_id>
+    <news_id>0</news_id>
 </root>
