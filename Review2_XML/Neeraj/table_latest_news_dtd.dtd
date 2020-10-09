@@ -1,0 +1,6 @@
+<!ELEMENT root (News_id, News_title, News_message, News_link)>
+<!ELEMENT News_id (#PCDATA)>
+<!ELEMENT News_title (#PCDATA)>
+<!ELEMENT News_message (#PCDATA)>
+<!ELEMENT News_link (#PCDATA)>
+
