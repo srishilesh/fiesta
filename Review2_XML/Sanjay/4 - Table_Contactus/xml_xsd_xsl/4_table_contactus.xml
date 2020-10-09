@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="4_table_contactus_style.xsl" type="text/xsl"?>
+
+<contactus xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:noNamespaceSchemaLocation="4_table_contactus.xsd">
+	<row>
+		<contact_id>1</contact_id>
+		<contact_name>Krishna Teja</contact_name>
+		<contact_phone>9878987656</contact_phone>
+		<contact_email>teja@gmail.com</contact_email>
+		<contact_message>Registration form is nopt working.</contact_message>
+	</row>
+	<row>
+		<contact_id>2</contact_id>
+		<contact_name>Ravi Varma</contact_name>
+		<contact_phone>9645678765</contact_phone>
+		<contact_email>ravi@yahoo.co.in</contact_email>
+		<contact_message>I am not able to register for solo events. It shows error.</contact_message>
+	</row>
+	<row>
+		<contact_id>3</contact_id>
+		<contact_name>Hari Krishna</contact_name>
+		<contact_phone>8907656564</contact_phone>
+		<contact_email>hari@gmail.com</contact_email>
+		<contact_message>Upcoming events are not updated.</contact_message>
+	</row>
+	<row>
+		<contact_id>4</contact_id>
+		<contact_name>Paul</contact_name>
+		<contact_phone>9877612342</contact_phone>
+		<contact_email>paul@amrita.edu</contact_email>
+		<contact_message>Can students from other colleges, register?</contact_message>
+	</row>
+</contactus>

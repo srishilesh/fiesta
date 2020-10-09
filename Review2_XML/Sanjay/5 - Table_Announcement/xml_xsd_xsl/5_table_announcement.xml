@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="5_table_announcement_style.xsl" type="text/xsl"?>
+
+
+<announcements xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:noNamespaceSchemaLocation="5_table_announcement.xsd">
+	<row>
+		<announcement_id>1</announcement_id>
+		<announcement_title>Event Postponed</announcement_title>
+		<announcement_message>The FIFA gaming event that was supposed to be held on September 30 has been postponed to October 29th.</announcement_message>
+		<event_id>11</event_id>
+	</row>
+	<row>
+		<announcement_id>2</announcement_id>
+		<announcement_title>New Football match coming up!</announcement_title>
+		<announcement_message>Hey ballers! 29th Inter college football tournament is on the way. Follow the chanenl for more updates.</announcement_message>
+		<event_id>13</event_id>
+	</row>
+	<row>
+		<announcement_id>3</announcement_id>
+		<announcement_title>Winners announced</announcement_title>
+		<announcement_message>The winners of Cultural fest event are announced. Congrats to all!!</announcement_message>
+		<event_id>14</event_id>
+	</row>
+	<row>
+		<announcement_id>4</announcement_id>
+		<announcement_title>Event cancelled due to COVID-19</announcement_title>
+		<announcement_message>Unfortunately, the event 15 is cancelled due to the ongoing pandemic. Sorry for the inconviniences caused.</announcement_message>
+		<event_id>15</event_id>
+	</row>
+</announcements>

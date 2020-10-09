@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema
+    xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+    <xs:element name="event_winners">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element maxOccurs="unbounded" ref="row"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="row">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="event_id"/>
+                <xs:element ref="team_id"/>
+                <xs:element ref="position"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+	<xs:element name="event_id">
+        <xs:simpleType>
+            <xs:restriction base="xs:integer">
+                <xs:minInclusive value="1"/>
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+	<xs:element name="team_id">
+        <xs:simpleType>
+            <xs:restriction base="xs:integer">
+                <xs:minInclusive value="1"/>
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+	<xs:element name="position">
+        <xs:simpleType>
+            <xs:restriction base="xs:integer">
+                <xs:minInclusive value="1"/>
+				<xs:maxInclusive value="10"/>
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+</xs:schema>
