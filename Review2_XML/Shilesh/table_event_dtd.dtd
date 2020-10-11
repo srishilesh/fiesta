@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!ELEMENT root (event*)>
+<!ELEMENT event (event_id, event_name, event_desc, event_tags, event_type_participation, event_timing, event_venue, event_max_participants, event_registration_link,event_organizer)>
+
+<!ELEMENT event_tags (tag*)>
+<!ELEMENT tag (#PCDATA)>
+
+<!ELEMENT event_timing (event_start_datetime, event_end_datetime)>
+<!ELEMENT event_start_datetime (#PCDATA)>
+<!ELEMENT event_end_datetime (#PCDATA)>
+
+<!ELEMENT event_organizer (event_organizer_intracollege, event_organizer_other, event_organizer_name, event_organizer_email, event_organizer_phone, event_organizer_details, event_organizer_poster)>
+<!ELEMENT event_organizer_intracollege (event_organizer_college, event_organizer_campus)>
+<!ELEMENT event_organizer_college (#PCDATA)>
+<!ELEMENT event_organizer_campus (#PCDATA)>
+
+<!ELEMENT event_id (#PCDATA)>
+<!ELEMENT event_name (#PCDATA)>
+<!ELEMENT event_desc (#PCDATA)>
+<!ELEMENT event_type_participation (#PCDATA)>
+<!ELEMENT event_venue (#PCDATA)>
+<!ELEMENT event_max_participants (#PCDATA)>
+<!ELEMENT event_registration_link (#PCDATA)>
+<!ELEMENT event_organizer_other (#PCDATA)>
+<!ELEMENT event_organizer_name (#PCDATA)>
+<!ELEMENT event_organizer_email (#PCDATA)>
+<!ELEMENT event_organizer_phone (#PCDATA)>
+<!ELEMENT event_organizer_details (#PCDATA)>
+<!ELEMENT event_organizer_poster (#PCDATA)>

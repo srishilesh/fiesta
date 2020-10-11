@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE root SYSTEM "table_event_dtd.dtd">
+<root>
+    <event>
+        <event_id>1</event_id>
+        <event_name>ICPC</event_name>
+        <event_desc>5 coding questions in 2 hrs</event_desc>
+        <event_tags>
+            <tag>coding</tag>
+        </event_tags>
+        <event_type_participation>Team</event_type_participation>
+        <event_timing>
+            <event_start_datetime></event_start_datetime>
+            <event_end_datetime></event_end_datetime>
+        </event_timing>
+        <event_venue>AB2 CP Lab2</event_venue>
+        <event_max_participants>100</event_max_participants>
+        <event_registration_link></event_registration_link>
+        <event_organizer>
+            <event_organizer_intracollege>
+                <event_organizer_college>Amrita</event_organizer_college>
+                <event_organizer_campus>Coimbatore</event_organizer_campus>
+            </event_organizer_intracollege>
+            <event_organizer_other></event_organizer_other>
+            <event_organizer_name>Dr.Abc</event_organizer_name>
+            <event_organizer_email>abc@gmail.com</event_organizer_email>
+            <event_organizer_phone>1234567890</event_organizer_phone>
+            <event_organizer_details>asdfqwer</event_organizer_details>
+            <event_organizer_poster></event_organizer_poster>
+        </event_organizer>
+    </event>
+    <event>
+        <event_id>2</event_id>
+        <event_name>Painting</event_name>
+        <event_desc>Paint a potrait in 2 hrs</event_desc>
+        <event_tags>
+            <tag>painting</tag>
+            <tag>potrait</tag>
+        </event_tags>
+        <event_type_participation>solo</event_type_participation>
+        <event_timing>
+            <event_start_datetime></event_start_datetime>
+            <event_end_datetime></event_end_datetime>
+        </event_timing>
+        <event_venue>AB1</event_venue>
+        <event_max_participants>100</event_max_participants>
+        <event_registration_link></event_registration_link>
+        <event_organizer>
+            <event_organizer_intracollege>
+                <event_organizer_college>Amrita</event_organizer_college>
+                <event_organizer_campus>Coimbatore</event_organizer_campus>
+            </event_organizer_intracollege>
+            <event_organizer_other></event_organizer_other>
+            <event_organizer_name>Mr.XYZ</event_organizer_name>
+            <event_organizer_email>xyz@gmail.com</event_organizer_email>
+            <event_organizer_phone>9876543210</event_organizer_phone>
+            <event_organizer_details>poiuyqwer</event_organizer_details>
+            <event_organizer_poster></event_organizer_poster>
+        </event_organizer>
+    </event>
+</root>
