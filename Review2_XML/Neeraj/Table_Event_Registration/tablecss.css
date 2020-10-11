@@ -1,0 +1,45 @@
+/* USE OF GOOGLE FONTS - GOOGLE STYLESHEET IMPORTED IN HTML FILE*/
+#table-title{
+    color: rgb(88, 40, 49);
+    font-family: "Sofia";
+    align-items: center;
+  }
+
+  /* EXAMPLE OF ELEMENT SELECTOR */
+  /* BORDER PROPERTY APPLIED FOR TABLE */
+  table {
+    width: 100%;
+    border: 2px solid #ddd;
+    align-items: center;
+  }
+
+  .table-props {
+    border-radius: 15px;
+    padding: 5px;  
+  }
+  
+  /* EXAMPLE OF ELEMENT SELECTOR */
+  th, td {
+    text-align: center;
+    padding: 8px;
+  }
+
+  /* EXAMPLE OF PSEUDO CLASS */
+  /* tr:nth-child(even){background-color: #f2f2f2}
+  tr:nth-child(odd){background-color: #f2f2f242} */
+
+  #table-heading {
+      font-weight: bold;
+      background-color: rgb(51, 20, 51);
+      color: rgb(224, 178, 92);
+  }
+  /* HIGHLIGHTED THE HIGHEST VALUE IN TABLE */
+  #highest-value {
+      background-color: rgb(206, 75, 58);
+  }
+
+  /* HIGHLIGHTED THE LOWEST VALUE IN TABLE */
+  #lowest-value {
+      background-color: rgb(224, 178, 92);
+  }
+
