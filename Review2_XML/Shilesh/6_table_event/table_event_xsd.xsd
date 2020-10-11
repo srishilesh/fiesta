@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+    <xs:element name="root" type="rootType" />
+
+    <xs:complexType name="rootType">
+        <xs:sequence minOccurs="0" maxOccurs="unbounded">
+            <xs:element name="event" type="eventType"></xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="eventType">
+        <xs:sequence maxOccurs="1">
+            <xs:element name="event_id" type="IDType" />
+            <xs:element name="event_name" type="nameType" />
+            <xs:element name="event_desc" type="descType" />
+            <xs:element name="event_tags" type="tagsType" />
+            <xs:element name="event_type_participation" type="participationType" />
+            <xs:element name="event_timing" type="timingType" />
+            <xs:element name="event_venue" type="nameType" />
+            <xs:element name="event_max_participants" type="numType" />
+            <xs:element name="event_registration_link" type="nameType" />
+            <xs:element name="event_organizer" type="organizerType" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="tagsType">
+        <xs:sequence maxOccurs="5">
+            <xs:element name="tag" type="tagType"></xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:simpleType name="tagType">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[a-z]*"></xs:pattern>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:complexType name="timingType">
+        <xs:sequence maxOccurs="1" minOccurs="1">
+            <xs:element name="event_start_datetime" type="timeType"></xs:element>
+            <xs:element name="event_end_datetime" type="timeType"></xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="organizerType">
+        <xs:sequence>
+            <xs:element name="event_organizer_intracollege" type="collegeType"></xs:element>
+            <xs:element name="event_organizer_other" type="nameType"></xs:element>
+            <xs:element name="event_organizer_name" type="nameType"></xs:element>
+            <xs:element name="event_organizer_email" type="emailType"></xs:element>
+            <xs:element name="event_organizer_phone" type="phoneType"></xs:element>
+            <xs:element name="event_organizer_details" type="nameType"></xs:element>
+            <xs:element name="event_organizer_poster"></xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="collegeType">
+        <xs:sequence maxOccurs="1">
+            <xs:element name="event_organizer_college" type="nameType"></xs:element>
+            <xs:element name="event_organizer_campus" type="nameType"></xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:simpleType name="emailType">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></xs:pattern>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="phoneType">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="\+?\d[\d -]{8,12}\d"></xs:pattern>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="timeType">
+        <xs:restriction base="xs:dateTime" />
+    </xs:simpleType>
+    
+    <xs:simpleType name="IDType">
+        <xs:restriction base="xs:integer">
+            <xs:minInclusive value="0"></xs:minInclusive>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="nameType">
+        <xs:restriction base="xs:string" />
+    </xs:simpleType>
+
+    <xs:simpleType name="descType">
+        <xs:restriction base="xs:string">
+            <xs:minLength value="10"></xs:minLength>
+            <xs:maxLength value="1000"></xs:maxLength>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="participationType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Solo"></xs:enumeration>
+            <xs:enumeration value="Team"></xs:enumeration>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="numType">
+        <xs:restriction base="xs:integer">
+            <xs:minInclusive value="10"></xs:minInclusive>
+            <xs:maxInclusive value="1000"></xs:maxInclusive>
+        </xs:restriction>
+    </xs:simpleType>
+
+</xs:schema>

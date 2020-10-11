@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE root SYSTEM "table_event_dtd.dtd">
-<root>
+<!-- <!DOCTYPE root SYSTEM "table_event_dtd.dtd"> -->
+<root xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="table_event_xsd.xsd">
     <event>
         <event_id>1</event_id>
         <event_name>ICPC</event_name>
@@ -10,8 +10,8 @@
         </event_tags>
         <event_type_participation>Team</event_type_participation>
         <event_timing>
-            <event_start_datetime></event_start_datetime>
-            <event_end_datetime></event_end_datetime>
+            <event_start_datetime>2020-04-01T10:00:00</event_start_datetime>
+            <event_end_datetime>2020-04-01T12:00:00</event_end_datetime>
         </event_timing>
         <event_venue>AB2 CP Lab2</event_venue>
         <event_max_participants>100</event_max_participants>
@@ -37,10 +37,10 @@
             <tag>painting</tag>
             <tag>potrait</tag>
         </event_tags>
-        <event_type_participation>solo</event_type_participation>
+        <event_type_participation>Solo</event_type_participation>
         <event_timing>
-            <event_start_datetime></event_start_datetime>
-            <event_end_datetime></event_end_datetime>
+            <event_start_datetime>2020-04-01T16:00:00</event_start_datetime>
+            <event_end_datetime>2020-04-01T18:00:00</event_end_datetime>
         </event_timing>
         <event_venue>AB1</event_venue>
         <event_max_participants>100</event_max_participants>
