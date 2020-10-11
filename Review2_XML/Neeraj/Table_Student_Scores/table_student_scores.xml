@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- <!DOCTYPE root SYSTEM "table_student_scores_dtd.dtd">  -->
+<?xml-stylesheet type="text/xsl" href="table_student_scores_xslt.xsl"?>
+<root xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="table_student_scores_xsd.xsd">
+    <student_id>0</student_id>
+    <student_score>0</student_score>
+</root>
