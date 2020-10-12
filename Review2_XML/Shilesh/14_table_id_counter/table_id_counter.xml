@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- <!DOCTYPE root SYSTEM "table_id_counter_dtd.dtd">  -->
-<?xml-stylesheet type="text/xsl" href="table_id_counter_xslt.xsl"?>
+<?xml-stylesheet type="text/xsl" href="table_id_counter_xsl.xsl"?>
 <root xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="table_id_counter_xsd.xsd">
     <student_id>0</student_id>
     <team_id>0</team_id>
