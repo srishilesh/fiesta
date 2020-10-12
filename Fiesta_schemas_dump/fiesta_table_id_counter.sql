@@ -1,6 +1,4 @@
-CREATE DATABASE  IF NOT EXISTS `fiesta` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
-USE `fiesta`;
--- MySQL dump 10.13  Distrib 8.0.17, for Win64 (x86_64)
+-- MySQL dump 10.13  Distrib 8.0.20, for Win64 (x86_64)
 --
 -- Host: database-1.c4hq5iosxryf.us-east-1.rds.amazonaws.com    Database: fiesta
 -- ------------------------------------------------------
@@ -26,27 +24,29 @@ SET @@SESSION.SQL_LOG_BIN= 0;
 SET @@GLOBAL.GTID_PURGED=/*!80000 '+'*/ '';
 
 --
--- Table structure for table `table_event_registrations`
+-- Table structure for table `table_id_counter`
 --
 
-DROP TABLE IF EXISTS `table_event_registrations`;
+DROP TABLE IF EXISTS `table_id_counter`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `table_event_registrations` (
-  `event_id` int(11) NOT NULL,
-  `team_id` int(11) NOT NULL,
-  `register_date_time` datetime NOT NULL,
-  PRIMARY KEY (`event_id`,`team_id`)
+CREATE TABLE `table_id_counter` (
+  `student_id` int(11) DEFAULT NULL,
+  `team_id` int(11) DEFAULT NULL,
+  `event_id` int(11) DEFAULT NULL,
+  `announcement_id` int(11) DEFAULT NULL,
+  `contact_id` int(11) DEFAULT NULL,
+  `news_id` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `table_event_registrations`
+-- Dumping data for table `table_id_counter`
 --
 
-LOCK TABLES `table_event_registrations` WRITE;
-/*!40000 ALTER TABLE `table_event_registrations` DISABLE KEYS */;
-/*!40000 ALTER TABLE `table_event_registrations` ENABLE KEYS */;
+LOCK TABLES `table_id_counter` WRITE;
+/*!40000 ALTER TABLE `table_id_counter` DISABLE KEYS */;
+/*!40000 ALTER TABLE `table_id_counter` ENABLE KEYS */;
 UNLOCK TABLES;
 SET @@SESSION.SQL_LOG_BIN = @MYSQLDUMP_TEMP_LOG_BIN;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -59,4 +59,4 @@ SET @@SESSION.SQL_LOG_BIN = @MYSQLDUMP_TEMP_LOG_BIN;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-08-20 22:38:13
+-- Dump completed on 2020-10-12 22:55:30

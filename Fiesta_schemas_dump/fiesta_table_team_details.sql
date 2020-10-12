@@ -1,6 +1,4 @@
-CREATE DATABASE  IF NOT EXISTS `fiesta` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
-USE `fiesta`;
--- MySQL dump 10.13  Distrib 8.0.17, for Win64 (x86_64)
+-- MySQL dump 10.13  Distrib 8.0.20, for Win64 (x86_64)
 --
 -- Host: database-1.c4hq5iosxryf.us-east-1.rds.amazonaws.com    Database: fiesta
 -- ------------------------------------------------------
@@ -26,29 +24,27 @@ SET @@SESSION.SQL_LOG_BIN= 0;
 SET @@GLOBAL.GTID_PURGED=/*!80000 '+'*/ '';
 
 --
--- Table structure for table `table_contactus`
+-- Table structure for table `table_team_details`
 --
 
-DROP TABLE IF EXISTS `table_contactus`;
+DROP TABLE IF EXISTS `table_team_details`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `table_contactus` (
-  `contact_id` int(11) NOT NULL,
-  `contact_name` varchar(50) NOT NULL,
-  `contact_phone` varchar(10) DEFAULT NULL,
-  `contact_email` varchar(45) NOT NULL,
-  `contact_message` varchar(500) NOT NULL,
-  PRIMARY KEY (`contact_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='contact_name \ncontact_phone\ncontact_email\ncontact_message';
+CREATE TABLE `table_team_details` (
+  `team_id` int(11) NOT NULL,
+  `team_name` varchar(100) NOT NULL,
+  `student_id` varchar(10) NOT NULL,
+  PRIMARY KEY (`team_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `table_contactus`
+-- Dumping data for table `table_team_details`
 --
 
-LOCK TABLES `table_contactus` WRITE;
-/*!40000 ALTER TABLE `table_contactus` DISABLE KEYS */;
-/*!40000 ALTER TABLE `table_contactus` ENABLE KEYS */;
+LOCK TABLES `table_team_details` WRITE;
+/*!40000 ALTER TABLE `table_team_details` DISABLE KEYS */;
+/*!40000 ALTER TABLE `table_team_details` ENABLE KEYS */;
 UNLOCK TABLES;
 SET @@SESSION.SQL_LOG_BIN = @MYSQLDUMP_TEMP_LOG_BIN;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -61,4 +57,4 @@ SET @@SESSION.SQL_LOG_BIN = @MYSQLDUMP_TEMP_LOG_BIN;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-08-20 22:38:31
+-- Dump completed on 2020-10-12 22:55:38

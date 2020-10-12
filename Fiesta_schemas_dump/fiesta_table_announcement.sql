@@ -1,6 +1,4 @@
-CREATE DATABASE  IF NOT EXISTS `fiesta` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
-USE `fiesta`;
--- MySQL dump 10.13  Distrib 8.0.17, for Win64 (x86_64)
+-- MySQL dump 10.13  Distrib 8.0.20, for Win64 (x86_64)
 --
 -- Host: database-1.c4hq5iosxryf.us-east-1.rds.amazonaws.com    Database: fiesta
 -- ------------------------------------------------------
@@ -26,43 +24,28 @@ SET @@SESSION.SQL_LOG_BIN= 0;
 SET @@GLOBAL.GTID_PURGED=/*!80000 '+'*/ '';
 
 --
--- Table structure for table `table_event`
+-- Table structure for table `table_announcement`
 --
 
-DROP TABLE IF EXISTS `table_event`;
+DROP TABLE IF EXISTS `table_announcement`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `table_event` (
-  `event_id` int(11) NOT NULL,
-  `event_name` varchar(200) NOT NULL,
-  `event_desc` varchar(1000) NOT NULL,
-  `event_tags` varchar(1000) NOT NULL,
-  `event_type_participation` int(11) NOT NULL,
-  `event_venue` varchar(450) NOT NULL,
-  `event_max_participants` int(11) NOT NULL,
-  `event_organizer_college` varchar(100) NOT NULL,
-  `event_organizer_campus` varchar(100) DEFAULT NULL,
-  `event_organizer_name` varchar(100) NOT NULL,
-  `event_organizer_email` varchar(100) NOT NULL,
-  `event_organizer_phone` varchar(20) NOT NULL,
-  `event_organizer_details` varchar(1000) NOT NULL,
-  `event_organizer_poster` blob,
-  `event_organizer_other` varchar(100) DEFAULT NULL,
-  `event_registration_link` varchar(100) DEFAULT NULL,
-  `event_start_datetime` datetime NOT NULL,
-  `event_end_datetime` datetime NOT NULL,
-  `event_timings` int(11) NOT NULL,
-  PRIMARY KEY (`event_id`)
+CREATE TABLE `table_announcement` (
+  `announcement_id` int(11) NOT NULL,
+  `announcement_message` varchar(1000) NOT NULL,
+  `announcement_title` varchar(100) NOT NULL,
+  `event_id` int(11) DEFAULT NULL,
+  PRIMARY KEY (`announcement_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `table_event`
+-- Dumping data for table `table_announcement`
 --
 
-LOCK TABLES `table_event` WRITE;
-/*!40000 ALTER TABLE `table_event` DISABLE KEYS */;
-/*!40000 ALTER TABLE `table_event` ENABLE KEYS */;
+LOCK TABLES `table_announcement` WRITE;
+/*!40000 ALTER TABLE `table_announcement` DISABLE KEYS */;
+/*!40000 ALTER TABLE `table_announcement` ENABLE KEYS */;
 UNLOCK TABLES;
 SET @@SESSION.SQL_LOG_BIN = @MYSQLDUMP_TEMP_LOG_BIN;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -75,4 +58,4 @@ SET @@SESSION.SQL_LOG_BIN = @MYSQLDUMP_TEMP_LOG_BIN;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-08-20 22:37:48
+-- Dump completed on 2020-10-12 22:55:21

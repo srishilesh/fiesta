@@ -1,6 +1,4 @@
-CREATE DATABASE  IF NOT EXISTS `fiesta` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
-USE `fiesta`;
--- MySQL dump 10.13  Distrib 8.0.17, for Win64 (x86_64)
+-- MySQL dump 10.13  Distrib 8.0.20, for Win64 (x86_64)
 --
 -- Host: database-1.c4hq5iosxryf.us-east-1.rds.amazonaws.com    Database: fiesta
 -- ------------------------------------------------------
@@ -26,31 +24,28 @@ SET @@SESSION.SQL_LOG_BIN= 0;
 SET @@GLOBAL.GTID_PURGED=/*!80000 '+'*/ '';
 
 --
--- Table structure for table `table_student_registration`
+-- Table structure for table `table_latest_news`
 --
 
-DROP TABLE IF EXISTS `table_student_registration`;
+DROP TABLE IF EXISTS `table_latest_news`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `table_student_registration` (
-  `student_id` varchar(10) NOT NULL,
-  `student_name` varchar(100) NOT NULL,
-  `student_roll_num` varchar(16) NOT NULL,
-  `student_email` varchar(45) NOT NULL,
-  `student_password` varchar(20) NOT NULL,
-  PRIMARY KEY (`student_id`),
-  UNIQUE KEY `student_roll_num_UNIQUE` (`student_roll_num`),
-  UNIQUE KEY `student_email_UNIQUE` (`student_email`)
+CREATE TABLE `table_latest_news` (
+  `news_id` int(11) NOT NULL,
+  `news_title` varchar(100) NOT NULL,
+  `news_message` varchar(1000) NOT NULL,
+  `news_link` varchar(100) DEFAULT NULL,
+  PRIMARY KEY (`news_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `table_student_registration`
+-- Dumping data for table `table_latest_news`
 --
 
-LOCK TABLES `table_student_registration` WRITE;
-/*!40000 ALTER TABLE `table_student_registration` DISABLE KEYS */;
-/*!40000 ALTER TABLE `table_student_registration` ENABLE KEYS */;
+LOCK TABLES `table_latest_news` WRITE;
+/*!40000 ALTER TABLE `table_latest_news` DISABLE KEYS */;
+/*!40000 ALTER TABLE `table_latest_news` ENABLE KEYS */;
 UNLOCK TABLES;
 SET @@SESSION.SQL_LOG_BIN = @MYSQLDUMP_TEMP_LOG_BIN;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -63,4 +58,4 @@ SET @@SESSION.SQL_LOG_BIN = @MYSQLDUMP_TEMP_LOG_BIN;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-08-20 22:38:05
+-- Dump completed on 2020-10-12 22:56:22
