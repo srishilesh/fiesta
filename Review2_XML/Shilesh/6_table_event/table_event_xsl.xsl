@@ -45,9 +45,12 @@
                             <td>
                                 <xsl:value-of select="event_desc" />
                             </td>
-                            <!-- Need to fix this -->
                             <td>
-                                <xsl:value-of select="event_tags/tag" />
+                                <xsl:for-each select="event_tags">
+                                    <xsl:call-template name="getTagField">
+                                        <xsl:with-param name="tag" select="current()"></xsl:with-param>
+                                    </xsl:call-template>
+                                </xsl:for-each>
                             </td>
                             <td>
                                 <xsl:value-of select="event_type_participation" />
@@ -93,5 +96,16 @@
                 </table>
             </body>
         </html>
+    </xsl:template>
+    <xsl:template name="getTagField">
+        <xsl:param name="tag" />
+        <xsl:variable name="tagIds">
+            <xsl:for-each select="//tag">
+                <xsl:value-of select="@displayName"></xsl:value-of>
+            </xsl:for-each>
+        </xsl:variable>
+        <xsl:element name="tags">
+            <xsl:value-of select="normalize-space(concat($tag,','))" />
+        </xsl:element>
     </xsl:template>
 </xsl:stylesheet>

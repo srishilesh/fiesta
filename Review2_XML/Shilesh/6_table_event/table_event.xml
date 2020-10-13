@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- <!DOCTYPE root SYSTEM "table_event_dtd.dtd"> -->
 <?xml-stylesheet type="text/xsl" href="table_event_xsl.xsl"?>
-<root xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="table_event_xsd.xsd">
+<!-- <root xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="table_event_xsd.xsd"> -->
+<root>
     <event>
         <event_id>1</event_id>
         <event_name>ICPC</event_name>
         <event_desc>5 coding questions in 2 hrs</event_desc>
         <event_tags>
-            <tag>coding</tag>
+            <tag id="1" displayName="coding">coding</tag>
         </event_tags>
         <event_type_participation>Team</event_type_participation>
         <event_timing>
@@ -35,8 +36,8 @@
         <event_name>Painting</event_name>
         <event_desc>Paint a potrait in 2 hrs</event_desc>
         <event_tags>
-            <tag>painting</tag>
-            <tag>potrait</tag>
+            <tag id="1" displayName="painting">painting</tag>
+            <tag id="2" displayName="artist">artist</tag>
         </event_tags>
         <event_type_participation>Solo</event_type_participation>
         <event_timing>
