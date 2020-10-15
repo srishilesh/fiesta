@@ -1,0 +1,84 @@
+* {
+        box-sizing: border-box;
+    }
+
+    /* MAKE BACKGROUND TO LIGHT COLOR */
+    /* body {
+        /* background: linear-gradient(rgba(255,255,255,0.3), rgba(255,255,255,0.3)), url('https://lh3.googleusercontent.com/eVUjL5WGHROV8Ls2EpBTsDs0p-OeyUrCIgbP8kJivgtl8mNbgVxObf8J7BjLFgZolaN0Bg4=s152');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed; */
+        /* background-color: rgb(150, 81, 150); COMMENT THIS AND UNCOMMENT THE ABOVE SNIPPET TO VIEW A LIGHT GRADIENT OVER THE BACKGROUND IMAGE */
+    /*} */
+  
+      /* TEXT FEATURES ON SCROLLING QUOTE FOR THE DAY*/
+  #marquee {
+    font-style: italic;
+}
+  .row {
+    height: 800px;
+  }
+
+  /* DEMO OF FLOAT PROPERTY*/
+  .column-left {
+      float: left;
+      width: 60%;      
+      padding-left: 5%;
+  }
+
+  .column-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+   }
+
+  #button-css {
+    color: rgb(224, 178, 92);
+    background-color: rgb(51, 20, 51);
+  }
+
+  /* EXAMPLE OF PSEUDO CLASS*/
+  #button-css:hover {
+    background-color: #ddd;
+    color: black;
+  }
+
+  label, #legend-css, .price-output {
+    color: rgb(224, 178, 92);
+  }
+
+  /* MAKE ONE PARAGRAPH BOLD*/
+  #bold-para {
+    color: rgb(189, 41, 22);
+    font-weight: bold;
+  }
+
+  /* MAKE ALL OTHER PARAGRAPHS APPEAR IN ITALICS */
+  #italic-para {
+    font-style: italic;
+    clear: both;
+    }
+
+  .logo>img {
+    border: #000000 5px solid;
+    float: left;
+  }
+
+  .logo{
+    display: flex;
+  }
+
+  /* Unique CSS feature not taught in lectures */
+  .logo:hover {
+    opacity: 0.8;
+    transform: scaleY(0.9);
+  }
+
+  #square {
+    list-style-type: square;
+  }
+
+  .clear {
+    clear: both;
+  }
