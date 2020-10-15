@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE skillset [
+	<!ELEMENT skillset (student)*>
+	<!ELEMENT student (student_id, primary_skill, ps_rating)>
+	<!ELEMENT student_id (#PCDATA)>
+	<!ELEMENT primary_skill (#PCDATA)>
+	<!ELEMENT ps_rating (#PCDATA)>	
+]>
+<skillset>
+<student>
+    <student_id>1</student_id>
+	<primary_skill>Badminton</primary_skill>
+	<ps_rating>2.5</ps_rating>
+</student>
+
+<student>
+    <student_id>2</student_id>
+	<primary_skill>Badminton</primary_skill>
+	<ps_rating>4</ps_rating>
+</student>
+<student>
+    <student_id>3</student_id>
+	<primary_skill>Cricket</primary_skill>
+	<ps_rating>3</ps_rating>
+</student>
+<student>
+    <student_id>4</student_id>
+	<primary_skill>Basket Ball</primary_skill>
+	<ps_rating>5</ps_rating>
+</student>
+<student>
+    <student_id>5</student_id>
+	<primary_skill>Foot Ball</primary_skill>
+	<ps_rating>3.5</ps_rating>
+</student>
+</skillset>
