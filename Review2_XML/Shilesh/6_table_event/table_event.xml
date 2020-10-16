@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- <!DOCTYPE root SYSTEM "table_event_dtd.dtd"> -->
 <?xml-stylesheet type="text/xsl" href="table_event_xsl.xsl"?>
-<!-- <root xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="table_event_xsd.xsd"> -->
-<root>
+<root xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="table_event_xsd.xsd">
+<!-- <root> -->
     <event>
         <event_id>1</event_id>
         <event_name>ICPC</event_name>

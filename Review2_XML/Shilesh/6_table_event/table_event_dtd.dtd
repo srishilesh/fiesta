@@ -5,6 +5,9 @@
 <!ELEMENT event_tags (tag*)>
 <!ELEMENT tag (#PCDATA)>
 
+<!ATTLIST tag id CDATA #REQUIRED>
+<!ATTLIST tag displayName CDATA #REQUIRED>
+
 <!ELEMENT event_timing (event_start_datetime, event_end_datetime)>
 <!ELEMENT event_start_datetime (#PCDATA)>
 <!ELEMENT event_end_datetime (#PCDATA)>

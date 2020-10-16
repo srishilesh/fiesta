@@ -25,15 +25,17 @@
 
     <xs:complexType name="tagsType">
         <xs:sequence maxOccurs="5">
-            <xs:element name="tag" type="tagType"></xs:element>
+            <xs:element name="tag" />
         </xs:sequence>
     </xs:complexType>
 
-    <xs:simpleType name="tagType">
-        <xs:restriction base="xs:string">
-            <xs:pattern value="[a-z]*"></xs:pattern>
-        </xs:restriction>
-    </xs:simpleType>
+    <xs:attribute name="id" >
+        <xs:simpleType >
+            <xs:restriction base="xs:string">
+                <!-- <xs:pattern value="[a-z]*"></xs:pattern>- -->
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:attribute>
 
     <xs:complexType name="timingType">
         <xs:sequence maxOccurs="1" minOccurs="1">
