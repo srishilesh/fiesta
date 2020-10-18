@@ -13,6 +13,6 @@
 <!ELEMENT student_phone (#PCDATA)>
 <!ELEMENT student_school (#PCDATA)>
 <!ELEMENT student_address (#PCDATA)>
-<!ELEMENT student_socialmedia_1(#PCDATA)>
+<!ELEMENT student_socialmedia_1 (#PCDATA)>
 <!ELEMENT student_socialmedia_2 (#PCDATA)>
 <!ELEMENT student_socialmedia_3 (#PCDATA)>

@@ -16,7 +16,7 @@ public class table_idcounter_xml_database_entry {
 		else
 			System.out.println("Database not connected!");
 
-         File id_counter_xmlfile = new File("./table_id_counter.xml");
+         File id_counter_xmlfile = new File("./src/table_id_counter.xml");
         
 		 DocumentBuilderFactory docBuilderFactory = DocumentBuilderFactory.newInstance();
 		 DocumentBuilder docBuilder = docBuilderFactory.newDocumentBuilder();
@@ -33,14 +33,14 @@ public class table_idcounter_xml_database_entry {
 		 		NodeList studentID = rowElement.getElementsByTagName("student_id");
 		 		Element studentElement = (Element) studentID.item(0);
 		 		NodeList textFNList = studentElement.getChildNodes();
-                String tmp = ((Node) textFNList.item(0)).getNodeValue().trim();
-                int student = Integer.parseInt(tmp);
+                 String tmp = ((Node) textFNList.item(0)).getNodeValue().trim();
+                 int student = Integer.parseInt(tmp);
 				
 		 		 NodeList teamID = rowElement.getElementsByTagName("team_id");
 		 		 Element teamElement = (Element) teamID.item(0);
 		 		 NodeList textLNList = teamElement.getChildNodes();
-                 tmp = ((Node) textLNList.item(0)).getNodeValue().trim();
-                 int team =  Integer.parseInt(tmp);
+                  tmp = ((Node) textLNList.item(0)).getNodeValue().trim();
+                  int team =  Integer.parseInt(tmp);
 				 
 		 		NodeList eventID = rowElement.getElementsByTagName("event_id");
 		 		Element eventElement = (Element) eventID.item(0);
@@ -77,9 +77,9 @@ public class table_idcounter_xml_database_entry {
 		 		stmt.setInt(6, news);
 
 		 		if (stmt.executeUpdate() == 1) {
-		 		 	System.out.println("Successful execution");
+		 		 	System.out.println("Inserted successfully!");
 		 		 } else {
-		 		 	System.out.println("Unsuccessful");
+		 		 	System.out.println("Error during insertion !!");
 		 		}
 		 	}
 		 }

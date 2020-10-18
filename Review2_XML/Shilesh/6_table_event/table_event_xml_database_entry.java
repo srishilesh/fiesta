@@ -71,10 +71,20 @@ public class table_event_xml_database_entry {
 
 				// WRITE FOR EVENT_TAGS
 				try {
-//					NodeList eventTagsList = rowElement.getElementsByTagName("event_tags");
-//					Element eventTagElement = (Element) eventTagsList.item(0);
-//					NodeList tt = eventTagElement.getChildNodes();
-//					System.out.println("TAGS LENGTH: " + (eventTagsList.getLength()));
+					NodeList eventTagsList = rowElement.getElementsByTagName("event_tags");
+					for (int j = 0; j < eventTagsList.getLength(); j ++) {
+						Node tag = eventTagsList.item(j);
+
+						if (tag.getNodeType() == Node.ELEMENT_NODE) {
+							Element tagElement = (Element) tag;
+							
+							NodeList tagList = tagElement.getElementsByTagName("tag");
+							Element aa = (Element) tagList.item(j);
+							NodeList bb = aa.getChildNodes();
+							tags += ((Node) bb.item(j)).getNodeValue().trim();
+						}
+					}
+//					System.out.println("TAGS LENGTH: " + tags);
 				}
 				catch(Exception e) {
 					System.out.println("Tags: null");
@@ -216,8 +226,8 @@ public class table_event_xml_database_entry {
 				}
 				
 				try {
-					File file = new File(poster);
-					fileread = new FileInputStream(file);
+//					File file = new File(poster);
+//					fileread = new FileInputStream(file);
 				}
 				catch(Exception e) {
 					System.out.println("Event poster: null");
@@ -269,7 +279,7 @@ public class table_event_xml_database_entry {
 					System.out.println("Inserted successfully! \n");
 				}
 				catch(Exception e) {
-					System.out.println("Error during insertion!! \n");
+					System.out.println("Either the data has already been inserted or its an error during insertion!! \n");
 				}
 				
 			}
