@@ -4,11 +4,11 @@
 
     <xs:complexType name="rootType">
         <xs:sequence minOccurs="0" maxOccurs="unbounded">
-            <xs:element name="profile_personal" type="profile_personalType"></xs:element>
+            <xs:element name="profile-personal" type="profile-personalType"></xs:element>
         </xs:sequence>
     </xs:complexType>
 
-    <xs:complexType name="profile_personalType">
+    <xs:complexType name="profile-personalType">
         <xs:sequence maxOccurs="1">
 
             <xs:element name="student_id" type="IDType" />
@@ -19,6 +19,7 @@
             <xs:element name="student_phone" type="phoneType" />
             <xs:element name="student_school" type="descType" />
             <xs:element name="student_address" type="descType" />
+			<xs:element name="student_socialmedia" type="mediaType" />
             
         </xs:sequence>
     </xs:complexType>
@@ -39,7 +40,7 @@
 
     <xs:simpleType name="phoneType">
         <xs:restriction base="xs:string">
-            <xs:pattern value="\+?\d[\d -]{8,12}\d"></xs:pattern>
+            <xs:pattern value="[1-9][0-9]{9}"></xs:pattern>
         </xs:restriction>
     </xs:simpleType>
 
