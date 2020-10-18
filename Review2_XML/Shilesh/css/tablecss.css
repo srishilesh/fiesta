@@ -16,8 +16,14 @@
   .table-props {
     border-radius: 15px;
     padding: 5px;  
+    position: relative;
+    margin: 4px, 4px; 
+    width: 300px; 
   }
   
+  div.scrolling {
+    overflow-x: scroll; 
+  }
   /* EXAMPLE OF ELEMENT SELECTOR */
   th, td {
     text-align: center;
