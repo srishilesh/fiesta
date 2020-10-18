@@ -31,21 +31,35 @@ public static void main ( String [] args ) throws Exception {
 		
 		for ( int s = 0 ; s < listOfAchievements.getLength(); s++) {
 			
+				int id = 0;
+				String ach = ""; 
+				
 				Node firstAchievementNode = listOfAchievements.item(s);
 				/*if ( firstCerealNode.getNodeType() == Node.ELEMENT_NODE ) {*/
 				Element firstAchievementElement = (Element) firstAchievementNode ;
 				
+				try {
 				NodeList idList = firstAchievementElement.getElementsByTagName("student_id");
 				Element idElement = (Element) idList.item(0);
 				NodeList textidList = idElement . getChildNodes ();
 				String temp = ((Node) textidList.item(0)).getNodeValue().trim();
-				int id = Integer.parseInt(temp);
+				id = Integer.parseInt(temp);
+				}
+				catch(Exception e) {
+					System.out.println("Student ID cannot be null");
+					System.exit(0); 
+				}
 				
+				try {
 				NodeList achList = firstAchievementElement.getElementsByTagName ("student_achievement");
 				Element achElement = (Element) achList.item(0);
 				NodeList textachList = achElement.getChildNodes();
-				String ach = ((Node) textachList.item(0)).getNodeValue().trim();
-				
+				ach = ((Node) textachList.item(0)).getNodeValue().trim();
+				}
+				catch(Exception e) {
+					System.out.println("Student achievement cannot be null");
+					System.exit(0); 
+				}
 				
 				String query = "insert into table_student_profile_achievements values(' " + id + " ',' " + ach + "') ";
 				
