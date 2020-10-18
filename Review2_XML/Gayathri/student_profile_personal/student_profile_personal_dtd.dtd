@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!ELEMENT root (profile-personal*)>
-<!ELEMENT profile-personal (student_id, student_dob, student_year_of_study, student_dept, student_about_myself, student_phone, student_school, student_address, student_socialmedia_1, student_socialmedia_2, students_socialmedia_3)>
+<!ELEMENT profile-personal (student_id, student_dob, student_year_of_study, student_dept, student_about_myself, student_phone, student_school, student_address, student_socialmedia_1, student_socialmedia_2, student_socialmedia_3)>
 
 <!ELEMENT student_socialmedia (student_socialmedia_1, student_socialmedia_2, student_socialmedia_3)>
 
