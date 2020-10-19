@@ -13,6 +13,9 @@
             <body>
                 <center>
                     <h2>Table Events</h2>
+                    <p>
+                        Number of Events - <xsl:value-of select="count(root/event/event_max_participants)" /><br/>
+                    </p>
                 </center>
                 <div class="scrolling">
                     <table class="table-props" id="table-title">
@@ -36,6 +39,7 @@
                             <th>Poster</th>
                         </tr>
                         <xsl:for-each select="root/event">
+                        <xsl:sort select="number(event_id)" data-type="number" />
                             <tr>
                                 <td>
                                     <xsl:value-of select="event_id" />
@@ -53,9 +57,18 @@
                                         </xsl:call-template>
                                     </xsl:for-each>
                                 </td>
-                                <td>
-                                    <xsl:value-of select="event_type_participation" />
-                                </td>
+                                <xsl:choose>
+                                    <xsl:when test="event_type_participation = 'Team'">
+                                        <td bgcolor="#f2f2f242">
+                                            <xsl:value-of select="event_type_participation" />
+                                        </td>
+                                    </xsl:when>
+                                    <xsl:otherwise>
+                                        <td bgcolor="#cccccc">
+                                            <xsl:value-of select="event_type_participation" />
+                                        </td>
+                                    </xsl:otherwise>
+                                </xsl:choose>
                                 <td>
                                     <xsl:value-of select="event_timing/event_start_datetime" />
                                 </td>

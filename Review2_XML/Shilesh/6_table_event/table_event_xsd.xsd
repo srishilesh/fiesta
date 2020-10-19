@@ -32,7 +32,6 @@
     <xs:attribute name="id" >
         <xs:simpleType >
             <xs:restriction base="xs:string">
-                <!-- <xs:pattern value="[a-z]*"></xs:pattern>- -->
             </xs:restriction>
         </xs:simpleType>
     </xs:attribute>
