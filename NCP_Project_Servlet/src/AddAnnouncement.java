@@ -18,7 +18,7 @@ import java.io.*;
 /**
  * Servlet implementation class AddAnnouncement
  */
-@WebServlet("/AddAnnouncement")
+@WebServlet("/addAnnouncement")
 public class AddAnnouncement extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        

@@ -37,7 +37,7 @@
           Contact Us
         </a>
 
-        <a class="navbar-item" href="../Login pages/admin_login.html">
+        <a class="navbar-item" href="<%= request.getContextPath() %>/adminLogin">
           Admin Login
         </a>
       </div>

@@ -4,3 +4,9 @@
 /LoginAdminServlet.class
 /UpdateEventServlet.class
 /UpdateWinners.class
+/HomePageServlet.class
+/ContactUsServlet.class
+/ViewEventWinnersServlet.class
+/ViewEventServlet.class
+/WinnersUpdateServlet.class
+/LatestNewsServlet.class

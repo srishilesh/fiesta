@@ -14,7 +14,7 @@ import java.io.*;
 /**
  * Servlet implementation class UpdateWinners
  */
-@WebServlet("/UpdateWinners")
+@WebServlet("/updateWinners")
 public class UpdateWinners extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        

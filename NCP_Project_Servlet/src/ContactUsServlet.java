@@ -1,8 +1,6 @@
 
 
 import java.io.IOException;
-import java.io.PrintWriter;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -10,16 +8,16 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class LoginAdminServlet
+ * Servlet implementation class ContactUsServlet
  */
-@WebServlet("/adminLogin")
-public class LoginAdminServlet extends HttpServlet {
+@WebServlet("/contactus")
+public class ContactUsServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public LoginAdminServlet() {
+    public ContactUsServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -30,7 +28,7 @@ public class LoginAdminServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		response.getWriter().append("Served at: ").append(request.getContextPath());
-		response.sendRedirect("Login%20pages/login_admin.jsp");
+		response.sendRedirect("Contact%20Us/contactus.jsp");
 	}
 
 	/**
@@ -38,27 +36,7 @@ public class LoginAdminServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		// doGet(request, response);
-		String email = request.getParameter("email");
-		String pword = request.getParameter("password");
-		System.out.println("Admin Login");
-		System.out.println("Email: " + email);
-		System.out.println("Password: " + pword);
-		if (email.equals("admin@gmail.com") && pword.equals("admin")) {
-			System.out.println("Login successful");
-			try {
-				response.setContentType("text/html");
-				PrintWriter out = response.getWriter();
-			    out.println("\n\n<h1>" + "Login Successful !!" + "</h1>");
-			    out.close();
-			}
-			catch(Exception e) {
-				System.out.println(e);
-			}
-		}
-		else {
-			System.out.println("Login unsuccessful");
-		}
+		doGet(request, response);
 	}
 
 }

@@ -14,7 +14,7 @@ import java.io.*;
 /**
  * Servlet implementation class DeleteUpdateAnnouncement
  */
-@WebServlet("/DeleteUpdateAnnouncement")
+@WebServlet("/deleteUpdateAnnouncement")
 public class DeleteUpdateAnnouncement extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
