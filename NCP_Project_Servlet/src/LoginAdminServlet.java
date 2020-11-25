@@ -1,6 +1,8 @@
 
 
 import java.io.IOException;
+import java.io.PrintWriter;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -8,16 +10,17 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class LoginServlet
+ * Servlet implementation class LoginAdminServlet
  */
 @WebServlet("/login")
-public class LoginServlet extends HttpServlet {
+public class LoginAdminServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-
+       
     /**
-     * Default constructor. 
+     * @see HttpServlet#HttpServlet()
      */
-    public LoginServlet() {
+    public LoginAdminServlet() {
+        super();
         // TODO Auto-generated constructor stub
     }
 
@@ -27,7 +30,7 @@ public class LoginServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		response.getWriter().append("Served at: ").append(request.getContextPath());
-		response.sendRedirect("loginForm.jsp");	
+		response.sendRedirect("login_admin.jsp");
 	}
 
 	/**
@@ -35,11 +38,27 @@ public class LoginServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-//		doGet(request, response);
-		String uname = request.getParameter("username");
+		// doGet(request, response);
+		String email = request.getParameter("email");
 		String pword = request.getParameter("password");
-		System.out.println("uname: " + uname);
-		System.out.println("pword: " + pword);
+		System.out.println("Admin Login");
+		System.out.println("Email: " + email);
+		System.out.println("Password: " + pword);
+		if (email.equals("admin@gmail.com") && pword.equals("admin")) {
+			System.out.println("Login successful");
+			try {
+				response.setContentType("text/html");
+				PrintWriter out = response.getWriter();
+			    out.println("\n\n<h1>" + "Login Successful !!" + "</h1>");
+			    out.close();
+			}
+			catch(Exception e) {
+				System.out.println(e);
+			}
+		}
+		else {
+			System.out.println("Login unsuccessful");
+		}
 	}
 
 }
