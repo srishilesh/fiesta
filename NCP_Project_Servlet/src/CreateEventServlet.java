@@ -33,7 +33,8 @@ public class CreateEventServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		response.getWriter().append("Served at: ").append(request.getContextPath());
-		response.sendRedirect("create_event.jsp");
+		
+		response.sendRedirect("Events/create_event.jsp");
 	}
 
 	/**
