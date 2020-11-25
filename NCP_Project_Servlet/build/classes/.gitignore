@@ -25,3 +25,8 @@
 /StudentViewEventWinnersServlet.class
 /StudentViewEventServlet.class
 /StudentTeamRegistrationServlet.class
+/RegistrationServlet.class
+/UpcomingEventsServlet.class
+/AdminHomeServlet.class
+/AdminViewAllEventsServlet.class
+/AdminViewAllStudentsServlet.class

@@ -1,0 +1,194 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Upcoming Events</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
+    <script src="https://use.fontawesome.com/releases/v5.1.0/js/all.js"></script>
+</head>
+
+<body>
+
+    <div class="columns container">
+      <div class="column is-5">
+        <h1 class="title is-1">Upcoming events</h1>
+        <div class="card mt-3">
+            <header class="card-header">
+                <p class="card-header-title is-size-4">
+                    Let us hear! My School
+                </p>
+            </header>
+            <div class="card-content">
+                <div class="content">
+                    It is understood and accepted that in any profession to be successful there are three key elements. 
+                    They are Skills, Knowledge and Attitude. Skills and Knowledge can be attained through our educational system. 
+                    A positive attitude makes an individual groomed to 100%.
+                    <br>
+                    <div class="columns is-bordered mt-1">
+                        <div class="column">
+                          <span class="has-text-weight-bold has-text-link">Date & Time: </span>11:09 PM - 1 Jan 2016
+                        </div>
+                        <div class="column">
+                            <span class="has-text-weight-bold has-text-link">Venue: </span> Amrita University
+                        </div>
+                        <div class="column">
+                            <span class="has-text-weight-bold has-text-link">Event Type: </span> Inter college
+                        </div>
+                        <div class="column">
+                            <span class="has-text-weight-bold has-text-link">Event Size: </span> 2
+                        </div>
+                      </div>
+                    
+                </div>
+            </div>
+            <footer class="card-footer">
+                <a href="#" class="card-footer-item has-text-success has-text-weight-bold">Apply</a>
+                <a href="#" class="card-footer-item has-text-success has-text-weight-bold">View Event</a>
+            </footer>
+        </div>
+        <div class="card mt-3">
+            <header class="card-header">
+                <p class="card-header-title is-size-4">
+                    Let us hear! My School
+                </p>
+            </header>
+            <div class="card-content">
+                <div class="content">
+                    It is understood and accepted that in any profession to be successful there are three key elements. 
+                    They are Skills, Knowledge and Attitude. Skills and Knowledge can be attained through our educational system. 
+                    A positive attitude makes an individual groomed to 100%.
+                    <br>
+                    <div class="columns is-bordered mt-1">
+                        <div class="column">
+                          <span class="has-text-weight-bold has-text-link">Date & Time: </span>11:09 PM - 1 Jan 2016
+                        </div>
+                        <div class="column">
+                            <span class="has-text-weight-bold has-text-link">Venue: </span> Amrita University
+                        </div>
+                        <div class="column">
+                            <span class="has-text-weight-bold has-text-link">Event Type: </span> Inter college
+                        </div>
+                        <div class="column">
+                            <span class="has-text-weight-bold has-text-link">Event Size: </span> 2
+                        </div>
+                      </div>
+                    
+                </div>
+            </div>
+            <footer class="card-footer">
+                <a href="#" class="card-footer-item has-text-success has-text-weight-bold">Apply</a>
+                <a href="#" class="card-footer-item has-text-success has-text-weight-bold">View Event</a>
+            </footer>
+        </div>
+        <div class="card mt-3">
+            <header class="card-header">
+                <p class="card-header-title is-size-4">
+                    Let us hear! My School
+                </p>
+            </header>
+            <div class="card-content">
+                <div class="content">
+                    It is understood and accepted that in any profession to be successful there are three key elements. 
+                    They are Skills, Knowledge and Attitude. Skills and Knowledge can be attained through our educational system. 
+                    A positive attitude makes an individual groomed to 100%.
+                    <br>
+                    <div class="columns is-bordered mt-1">
+                        <div class="column">
+                          <span class="has-text-weight-bold has-text-link">Date & Time: </span>11:09 PM - 1 Jan 2016
+                        </div>
+                        <div class="column">
+                            <span class="has-text-weight-bold has-text-link">Venue: </span> Amrita University
+                        </div>
+                        <div class="column">
+                            <span class="has-text-weight-bold has-text-link">Event Type: </span> Inter college
+                        </div>
+                        <div class="column">
+                            <span class="has-text-weight-bold has-text-link">Event Size: </span> 2
+                        </div>
+                      </div>
+                    
+                </div>
+            </div>
+            <footer class="card-footer">
+                <a href="#" class="card-footer-item has-text-success has-text-weight-bold">Apply</a>
+                <a href="#" class="card-footer-item has-text-success has-text-weight-bold">View Event</a>
+            </footer>
+        </div>
+        <div class="card mt-3">
+            <header class="card-header">
+                <p class="card-header-title is-size-4">
+                    Let us hear! My School
+                </p>
+            </header>
+            <div class="card-content">
+                <div class="content">
+                    It is understood and accepted that in any profession to be successful there are three key elements. 
+                    They are Skills, Knowledge and Attitude. Skills and Knowledge can be attained through our educational system. 
+                    A positive attitude makes an individual groomed to 100%.
+                    <br>
+                    <div class="columns is-bordered mt-1">
+                        <div class="column">
+                          <span class="has-text-weight-bold has-text-link">Date & Time: </span>11:09 PM - 1 Jan 2016
+                        </div>
+                        <div class="column">
+                            <span class="has-text-weight-bold has-text-link">Venue: </span> Amrita University
+                        </div>
+                        <div class="column">
+                            <span class="has-text-weight-bold has-text-link">Event Type: </span> Inter college
+                        </div>
+                        <div class="column">
+                            <span class="has-text-weight-bold has-text-link">Event Size: </span> 2
+                        </div>
+                      </div>
+                    
+                </div>
+            </div>
+            <footer class="card-footer">
+                <a href="#" class="card-footer-item has-text-success has-text-weight-bold">Apply</a>
+                <a href="#" class="card-footer-item has-text-success has-text-weight-bold">View Event</a>
+            </footer>
+        </div>
+        <div class="card mt-3">
+            <header class="card-header">
+                <p class="card-header-title is-size-4">
+                    Let us hear! My School
+                </p>
+            </header>
+            <div class="card-content">
+                <div class="content">
+                    It is understood and accepted that in any profession to be successful there are three key elements. 
+                    They are Skills, Knowledge and Attitude. Skills and Knowledge can be attained through our educational system. 
+                    A positive attitude makes an individual groomed to 100%.
+                    <br>
+                    <div class="columns is-bordered mt-1">
+                        <div class="column">
+                          <span class="has-text-weight-bold has-text-link">Date & Time: </span>11:09 PM - 1 Jan 2016
+                        </div>
+                        <div class="column">
+                            <span class="has-text-weight-bold has-text-link">Venue: </span> Amrita University
+                        </div>
+                        <div class="column">
+                            <span class="has-text-weight-bold has-text-link">Event Type: </span> Inter college
+                        </div>
+                        <div class="column">
+                            <span class="has-text-weight-bold has-text-link">Event Size: </span> 2
+                        </div>
+                      </div>
+                    
+                </div>
+            </div>
+            <footer class="card-footer">
+                <a href="#" class="card-footer-item has-text-success has-text-weight-bold">Apply</a>
+                <a href="#" class="card-footer-item has-text-success has-text-weight-bold">View Event</a>
+            </footer>
+        </div>
+      </div>
+		
+    </div>
+</body>
+
+</html>
