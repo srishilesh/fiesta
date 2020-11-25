@@ -13,3 +13,15 @@
 /GenerateReportDurationServlet.class
 /GenerateReportInputServlet.class
 /AdminLeaderboardServlet.class
+/AdminSearchServlet.class
+/StudentLeaderboardServlet.class
+/AddAchievementsServlet.class
+/AddContactServlet.class
+/AddPersonalServlet.class
+/EditProfileServlet.class
+/DisplayProfileServlet.class
+/StudentSearchServlet.class
+/StudentHomeServlet.class
+/StudentViewEventWinnersServlet.class
+/StudentViewEventServlet.class
+/StudentTeamRegistrationServlet.class
