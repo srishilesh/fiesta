@@ -10,3 +10,6 @@
 /ViewEventServlet.class
 /WinnersUpdateServlet.class
 /LatestNewsServlet.class
+/GenerateReportDurationServlet.class
+/GenerateReportInputServlet.class
+/AdminLeaderboardServlet.class
