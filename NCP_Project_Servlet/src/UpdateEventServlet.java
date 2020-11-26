@@ -70,10 +70,7 @@ public class UpdateEventServlet extends HttpServlet {
 			System.out.println("Error while retrieving data through POST method");
 		}
 		try {
-			response.setContentType("text/html");
-			PrintWriter out = response.getWriter();
-		    out.println("\n\n<h1>" + "Updated the database" + "</h1>");
-		    out.close();
+			response.sendRedirect(request.getContextPath()+"/adminHome");
 		}
 		catch(Exception e) {
 			System.out.println(e);

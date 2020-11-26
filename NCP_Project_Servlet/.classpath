@@ -12,8 +12,12 @@
 			<attribute name="owner.project.facets" value="#system#;jst.web"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry kind="lib" path="C:/Program Files (x86)/MySQL/Connector J 8.0/mysql-connector-java-8.0.20.jar"/>
-	<classpathentry kind="lib" path="C:/eclipse/servlet-api.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="D:/sem7/NCP/mysql-connector-java-8.0.21.jar"/>
+	<classpathentry kind="lib" path="D:/sem7/NCP/servlet-api.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>

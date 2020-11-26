@@ -69,100 +69,7 @@
   	<script src="../js/adminPageNavbar.js"></script>
 </head>
 <body>
-	<nav class="navbar" role="navigation" aria-label="main navigation">
-		<div class="navbar-brand">
-			<a class="navbar-item" href="../admin_dashboard/admin_dashboard.html">
-				<img src="../Logo/Fiesta.PNG" width="112" height="28">
-			</a>
-		</div>
-
-		<div id="navbarBasicExample" class="navbar-menu">
-			<div class="navbar-start">
-
-				<div class="navbar-item has-dropdown is-hoverable">
-					<a class="navbar-link">
-						Announcements
-					</a>
-
-					<div class="navbar-dropdown">
-						<a class="navbar-item" href="../Announcements/Create_announcement.html">
-							Create New Announcement
-						</a>
-						<a class="navbar-item" href="../Announcements/delete_update.html">
-							Update/Delete Announcement
-						</a>
-						<a class="navbar-item" href="../Announcements/Latest_News.html">
-							Latest News
-						</a>
-
-					</div>
-				</div>
-
-				<div class="navbar-item has-dropdown is-hoverable">
-					<a class="navbar-link">
-						Events
-					</a>
-
-					<div class="navbar-dropdown">
-						<!-- <a class="navbar-item">
-							View Events
-						</a> -->
-						<a class="navbar-item" href="../Events/create_event.html">
-							Create New Event
-						</a>
-						<a class="navbar-item" href="../Events/update_winners.html">
-							Update Event Winners
-						</a>
-						<a class="navbar-item" href="../Events/update_event.html">
-							Update Event Details
-						</a>
-						<a class="navbar-item" href="../admin_dashboard/admin_view-events.html">
-							View All Events
-						</a>
-						<a class="navbar-item" href="../admin_dashboard/admin_view-students.html">
-							View Student Registrations
-						</a>
-
-					</div>
-				</div>
-				<div class="navbar-item has-dropdown is-hoverable">
-					<a class="navbar-link">
-						Generate Report
-					</a>
-
-					<div class="navbar-dropdown">
-
-						<a class="navbar-item" href="../Generate Report/generate_report_based_on_input.html">
-							Based on Input
-						</a>
-						<a class="navbar-item" href="../Generate Report/generate_report_based_on_duration.html">
-							Based on Duration
-						</a>
-
-
-					</div>
-				</div>
-				<a class="navbar-item" href="../Search/search_tags.html">
-					Search
-				</a>
-				<a class="navbar-item" href="../Leaderboard/leaderboard_table.html">
-					Leaderboard
-				</a>
-
-			</div>
-
-			<div class="navbar-end">
-				<div class="navbar-item">
-					<div class="buttons">
-						<p id="ha"><b>Hello Admin:) &ensp;&ensp; </b></p>
-						<a href="../Landing_page/home_page.html" id="ab1" class="button is-danger">
-							<strong>LOG OUT</strong>
-						</a>
-					</div>
-				</div>
-			</div>
-		</div>
-	</nav>
+	<div id="nav-placeholder"></div>
 	<div class="columns">
 		<div class="container column is-5 mt-4">
 			<main class="container content box">
@@ -189,7 +96,7 @@
 
 				</div>
 
-				<form id="myForm" action="<%= request.getContextPath() %>/UpdateWinners" method="post" onsubmit="return validate()">
+				<form id="myForm" action="<%= request.getContextPath() %>/updateWinners" method="post" onsubmit="return validate()">
 					<div class="field">
 						<label class="label" for="event_id">Enter Event ID</label>
 						<input type="text" name="event_id" id="event_id" class="input" required>

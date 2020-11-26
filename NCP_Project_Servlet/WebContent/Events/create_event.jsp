@@ -96,7 +96,7 @@
     </div>
   </section>
 
-  <form action="<%= request.getContextPath() %>/addEvent" method="post">
+  <form action="<%= request.getContextPath() %>/addEvent" method="post" onSubmit="return validateSubmission()">
     <div class="container mb-3">
       <div class="field">
         <label class="label">Event Name</label>
@@ -156,7 +156,7 @@
 
         <div class="column">
           <label class="label">Registration Link</label>
-          <input class="input" name="event_registration_link" type="url" placeholder="Enter URL here" required>
+          <input class="input" name="event_registration_link" type="url" placeholder="Enter URL here" >
         </div>
       </div>
 
@@ -321,8 +321,12 @@
       var phone = document.getElementsByName('event_organizer_phone')
       if (validateEmailAddress(email)) {
         if (validPhone(phone)) {
-          alert('Form Submitted')
+          alert('Event Created')
+          return true;
         }
+      }
+      else {
+    	  return false;
       }
     }
 

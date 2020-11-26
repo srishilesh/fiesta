@@ -66,13 +66,11 @@ public class UpdateWinners extends HttpServlet {
 				int rows_updated = stmt.executeUpdate();
 				System.out.println(rows_updated + " records inserted"); 
 			}
-			
-			
-			
+					
 			con.close();
 			
 //			response.getWriter().append("Served at: ").append(request.getContextPath());
-//		    response.sendRedirect("indexForm.jsp");
+		    response.sendRedirect(request.getContextPath()+"/adminHome");
 		}
 		catch(Exception e) {
 			System.out.println(e);

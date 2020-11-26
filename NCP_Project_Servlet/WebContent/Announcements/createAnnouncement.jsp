@@ -17,6 +17,7 @@
 					return false;
 				}
 				else {
+					alert("Announcement made successfully")
 					return true
 				}
 	        }
@@ -30,7 +31,7 @@
 			
     <div class="container column is-6 box mt-3">
         <p class="title">Add new announcement!</p>
-        <form id="myForm" action="<%= request.getContextPath() %>/AddAnnouncement" method="post" onsubmit="return validate()">
+        <form id="myForm" action="<%= request.getContextPath() %>/addAnnouncement" method="post" onsubmit="return validate()">
             <div class="field">
 						<label class="label" for="event_id">Enter Event ID</label>
 						<input type="text" name="event_id" id="event_id" class="input" required>

@@ -29,11 +29,13 @@
                     return false
                 }
                 else {
+                	alert("Announcement updated successfully")
                     return true
                 }
             } else if (document.getElementById("delete").checked) {
                 var r = confirm("Are you sure to delete?");
                 if (r == true) {
+                	alert("Announcement deleted successfully")
                     return true
                 } else {
                     return false
@@ -51,7 +53,7 @@
     <div id="nav-placeholder"></div>
     <div class="container column is-6 box mt-3">
         <p class="title">Modify the Announcement</p>
-        <form id="myForm" action="<%= request.getContextPath() %>/DeleteUpdateAnnouncement" method="post" onsubmit="return validate()">
+        <form id="myForm" action="<%= request.getContextPath() %>/deleteUpdateAnnouncement" method="post" onsubmit="return validate()">
             <div class="field">
                 <label class="label">Announcement ID</label>
                 <div>

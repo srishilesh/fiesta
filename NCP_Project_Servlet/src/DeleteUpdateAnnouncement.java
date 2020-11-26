@@ -91,7 +91,7 @@ public class DeleteUpdateAnnouncement extends HttpServlet {
 			con.close();
 			
 //			response.getWriter().append("Served at: ").append(request.getContextPath());
-//		    response.sendRedirect("indexForm.jsp");
+		    response.sendRedirect(request.getContextPath()+"/adminHome");
 		}
 		catch(Exception e) {
 			System.out.println(e);

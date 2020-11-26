@@ -63,12 +63,12 @@ public class ContactUsServlet extends HttpServlet {
 		int contact_id = 0;
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			String path_to_db = "jdbc:mysql://localhost:3306/sys";
+			String path_to_db = "jdbc:mysql://localhost:3306/fiesta";
 			String username = "root";
 			String password = "root";
 			Connection con = DriverManager.getConnection(path_to_db, username, password);
 			
-			String select_contact_id = "SELECT contact_id FROM fiesta.table_id_counter_new WHERE id='1'";
+			String select_contact_id = "SELECT contact_id FROM table_id_counter_new WHERE id='1'";
 			PreparedStatement stmt = con.prepareStatement(select_contact_id);
 			rst = stmt.executeQuery();
 			while (rst.next()) {
@@ -76,7 +76,7 @@ public class ContactUsServlet extends HttpServlet {
 			}
 			System.out.println("Retrieved the contact_id: "+contact_id);
 			
-			String update_query = "UPDATE fiesta.table_id_counter_new SET contact_id=? WHERE id='1'";
+			String update_query = "UPDATE table_id_counter_new SET contact_id=? WHERE id='1'";
 			PreparedStatement update_stmt = con.prepareStatement(update_query);
 			
 			update_stmt.setInt(1, contact_id + 1);
@@ -94,12 +94,12 @@ public class ContactUsServlet extends HttpServlet {
 	public static void insertIntoDatabase(int contact_id, String contactName, String contactEmail, String contactPhone, String contactMessage) {
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			String path_to_db = "jdbc:mysql://localhost:3306/sys";
+			String path_to_db = "jdbc:mysql://localhost:3306/fiesta";
 			String username = "root";
 			String password = "root";
 			Connection con = DriverManager.getConnection(path_to_db, username, password);
 					
-			String query = "insert into fiesta.table_contactus values (?,?,?,?,?)";
+			String query = "insert into table_contactus values (?,?,?,?,?)";
 			PreparedStatement stmt = con.prepareStatement(query);
 			
 			stmt.setInt(1, contact_id);
