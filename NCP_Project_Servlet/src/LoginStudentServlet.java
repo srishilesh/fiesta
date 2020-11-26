@@ -45,27 +45,33 @@ public class LoginStudentServlet extends HttpServlet {
 		// doGet(request, response);
 		String email = request.getParameter("email");
 		String pword = request.getParameter("password");
-		 String student_id = retrieveStudent(email);
+		 String student_id = retrieveStudent(email, pword);
 		// String student_id = "3";
+		if (student_id.equals("-1") == false) {
+			Cookie cookie = new Cookie("student_id", student_id);
+			// Set expiry date after 24 Hrs for both the cookies.
+			cookie.setMaxAge(123456);
+			// Add both the cookies in the response header.
+			response.addCookie(cookie);
+			
+			// response.sendRedirect("Student%20pages/student_dashboard/student_home.jsp");
+			response.sendRedirect(request.getContextPath()+"/studentHome");
+		}
+		else {
+			response.sendRedirect(request.getContextPath()+"/studentLogin");
+		}
 		
-		Cookie cookie = new Cookie("student_id", student_id);
-		// Set expiry date after 24 Hrs for both the cookies.
-		cookie.setMaxAge(123456);
-		// Add both the cookies in the response header.
-		response.addCookie(cookie);
-		
-		// response.sendRedirect("Student%20pages/student_dashboard/student_home.jsp");
-		response.sendRedirect(request.getContextPath()+"/studentHome");
 	}
 	
-	public String retrieveStudent(String email) {
+	public String retrieveStudent(String email, String password) {
 		ResultSet rst = null;
 		String student_id = "";
+		String pass = "";
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			Connection con = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/sys","root","root");
 			
-			String select_student_id = "SELECT student_id FROM fiesta.table_student_registration WHERE student_email=?";
+			String select_student_id = "SELECT student_id, student_password FROM fiesta.table_student_registration WHERE student_email=?";
 			PreparedStatement stmt = con.prepareStatement(select_student_id);
 			
 			stmt.setString(1, email);
@@ -73,13 +79,17 @@ public class LoginStudentServlet extends HttpServlet {
 			rst = stmt.executeQuery();
 			while (rst.next()) {
 				student_id = rst.getString(1);
+				pass = rst.getString(2);
 			}
 		}
 		catch(Exception e) {
 			System.out.println(e);
 			System.exit(1);
 		}
-		return student_id;
+		if (pass.equals(password))
+			return student_id;
+		else
+			return "-1";
 	}
 	
 
