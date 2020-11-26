@@ -18,7 +18,7 @@
 <body>
   <nav class="navbar" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
-      <a class="navbar-item" href="#">
+      <a class="navbar-item" href="<%= request.getContextPath() %>/home">
         <img src="../Logo/Fiesta.PNG" width="112" height="28">
       </a>
 
@@ -36,7 +36,7 @@
           About Us
         </a>
 
-        <a class="navbar-item" href="../Contact Us/contactus.html">
+        <a class="navbar-item" href="<%= request.getContextPath() %>/contactus">
           Contact Us
         </a>
 
@@ -48,10 +48,10 @@
       <div class="navbar-end">
         <div class="navbar-item">
           <div class="buttons">
-            <a class="button is-primary" href="../Student Registration Page/registration page.html">
+            <a class="button is-primary" href="<%= request.getContextPath() %>/registration">
               <strong>Sign up</strong>
             </a>
-            <a class="button is-light" href="../Login pages/student_login.html">
+            <a class="button is-light" href="<%= request.getContextPath() %>/studentLogin">
               Log in
             </a>
           </div>
@@ -110,12 +110,12 @@
               <div class="column is-10">
                 <h4 class="title is-spaced is-4">Search</h4>
                 <p class="subtitle is-6">Find friends with similar interests and form up a team for group events</p>
-              </div>
+              </div> 	
             </div>
           </div>
         </div>
         <div class="buttons is-centered"><a class="button is-primary"
-            href="../Student Registration Page/registration page.html">Sign up</a></div>
+            href="<%= request.getContextPath() %>/registration">Sign up</a></div>
       </div>
     </section>
 
@@ -165,7 +165,7 @@
           </div>
           <div class="column is-4 has-text-centered is-hidden-mobile"><a class="title is-3" href="#">fiesta</a></div>
           <div class="column is-4 has-text-right">
-            <div class="level"><a class="level-item" href="../Contact Us/contactus.html">Contact us</a></div>
+            <div class="level"><a class="level-item" href="<%= request.getContextPath() %>/contactus">Contact us</a></div>
           </div>
         </div>
 
