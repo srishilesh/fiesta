@@ -1,12 +1,46 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
-<html>
-<head>
-<meta charset="ISO-8859-1">
-<title>Insert title here</title>
-</head>
-<body>
+  <nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="<%= request.getContextPath() %>/studentHome">
+        <img src="../../Logo/Fiesta.PNG" width="112" height="28">
+      </a>
+    </div>
+    <div id="navbarBasicExample" class="navbar-menu">
+      <div class="navbar-start">
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link">
+            Profile page
+          </a>
 
-</body>
-</html>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="<%= request.getContextPath() %>/displayProfile">
+              View Profile
+            </a>
+            <a class="navbar-item" href="<%= request.getContextPath() %>/editProfile">
+              Edit Profile
+			</a>
+		</div>
+        </div>
+
+        <a class="navbar-item" href="<%= request.getContextPath() %>/studentSearch">
+          Search
+        </a>
+
+        <a class="navbar-item" href="<%= request.getContextPath() %>/studentLeaderboard">
+          Leaderboard
+        </a>
+      </div>
+      <div class="navbar-end">
+				<div class="navbar-item">
+					<div class="buttons">
+						<p id="ha"><b>Hello Sanjay:) &ensp;&ensp; </b></p>
+						<a href="<%= request.getContextPath() %>/home" id="ab1" class="button is-danger">
+							<strong>LOG OUT</strong>
+						</a>
+					</div>
+				</div>
+			</div>
+    </div>
+  </nav>

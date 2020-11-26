@@ -20,60 +20,13 @@
           
         </style> -->
         <!-- After connecting backend, show red boxes only after submit button gets clicked -->
+          <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+  <script src="../../js/studentPageNavbar.js"></script>
     </head>
 
     <body class="has-background-info">
 
-      <nav class="navbar" role="navigation" aria-label="main navigation">
-        <div class="navbar-brand">
-          <a class="navbar-item" href="../student_dashboard/student_dashboard.html">
-            <img src="../../Logo/Fiesta.PNG" width="112" height="28">
-          </a>
-        </div>
-        <div id="navbarBasicExample" class="navbar-menu">
-          <div class="navbar-start">
-            <div class="navbar-item has-dropdown is-hoverable">
-              <a class="navbar-link">
-                Profile page
-              </a>
-    
-              <div class="navbar-dropdown">
-                <a class="navbar-item" href="../Public_student_profile/Profile_Page.html">
-                  View Profile
-                </a>
-                <a class="navbar-item" href="../Private_student_profile/student_add_personal_details.html">
-                  Edit Profile - Personal
-          </a>
-          <a class="navbar-item" href="../Private_student_profile/student_add_achievements_details.html">
-            Edit Profile - Achievement
-          </a>
-          <a class="navbar-item" href="../Private_student_profile/student_add_contact_details.html">
-            Edit Profile - Contact
-          </a>  
-    
-              </div>
-            </div>
-    
-            <a class="navbar-item" href="../Search/search_tags.html">
-              Search
-            </a>
-    
-            <a class="navbar-item" href="../Leaderboard/leaderboard_table.html">
-              Leaderboard
-            </a>
-          </div>
-          <div class="navbar-end">
-            <div class="navbar-item">
-              <div class="buttons">
-                <p id="ha"><b>Hello Sanjay:) &ensp;&ensp; </b></p>
-                <a href="../../Landing_page/home_page.html" id="ab1" class="button is-danger">
-                  <strong>LOG OUT</strong>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </nav>
+      <div id="nav-placeholder"></div>
 
 
     <!--CONTACT STUDENTS -->

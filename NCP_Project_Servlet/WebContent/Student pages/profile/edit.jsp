@@ -9,64 +9,13 @@
         <title>Students Profile</title>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
         <script src="https://use.fontawesome.com/releases/v5.1.0/js/all.js"></script>
+          <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+  <script src="../../js/studentPageNavbar.js"></script>
     </head>
 
     <body>
 
-        <nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
-        <div class="navbar-brand">
-            <a class="navbar-item" href="#">
-        <img src="../Logo/Fiesta.PNG" width="112" height="28">
-            </a>
-            <a id="navbar-burger" role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="menubar">
-                <span aria-hidden="true"></span>
-                <span aria-hidden="true"></span>
-                <span aria-hidden="true"></span>
-            </a>
-        </div>
-
-    <div id="navbarBasicExample" class="navbar-menu">
-      <div class="navbar-start">
-        <a class="navbar-item">
-          View Students
-        </a>
-  
-        <a class="navbar-item">
-          News
-        </a>
-  
-        <div class="navbar-item has-dropdown is-hoverable">
-          <a class="navbar-link">
-            More
-          </a>
-  
-          <div class="navbar-dropdown">
-            <a class="navbar-item">
-              About
-            </a>
-            <a class="navbar-item">
-              Add Events
-            </a>
-            <a class="navbar-item">
-              Contact
-            </a>
-            <hr class="navbar-divider">
-            <a class="navbar-item">
-              Report an issue
-            </a>
-          </div>
-        </div>
-        </div>
-        <div id="navbarBasicExample" class="navbar-menu">
-            <div class="navbar-end">
-                <a class="navbar-item" href="#details" data-target="details">Student Details</a>
-                <a class="navbar-item" href="#achievements" data-target="achievements">Achievements</a>
-                <a class="navbar-item" href="#contact" data-target="contact">Contact Details</a>
-            </div>
-        </div>
-    </div>
-    </nav>
-
+       <div id="nav-placeholder"></div>
     <!-- STUDENT DETAILS -->
     <section id="details" class="section">
         <div class="notification is-info" style="height:45em"><h2 class="subtitle is-2">Student details</h2>
