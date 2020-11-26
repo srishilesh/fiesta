@@ -1,5 +1,8 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+<%@page import="java.util.ArrayList"%>
+<%@page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+
+ 
 <!DOCTYPE html>
 <html>
 
@@ -18,7 +21,10 @@
 </style>
 
 <body>
+			
 	<div id="nav-placeholder"></div>
+	
+	<p><%=request.getAttribute("announcements")%></p>
 	<div class="columns container">
 		<div class="column is-9 ml-4">
 			<h1 class="title is-1">Upcoming events</h1>

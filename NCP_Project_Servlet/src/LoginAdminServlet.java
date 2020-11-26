@@ -51,7 +51,7 @@ public class LoginAdminServlet extends HttpServlet {
 //				PrintWriter out = response.getWriter();
 //			    out.println("\n\n<h1>" + "Login Successful !!" + "</h1>");
 //			    out.close();
-				response.sendRedirect("Admin/admin_home.jsp");
+				response.sendRedirect(request.getContextPath()+"/adminHome");
 			}
 			catch(Exception e) {
 				System.out.println(e);
