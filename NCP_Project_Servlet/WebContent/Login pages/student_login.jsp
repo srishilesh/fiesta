@@ -27,10 +27,11 @@
         <div class="media">
           <div class="is-size-4 has-text-centered">Student Login</div>
         </div>
-        <div class="content">
+        <form action="<%= request.getContextPath() %>/studentLogin" method="post">
+        	<div class="content">
           <div class="field">
             <p class="control has-icons-left has-icons-right">
-              <input class="input" type="email" placeholder="Email">
+              <input class="input" type="email" name="email" id="email" placeholder="Email">
               <span class="icon is-small is-left">
                 <span class="material-icons">alternate_email</span>
               </span>
@@ -41,7 +42,7 @@
           </div>
           <div class="field">
             <p class="control has-icons-left">
-              <input class="input" type="password" placeholder="Password">
+              <input class="input" type="password" name="password" id="password" placeholder="Password">
               <span class="icon is-required is-small is-left ">
                 <span class="material-icons">lock</span>
               </span>
@@ -51,6 +52,7 @@
             <button class="button is-fullwidth is-rounded is-success">Login</button>
           </div>
         </div>
+        </form>
       </div>
   </div>
 </body>

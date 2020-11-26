@@ -33,7 +33,7 @@
                                 </div>
                             </div>
                             <div class="has-background-success-light box cta column is-one-third has-text-left">
-                                <form id="myForm" action="#" method="post" onsubmit="return validate()">
+                                <form id="myForm" action="<%= request.getContextPath() %>/contactus" method="post">
 
                                     <div class="field">
                                         <label class="label">Name</label>
@@ -60,7 +60,7 @@
                                         </div>
                                     </div>
                                     <div class="control">
-                                        <button type="submit" class="button is-link is-fullwidth has-text-weight-medium is-medium">Send Message</button>
+                                        <button type="submit" onclick="alert('Details Submitted')" class="button is-link is-fullwidth has-text-weight-medium is-medium">Send Message</button>
                                     </div>
                                 </form>
                             </div>

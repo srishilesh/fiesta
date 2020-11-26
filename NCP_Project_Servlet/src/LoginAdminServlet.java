@@ -47,10 +47,11 @@ public class LoginAdminServlet extends HttpServlet {
 		if (email.equals("admin@gmail.com") && pword.equals("admin")) {
 			System.out.println("Login successful");
 			try {
-				response.setContentType("text/html");
-				PrintWriter out = response.getWriter();
-			    out.println("\n\n<h1>" + "Login Successful !!" + "</h1>");
-			    out.close();
+//				response.setContentType("text/html");
+//				PrintWriter out = response.getWriter();
+//			    out.println("\n\n<h1>" + "Login Successful !!" + "</h1>");
+//			    out.close();
+				response.sendRedirect("Admin/admin_home.jsp");
 			}
 			catch(Exception e) {
 				System.out.println(e);

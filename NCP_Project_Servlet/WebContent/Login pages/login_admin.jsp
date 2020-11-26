@@ -29,7 +29,7 @@
         <div class="media">
           <div class="is-size-4 has-text-centered">Admin Login</div>
         </div>
-        <form method="post" action="<%= request.getContextPath() %>/login">
+        <form method="post" action="<%= request.getContextPath() %>/adminLogin">
         	<div class="content">
 	          <div class="field">
 	            <p class="control has-icons-left has-icons-right">
@@ -62,9 +62,7 @@
         var emailadd = document.getElementById('email')
         var password = document.getElementById('password')
         if (validateEmailAddress(email)) {
-          if (validatePass(password)) {
             alert('Logged In')
-          }
         }
       }
 

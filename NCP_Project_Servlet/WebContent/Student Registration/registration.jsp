@@ -64,37 +64,23 @@
   </style>
   <body>
     <div id="nav-placeholder"></div>
-      <form class="for" onsubmit=" return validateform()" name="for">
+      <form class="for" action="<%= request.getContextPath() %>/registration" method="post" onsubmit=" return validateform()" name="for">
         <h1>Sign Up</h1>
         <label for="name">Name:</label>
         <input  id="name" name="name" type="text" placeholder="Name"> 
         <br>
         <br>
-        <label for="Username">Username:</label>
-        <input  id="Username" type="text" placeholder="Username"> 
-        <br>
         <p id="p1"></p>
-        <label for="Email">Email:  </label>
-        <input  id="Email" type="email" placeholder="Email"> 
+        <label for="email">Email:  </label>
+        <input  id="email" name="email" type="email" placeholder="Email"> 
         <br>
         <br>
-        <label for="Password">Password:</label>
-        <input  id="Password" type="password" name="Password" placeholder="Password">         
+        <label for="password">Password:</label>
+        <input  id="password" type="password" name="password" placeholder="Password">         
         <p id="p2"></p>
-        <label for="gamein">Game:</label>
-        <input id="gi" type="text" name="gamein" id="gamein" placeholder="Game interested in">
+        <label for="roll">Roll Number:</label>
+        <input id="roll" type="text" name="roll"  placeholder="CB.EN.U4CSE17000">
         <br>
-        <label for="nof">#Tournaments won:</label>
-        <input type="number" name="nof" id="nof" placeholder="Tournaments won">
-        <br>
-        <label for="Age">Age:</label>
-        <input id="ag" type="number" name="Age" id="Age" placeholder="Age">
-        <br>
-        <label for="skl">School:</label>
-        <input id="sk" type="text" name="skl" id="skl" placeholder="School">
-        <br>
-        <br>
-        <p><input id="cb" type="checkbox" name="agreed" value="agreed"> I agree to the terms and conditions.</p> 
         <button class="btn btn-success" >Sign Up</button>        
        </form>
        <script>
@@ -120,15 +106,6 @@
           }
           return status;
         }
-    
-    
-    
       </script>
-            
-       
-      
-
-
-  
   </body>
 </html>
