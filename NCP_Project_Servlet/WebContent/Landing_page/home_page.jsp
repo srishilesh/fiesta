@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
   <script src="https://use.fontawesome.com/releases/v5.1.0/js/all.js"></script>
   <link rel="icon" href="favicon.ico">
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
   <script src="../js/landingPageNavbar.js"></script>
 </head>
 

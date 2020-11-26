@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link href='https://fonts.googleapis.com/css?family=Abhaya Libre' rel='stylesheet'>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+  <script src="../js/landingPageNavbar.js"></script>
   </head>
   <style>
       .for {
@@ -61,49 +63,7 @@
     }
   </style>
   <body>
-    <nav class="navbar" role="navigation" aria-label="main navigation">
-      <div class="navbar-brand">
-          <a class="navbar-item" href="#">
-              <img src="../Logo/Fiesta.PNG" width="112" height="28">
-          </a>
-
-          <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false"
-              data-target="navbarBasicExample">
-              <span aria-hidden="true"></span>
-              <span aria-hidden="true"></span>
-              <span aria-hidden="true"></span>
-          </a>
-      </div>
-
-      <div id="navbarBasicExample" class="navbar-menu">
-          <div class="navbar-start">
-              <a class="navbar-item">
-                  About Us
-              </a>
-
-              <a class="navbar-item" href="../Contact Us/contactus.html">
-                  Contact Us
-              </a>
-
-              <a class="navbar-item" href="../Login pages/admin_login.html">
-                Admin Login
-              </a>
-          </div>
-
-          <div class="navbar-end">
-              <div class="navbar-item">
-                  <div class="buttons">
-                      <a class="button is-primary" href="../Student Registration Page/registration page.html">
-                          <strong>Sign up</strong>
-                      </a>
-                      <a class="button is-light" href="../Login pages/student_login.html">
-                          Log in
-                      </a>
-                  </div>
-              </div>
-          </div>
-      </div>
-  </nav>
+    <div id="nav-placeholder"></div>
       <form class="for" onsubmit=" return validateform()" name="for">
         <h1>Sign Up</h1>
         <label for="name">Name:</label>
