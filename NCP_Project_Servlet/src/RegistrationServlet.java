@@ -51,7 +51,7 @@ public class RegistrationServlet extends HttpServlet {
 		String student_id = studentIDTrigger() + "";
 		try {
 			if (insertIntoDatabase(student_id, name, email, pword, roll) == 1) {
-				response.sendRedirect(request.getContextPath()+"/home");
+				response.sendRedirect(request.getContextPath()+"/studentLogin");
 			}
 			else {
 			    response.sendRedirect(request.getContextPath()+"/registration");
