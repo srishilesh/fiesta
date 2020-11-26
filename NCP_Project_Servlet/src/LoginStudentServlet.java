@@ -45,8 +45,8 @@ public class LoginStudentServlet extends HttpServlet {
 		// doGet(request, response);
 		String email = request.getParameter("email");
 		String pword = request.getParameter("password");
-		// String student_id = retrieveStudent(email);
-		String student_id = "3";
+		 String student_id = retrieveStudent(email);
+		// String student_id = "3";
 		
 		Cookie cookie = new Cookie("student_id", student_id);
 		// Set expiry date after 24 Hrs for both the cookies.

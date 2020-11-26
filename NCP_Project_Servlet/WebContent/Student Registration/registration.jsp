@@ -64,7 +64,7 @@
   </style>
   <body>
     <div id="nav-placeholder"></div>
-      <form class="for" action="<%= request.getContextPath() %>/registration" method="post" onsubmit=" return validateform()" name="for">
+      <form class="for" action="<%= request.getContextPath() %>/registration" method="post" name="for">
         <h1>Sign Up</h1>
         <label for="name">Name:</label>
         <input  id="name" name="name" type="text" placeholder="Name"> 

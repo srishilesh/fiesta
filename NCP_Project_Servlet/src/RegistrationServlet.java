@@ -1,6 +1,7 @@
 
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -48,6 +49,19 @@ public class RegistrationServlet extends HttpServlet {
 		String pword = request.getParameter("password");
 		String roll = request.getParameter("roll");
 		String student_id = studentIDTrigger() + "";
+		try {
+			if (insertIntoDatabase(student_id, name, email, pword, roll) == 1) {
+				response.sendRedirect(request.getContextPath()+"/home");
+			}
+			else {
+			    response.sendRedirect(request.getContextPath()+"/registration");
+			}
+			
+		}
+		catch(Exception e) {
+			System.out.println("Error: "+e);
+			
+		}
 	}
 	
 	public static int studentIDTrigger() {
@@ -65,14 +79,7 @@ public class RegistrationServlet extends HttpServlet {
 			}
 			System.out.println("Retrieved the student_id: "+student_id);
 			
-			String update_query = "UPDATE fiesta.table_id_counter_new SET student_id=? WHERE id='1'";
-			PreparedStatement update_stmt = con.prepareStatement(update_query);
 			
-			int temp = student_id + 1;
-//			student_id = temp + "";
-			update_stmt.setString(1, temp + "");
-			int row = update_stmt.executeUpdate();
-			System.out.println("Updated the new student_id: "+(student_id + 1));
 
 		}
 		catch(Exception e) {
@@ -80,6 +87,46 @@ public class RegistrationServlet extends HttpServlet {
 			System.exit(1);
 		}
 		return student_id + 1;
+	}
+	
+	public static int insertIntoDatabase(String student_id, String name, String email, String password, String rollno) {
+		try {
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			Connection con = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/sys","root","root");
+			
+			System.out.println("-------------- STUDENT - REGISTRATION -------------------"); 
+					
+			String query = "insert into fiesta.table_student_registration values (?,?,?,?,?)";
+			PreparedStatement stmt = con.prepareStatement(query);
+			
+			int temp = Integer.parseInt(student_id) + 1;
+			student_id = temp + "";
+			stmt.setString(1, student_id);
+			stmt.setString(2, name);
+			stmt.setString(3, rollno);
+			stmt.setString(4, email);
+			stmt.setString(5, password);
+			
+			int i = stmt.executeUpdate();
+			System.out.println("Inserted Registration Details successfully!");
+			
+			
+			String update_query = "UPDATE fiesta.table_id_counter_new SET student_id=? WHERE id='1'";
+			PreparedStatement update_stmt = con.prepareStatement(update_query);
+			
+			
+//			student_id = temp + "";
+			update_stmt.setString(1, student_id);
+			int row = update_stmt.executeUpdate();
+			System.out.println("Updated the new student_id: "+(student_id + 1));
+			con.close();
+			return 1;
+		}
+		catch(Exception e) {
+			System.out.println(e);
+			System.out.println("Inserted Failed!");
+		}
+		return 0;
 	}
 
 }
