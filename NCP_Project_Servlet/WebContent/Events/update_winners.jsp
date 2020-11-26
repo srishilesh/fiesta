@@ -65,6 +65,8 @@
 			return true;
 		}
 	</script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+  	<script src="../js/adminPageNavbar.js"></script>
 </head>
 <body>
 	<nav class="navbar" role="navigation" aria-label="main navigation">
