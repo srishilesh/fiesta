@@ -38,25 +38,25 @@
                                     <div class="field">
                                         <label class="label">Name</label>
                                         <div class="control ">
-                                            <input class="input is-rounded" type="text" required="">
+                                            <input class="input is-rounded" name="name" type="text" required="">
                                         </div>
                                     </div>
                                     <div class="field">
                                         <label class="label">Phone Number</label>
                                         <div class="control">
-                                            <input class="input is-rounded" type="Phone" required="">
+                                            <input class="input is-rounded" name="phone" type="Phone" required="">
                                         </div>
                                     </div>
                                     <div class="field">
                                         <label class="label">Email Address</label>
                                         <div class="control">
-                                            <input class="input is-rounded has-text-weight-normal" type="Email" required="">
+                                            <input class="input is-rounded has-text-weight-normal" name="email" type="Email" required="">
                                         </div>
                                     </div>
                                     <div class="field">
                                         <label class="label">Message</label>
                                         <div class="control">
-                                            <textarea class="input textarea is-medium"></textarea>
+                                            <textarea class="input textarea is-medium" name="message"></textarea>
                                         </div>
                                     </div>
                                     <div class="control">
