@@ -20,9 +20,8 @@
     <section id="details" class="section">
         <div class="notification is-info" style="height:45em"><h2 class="subtitle is-2">Student details</h2>
 
-
-
-<div class="field is-horizontal">
+		<form action="<%= request.getContextPath() %>/addPersonal" method="post" id="student">
+			<div class="field is-horizontal">
   <div class="field-label is-normal">
     <label class="label">Student</label>
   </div>
@@ -30,7 +29,7 @@
 
     <div class="field">
       <p class="control is-expanded has-icons-left">
-        <input class="input" type="text" placeholder="Name">
+        <input class="input" type="text" name="studentname" placeholder="Name">
         <span class="icon is-small is-left">
           <i class="fas fa-user"></i>
         </span>
@@ -39,7 +38,7 @@
 
     <div class="field">
       <p class="control is-expanded has-icons-left ">
-        <input class="input" type="date" placeholder="Date of brith">
+        <input class="input" type="date" name="dob" placeholder="Date of brith">
         <span class="icon is-small is-left">
           <i class="fas fa-birthday-cake"></i>
         </span>
@@ -57,7 +56,7 @@
         <div class="field">
           <div class="control">
             <p class="control is-expanded">
-              <input class="input" type="text" placeholder="Registration number">
+              <input class="input" type="text" name="registrationnumber" placeholder="Registration number">
             </p>
           </div>
         </div>
@@ -72,7 +71,7 @@
         <div class="field">
           <div class="control">
             <p class="control is-expanded">
-              <input class="input" type="month" placeholder="Select the month and year of graduation">
+              <input class="input" type="month" name="graduation" placeholder="Select the month and year of graduation">
             </p>
           </div>
           <p class="help">Select month and year</p>
@@ -89,7 +88,7 @@
     <div class="field is-narrow">
       <div class="control">
         <div class="select is-fullwidth">
-          <select>
+          <select name="dept">
             <option>Computer Science & Engineering</option>
             <option>Electrical & Electronics Engineering </option>
             <option>Electronics & Communication Engineering</option>
@@ -111,11 +110,11 @@
     <div class="field is-narrow">
       <div class="control">
         <label class="radio">
-          <input type="radio" name="member">
+          <input type="radio" name="member" value="1">
           Yes
         </label>
         <label class="radio">
-          <input type="radio" name="member">
+          <input type="radio" name="member" value="0">
           No
         </label>
       </div>
@@ -130,7 +129,7 @@
   <div class="field-body">
     <div class="field">
       <div class="control">
-        <input class="input" type="text" placeholder="e.g. Tennis Football Basketball (Enter with spaces)">
+        <input class="input" type="text" name="extracurricular" placeholder="e.g. Tennis Football Basketball (Enter with spaces)">
       </div>
     </div>
   </div>
@@ -143,7 +142,7 @@
   <div class="field-body">
     <div class="field">
       <div class="control">
-        <textarea class="textarea" placeholder="Tell us more about you :) "></textarea>
+        <textarea class="textarea" name="aboutme" placeholder="Tell us more about you :) "></textarea>
       </div>
     </div>
   </div>
@@ -155,17 +154,17 @@
   </div>
       <div class="field is-grouped is-grouped-right">
       <p class="control">
-        <a class="button is-link is-medium">
-          Submit
-        </a>
+        <input class="button is-link is-medium" type="Submit" value="Submit">
+        </input>
       </p>
       <p class="control">
-        <a class="button is-light is-medium">
-          Cancel
-        </a>
+        <input class="button is-light is-medium" type="reset" value="Reset">
+          </input>
       </p>
       </div>
 </div>
+			
+		</form>
 
         </div>
     </section>
@@ -175,8 +174,8 @@
     <section id="achievements" class="section">
         <div class="notification is-info" style="height:45em"><h2 class="subtitle is-2"> Achievements</h2>
 
-
-<div class="field is-horizontal">
+		<form action="<%= request.getContextPath() %>/addAchievements" method="post" id="achievements">
+			<div class="field is-horizontal">
   <div class="field-label is-normal">
     <label class="label">Name of the Event</label>
   </div>
@@ -352,9 +351,8 @@
         </a>
       </p>
       </div>
-</div>
-
-
+</div>						
+		</form>
         </div>
     </section>
 
@@ -364,8 +362,8 @@
         <div class="notification is-info" style="height:20em"><h2 class="subtitle is-2"> Contact details</h2>
 
 
-
-<div class="field is-horizontal">
+		<form action="<%= request.getContextPath() %>/addContact" method="post" id="contact">
+				<div class="field is-horizontal">
   <div class="field-label is-normal">
     <label class="label">E-mail</label>
   </div>
@@ -446,13 +444,11 @@
       </p>
       </div>
 </div>
+						
+		</form>
 
         </div>
     </section>
 
     </body>
 </html>
-
-
-
-

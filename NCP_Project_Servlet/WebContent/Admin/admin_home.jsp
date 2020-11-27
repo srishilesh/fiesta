@@ -12,10 +12,10 @@
 	<title>Admin Dashboard</title>
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
-  	<!--  <script src="../js/adminPageNavbar.js"></script>-->
+  	<script src="<%=request.getContextPath()%>/js/adminPageNavbar.js"></script>
   	<script>$(function(){
-  	  $("#nav-placeholder").load("../Navbar/adminPageNavbar.jsp");
-  	});</script>
+  	  $("#nav-placeholder").load("<%=request.getContextPath()%>/Navbar/adminPageNavbar.jsp");
+  	});</script>  
 </head>
 <style>
 	body {
@@ -27,10 +27,61 @@
 			
 	<div id="nav-placeholder"></div>
 	
-	<p><%=request.getAttribute("announcements")%></p>
 	<div class="columns container">
 		<div class="column is-9 ml-4">
 			<h1 class="title is-1">Upcoming events</h1>
+			
+			<%  
+			ArrayList<ArrayList<String>> listEvents = (ArrayList<ArrayList<String>>) request.getAttribute("upcomingEvents");
+			
+			// print the information about every category of the list
+			for(ArrayList<String> event : listEvents) {%>
+				 <div class="card mt-3">
+				<header class="card-header">
+					<p class="card-header-title is-size-4">
+						<%=event.get(1)%>
+					</p>
+				</header>
+				<div class="card-content">
+					<div class="content">
+						<p class="is-size-5 has-text-weight-semibold">
+							<%=event.get(2)%>
+						</p>
+						<br>
+						<div class="columns is-bordered mt-1">
+							<div class="column">
+								<span class="has-text-weight-bold has-text-link">Start Date & Time: </span><%=event.get(5)%>>
+								<br>
+								<span class="has-text-weight-bold has-text-link">End Date & Time: </span><%=event.get(6)%>
+							</div>
+							<div class="column">
+								<span class="has-text-weight-bold has-text-link">Venue: </span> <%=event.get(3)%>
+							</div>
+							<div class="column">
+								<span class="has-text-weight-bold has-text-link">Organizer College: </span> <%=event.get(7)%>
+							</div>
+							<div class="column">
+								<span class="has-text-weight-bold has-text-link">Event Size: </span> <%=event.get(4)%>
+							</div>
+							<div class="column">
+								<span class="has-text-weight-bold has-text-link">Event ID: </span> <%=event.get(0)%>
+							</div>
+						</div>
+
+					</div>
+				</div>
+				<footer class="card-footer">
+					
+					<a href="../Events/view_event.html" class="card-footer-item has-text-success has-text-weight-bold">View Event</a>
+				</footer>
+			</div>
+				 <%
+			}
+			%>
+			
+			
+			
+			
 			<div class="card mt-3">
 				<header class="card-header">
 					<p class="card-header-title is-size-4">
@@ -222,6 +273,25 @@
 					<p>Announcements!</p>
 				</div>
 				<div class="message-body">
+				
+					<%  
+					ArrayList<ArrayList<String>> list = (ArrayList<ArrayList<String>>) request.getAttribute("announcements");
+					
+					// print the information about every category of the list
+					for(ArrayList<String> ann : list) {%>
+						 <div class="notification is-link">
+							<p class="title is-4"><%=ann.get(2)%></p>
+							<p> <%=ann.get(1)%></p>
+							<p> Event ID:<%=ann.get(3)%></p>
+							<br>
+							<a href="../Events/view_event.html"><span class="tag is-warning">Go to Event</span></a>
+							<span class="is-primary is-link is-light ann_id "><%=ann.get(0)%></span>
+	
+						</div>
+						 <%
+					}
+					%>
+				
 					<div class="notification is-link">
 						<p class="title is-4">Winner of Asphalt</p>
 
@@ -235,6 +305,7 @@
 						<span class="is-primary is-link is-light ann_id ">1</span>
 
 					</div>
+					
 					<div class="notification is-link">
 						<p class="title is-4">Webinar dates</p>
 						<p>Amrita Center for Cyber Security Systems and Networks, located at the Amrita Vishwa
