@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.sun.tools.javac.util.List;
+//import com.sun.tools.javac.util.List;
 
 /**
  * Servlet implementation class AdminHomeServlet
@@ -58,11 +58,11 @@ public class AdminHomeServlet extends HttpServlet {
 			System.exit(1);
 		}
 //		request.setAttribute("announcements", anns);
-//		request.setAttribute("announcements", "ann");
+		request.setAttribute("announcements", "ann");
 //		getServletConfig().getServletContext().getRequestDispatcher("Admin/admin_home.jsp").forward(request,response);
 //		request.setAttribute("announcements", anns); 
-		response.sendRedirect("Admin/admin_home.jsp");
-//		request.getRequestDispatcher("Admin/admin_home.jsp").forward(request, response); 
+		// response.sendRedirect("Admin/admin_home.jsp");
+		request.getRequestDispatcher("Admin/admin_home.jsp").include(request, response); 
 	}
 
 	/**
