@@ -80,7 +80,7 @@ public class AddPersonalServlet extends HttpServlet {
 		else
 			student_id = Integer.parseInt(student_id_str);
 		
-		insertIntoDatabase(student_id, name, regno, graduation, dept, dob, school, skill1, skill1_rating, skill2, skill2_rating, address, aboutme);
+		insertIntoDatabase(student_id, name, regno, graduation, dept, dob, school, skill1, skill2, skill1_rating, skill2_rating, address, aboutme);
 		response.sendRedirect(request.getContextPath() +"/studentHome");
 		
 	}

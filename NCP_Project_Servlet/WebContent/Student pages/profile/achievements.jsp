@@ -34,7 +34,7 @@
     <div class="notification" style="margin: 3% 5% 1% 5%;">
       <h2 class="subtitle is-2"> Achievements</h2>
 
-      <form name="achievement_details" method="post">
+      <form name="achievement_details" method="post" action="<%= request.getContextPath()%>/addAchievements">
 
         <div class="field is-horizontal">
           <div class="field-label is-normal">
@@ -44,7 +44,7 @@
 
             <div class="field">
               <p class="control is-expanded has-icons-left">
-                <input class="input event_name" id="event_name" type="text" placeholder="Name of the event"
+                <input class="input event_name" name="event_name" type="text" placeholder="Name of the event"
                   pattern="[a-zA-Z0-9\s]+" required="true">
                 <span class="icon is-small is-left">
                   <i class="fas fa-file-signature"></i>
@@ -56,7 +56,7 @@
             </div>
             <div class="field">
               <p class="control is-expanded has-icons-left ">
-                <input class="input event_date" id="event_date" type="date" required="true">
+                <input class="input event_date" name="event_date" type="date" required="true">
                 <span class="icon is-small is-left">
                   <i class="fas fa-calendar-alt"></i>
                 </span>
@@ -75,7 +75,7 @@
 
             <div class="field">
               <p class="control is-expanded has-icons-left">
-                <input class="input location" id="location" type="text" placeholder="Where did it take place?"
+                <input class="input location" name="location" type="text" placeholder="Where did it take place?"
                   pattern="[a-zA-Z\s]+" required="true">
 
                 <span class="icon is-small is-left">
@@ -88,7 +88,7 @@
             </div>
             <div class="field">
               <p class="control is-expanded has-icons-left ">
-                <input class="input team_size" id="team_size" type="number" min="1" max="15" required="true">
+                <input class="input team_size" name="team_size" type="number" min="1" max="15" required="true">
                 <span class="icon is-small is-left">
                   <i class="fas fa-user-friends"></i>
                 </span>
@@ -105,11 +105,11 @@
             <div class="field is-narrow">
               <div class="control">
                 <label class="radio">
-                  <input type="radio" name="partipation">
+                  <input type="radio" name="participation" value="winner">
                   Winner
                 </label>
                 <label class="radio">
-                  <input type="radio" name="participation" checked>
+                  <input type="radio" name="participation" value="participation" checked>
                   Just participated
                 </label>
               </div>
@@ -131,7 +131,7 @@
             can be submitted. -->
 
 
-                  <input class="input proof_link" id="proof_link" type="url"
+                  <input class="input proof_link" name="proof" type="url"
                     placeholder="Enter the link here (Eg: Upload certificates to your Google drive and paste link)"
                     required="true">
                   <span class="icon is-small is-left">
@@ -150,30 +150,19 @@
         <!-- Each achievement has atmost 1 specialization -->
         <div class="field is-horizontal">
           <div class="field-label is-normal">
-            <label class="label">Specialization</label>
+            <label class="label">Skill</label>
           </div>
           <div class="field-body">
 
             <div class="field">
               <p class="control is-expanded has-icons-left ">
-                <input class="input specialization" id="specialization" type="text"
+                <input class="input specialization" name="skill" type="text"
                   placeholder="Eg: Football/ Cricket/ Basketball" pattern="[A-Za-z]+" required="true">
                 <span class="icon is-small is-left">
                   <i class="fas fa-chess-queen"></i>
                 </span>
               </p>
               <p class="help is-info">Each achievement has atmost 1 specialization</p>
-            </div>
-
-            <div class="field">
-              <p class="control is-expanded has-icons-left ">
-                <input class="input stu_id" id="stu_id" type="number" placeholder="Your student ID" pattern="[0-9]+"
-                  required="true">
-
-                <span class="icon is-small is-left">
-                  <i class="fas fa-hashtag"></i>
-                </span>
-              </p>
             </div>
           </div>
         </div>
@@ -186,7 +175,7 @@
 
             <div class="field">
               <p class="control is-expanded has-icons-left ">
-                <input class="input leader_name" id="leader_name" type="text"
+                <input class="input leader_name" name="team_leader" type="text"
                   placeholder="Fill in your name if it's a solo participation" pattern="[A-Za-z\s]+" required="true">
                 <span class="icon is-small is-left">
                   <i class="fas fa-user"></i>
@@ -194,15 +183,6 @@
               </p>
             </div>
 
-            <div class="field">
-              <p class="control is-expanded has-icons-left ">
-                <input class="input leader_mail" id="leader_mail" type="email"
-                  placeholder="Enter team leader's id or e-mail(College/Primary)" required="true">
-                <span class="icon is-small is-left">
-                  <i class="fas fa-envelope"></i>
-                </span>
-              </p>
-            </div>
           </div>
         </div>
 
@@ -213,7 +193,7 @@
           <div class="field-body">
             <div class="field">
               <div class="control">
-                <textarea class="textarea" placeholder="Tell us more about the event :) " required="true"></textarea>
+                <textarea class="textarea" name="desc" placeholder="Tell us more about the event :) " required="true"></textarea>
               </div>
             </div>
           </div>
@@ -224,7 +204,6 @@
           <div class="field-label">
             <!-- Left empty for spacing -->
           </div>
-          <form action="" method="">
             <div class="field" id="create-container">
             </div>
             <div class="field is-grouped is-grouped-right">
@@ -235,7 +214,6 @@
                 <input type="reset" class="button is-link is-medium" value="Reset">
               </p>
             </div>
-          </form>
         </div>
 
       </form>
