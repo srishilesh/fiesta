@@ -18,8 +18,14 @@
             <a class="navbar-item" href="<%= request.getContextPath() %>/displayProfile">
               View Profile
             </a>
-            <a class="navbar-item" href="<%= request.getContextPath() %>/editProfile">
-              Edit Profile
+            <a class="navbar-item" href="<%= request.getContextPath() %>/addPersonal">
+              Edit Personal Details
+			</a>
+			<a class="navbar-item" href="<%= request.getContextPath() %>/addAchievements">
+              Edit Achievements Details
+			</a>
+			<a class="navbar-item" href="<%= request.getContextPath() %>/addContact">
+              Edit Contact Details
 			</a>
 		</div>
         </div>

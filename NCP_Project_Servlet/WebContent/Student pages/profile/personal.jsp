@@ -52,7 +52,7 @@
     <section id="details" class="section container is-centered ">
       <div class="notification" style="margin: 3% 5% 0.1% 5%;"><h2 class="subtitle is-2">Student details</h2>
 
-<form name="personal_details" method="post">
+<form name="personal_details" method="post" action="<%=request.getContextPath()%>/addPersonal">
 
 <div class="field is-horizontal">
 <div class="field-label is-normal">
@@ -62,20 +62,10 @@
 
   <div class="field">
     <p class="control is-expanded has-icons-left">
-      <input class="input name" id="name" type="text" placeholder="Name" 
+      <input class="input name" id="name" name="name" type="text" placeholder="Name" 
       pattern="[a-zA-Z\s]+" required="true">
       <span class="icon is-small is-left">
         <i class="fas fa-user"></i>
-      </span>
-    </p>
-  </div>
-
-  <div class="field">
-    <p class="control is-expanded has-icons-left ">
-      <input class="input stu_id" id="stu_id" type="number" placeholder="Student ID"
-      required = "true">
-      <span class="icon is-small is-left">
-        <i class="fas fa-hashtag"></i>
       </span>
     </p>
   </div>
@@ -91,7 +81,7 @@
       <div class="field">
         <div class="control">
           <p class="control is-expanded has-icons-left">
-            <input class="input reg_no" id="reg_no" type="text" placeholder="Registration number"
+            <input class="input reg_no" name="reg_no" type="text" placeholder="Registration number"
             pattern="CB.EN.U4CSE[0-9][0-9][0-9][0-9][0-9]" required="true">
             <span class="icon is-small is-left">
               <i class="fas fa-id-card"></i>
@@ -111,7 +101,7 @@
       <div class="field">
         <div class="control">
           <p class="control is-expanded">
-            <input class="input year_of_stud" id="year_of_stud"type="month" placeholder="Select the month and year of graduation"
+            <input class="input year_of_stud" name="graduation"type="month" placeholder="Select the month and year of graduation"
             required="true">
           </p>
         </div>
@@ -129,7 +119,7 @@
   <div class="field is-narrow">
     <div class="control">
       <div class="select is-fullwidth">
-        <select class="dept" id="dept" required="true">
+        <select class="dept" name="dept" required="true">
           <option value="">Select one department</option>
           <option>Computer Science & Engineering</option>
           <option>Electrical & Electronics Engineering </option>
@@ -144,7 +134,7 @@
 
   <div class="field">
     <p class="control is-expanded has-icons-left ">
-      <input class="input dob" id="dob" type="date" placeholder="Date of brith" required="true">
+      <input class="input dob" name="dob" type="date" placeholder="Date of brith" required="true">
       <span class="icon is-small is-left">
         <i class="fas fa-birthday-cake"></i>
       </span>
@@ -155,47 +145,63 @@
 </div>
 
 <div class="field is-horizontal">
-<div class="field-label">
-  <label class="label">Available for upcoming events?</label>
+<div class="field-label is-normal">
+  <label class="label">School</label>
 </div>
 <div class="field-body">
-  <div class="field is-narrow">
-    <div class="control">
-      <label class="radio">
-        <input type="radio" name="available" id="available" checked>
-        Yes
-      </label>
-      <label class="radio">
-        <input type="radio" name="available" id="available">
-        No
-      </label>
+  <div class="field">
+    <div class="control level-item">
+      <input name="school" class="input" type="text" id="school" required>
+      </div>
     </div>
   </div>
 </div>
-</div>
-
-<!-- Get input dynamically -->
 
 <div class="field is-horizontal">
 <div class="field-label is-normal">
-  <label class="label">Number of Skills</label>
+  <label class="label">Skill 1</label>
 </div>
 <div class="field-body">
   <div class="field">
     <div class="control level-item">
       <!--<input class="input" type="text" placeholder="e.g. Tennis Football Basketball (Enter with spaces)">-->
-      <input name="no_of_skills" class="no_of_skills input is-" type="number" id="no_of_skills" required>
-      
+      <input name="skill1" class="input" type="text" id="skill1" required>
+      <input type="range" id="skill1_rating" name="skill1_rating" min="0" max="5">
       </div>
     </div>
   </div>
-<button class="button is-primary" name="skills" onclick="addFields();">Add skills</button>
 </div>
 
-<div class="field" id="create-container">
+<div class="field is-horizontal">
+<div class="field-label is-normal">
+  <label class="label">Skill 2</label>
+</div>
+<div class="field-body">
+  <div class="field">
+    <div class="control level-item">
+      <!--<input class="input" type="text" placeholder="e.g. Tennis Football Basketball (Enter with spaces)">-->
+      <input name="skill2" class="input" type="text" id="skill2" required>
+      <input type="range" id="skill2_rating" name="skill2_rating" min="0" max="5">
+      </div>
+    </div>
+  </div>
 </div>
 
 
+
+<div class="field is-horizontal">
+<div class="field-label is-normal">
+  <label class="label">Address</label>
+</div>
+<div class="field-body">
+  <div class="field">
+    <div class="control level-item">
+      <input name="address" class="input" type="text" id="address" required>
+      </div>
+    </div>
+  </div>
+</div>
+  
 <div class="field is-horizontal">
 <div class="field-label is-normal">
   <label class="label">About myself</label>
@@ -203,7 +209,7 @@
 <div class="field-body">
   <div class="field">
     <div class="control">
-      <textarea class="textarea" id="about_myself" placeholder="Tell us more about you :) " required></textarea>
+      <textarea class="textarea" name="aboutme" placeholder="Tell us more about you :) " required></textarea>
     </div>
   </div>
 </div>
