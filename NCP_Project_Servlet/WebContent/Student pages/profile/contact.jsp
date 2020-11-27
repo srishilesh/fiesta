@@ -33,7 +33,7 @@
     <section id="contact" class="section container is-centered">
       <div class="notification" style="margin: 3% 5% 0.1% 5%;"><h2 class="subtitle is-2"> Contact details</h2>
 
-<form name="contact_details" method="post">
+<form name="contact_details" method="post" action="<%=request.getContextPath() %>/addContact">
 
 <div class="field is-horizontal">
 <div class="field-label is-normal">
@@ -43,18 +43,8 @@
 
   <div class="field">
     <p class="control is-expanded has-icons-left ">
-      <input class="input primary_mail" id="primary_mail" type="email" 
+      <input class="input primary_mail" name="email" type="email" 
       placeholder="Primary E-mail" required>
-      <span class="icon is-small is-left">
-        <i class="fas fa-envelope"></i>
-      </span>
-    </p>
-  </div>
-
-  <div class="field">
-    <p class="control is-expanded has-icons-left ">
-      <input class="input college_mail" id="college_mail" type="email" 
-      placeholder="College E-mail" required>
       <span class="icon is-small is-left">
         <i class="fas fa-envelope"></i>
       </span>
@@ -77,7 +67,7 @@
         </a>
       </p>
       <p class="control is-expanded">
-        <input class="input primary_phone" id="primary_phone" type="tel" 
+        <input class="input primary_phone" name="phone" type="tel" 
         placeholder="Your phone number[10 digits]" 
         pattern="[0-9]{9}[0-9]{1}" maxlength="10" required>
       </p>
@@ -85,34 +75,19 @@
     <p class="help">Do not enter the first zero. Enter ten digits number.</p>
   </div>
 
-  <div class="field">
-    <div class="field has-addons">
-      <p class="control">
-        <a class="button is-static">
-          +91
-        </a>
-      </p>
-      <p class="control is-expanded">
-        <input class="input alternate_phone" id="alternate_phone" type="tel" 
-        placeholder="Alternate phone number[10 digits]"
-        pattern="[0-9]{9}[0-9]{1}" maxlength="10" required>
-      </p>
-    </div>
-    <p class="help">Do not enter the first zero. Enter ten digits number.</p>
-  </div>
 </div>
 </div>
 
 
 <div class="field is-horizontal">
 <div class="field-label is-normal">
-  <label class="label">Socail Media #1</label>
+  <label class="label">Social Media #1</label>
 </div>
 <div class="field-body">
 
   <div class="field">
     <p class="control is-expanded has-icons-left">
-          <input class="input media1" id="media1" type="url" 
+          <input class="input media1" name="media1" type="url" 
           placeholder="copy & paste the link of your profile"
           required>
       <span class="icon is-small is-left">
@@ -124,33 +99,15 @@
 </div>
 <div class="field is-horizontal">
 <div class="field-label is-normal">
-  <label class="label">Socail Media #2</label>
+  <label class="label">Social Media #2</label>
 </div>
 <div class="field-body">
 
   <div class="field">
     <p class="control is-expanded has-icons-left">
-          <input class="input media2" id="media2" type="url" 
+          <input class="input media2" name="media2" type="url" 
           placeholder="copy & paste the link of your profile"
-          required>
-      <span class="icon is-small is-left">
-        <i class="fas fa-user-circle"></i>
-      </span>
-    </p>
-  </div>
-</div>
-</div>
-<div class="field is-horizontal">
-<div class="field-label is-normal">
-  <label class="label">Socail Media #3</label>
-</div>
-<div class="field-body">
-
-  <div class="field">
-    <p class="control is-expanded has-icons-left">
-          <input class="input media3" id="media3" type="url" 
-          placeholder="copy & paste the link of your profile"
-          required>
+          >
       <span class="icon is-small is-left">
         <i class="fas fa-user-circle"></i>
       </span>
@@ -164,7 +121,6 @@
 <div class="field-label">
   <!-- Left empty for spacing -->
 </div>
-    <form action="" method="">
         <div class="field" id="create-container">
         </div>
         <div class="field is-grouped is-grouped-right">
@@ -175,7 +131,6 @@
             <input type="reset" class="button is-link is-medium" value="Reset">
           </p>
         </div>
-    </form>
 </div>
 
 
