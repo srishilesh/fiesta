@@ -18,30 +18,29 @@ USE `fiesta`;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `table_contactus`
+-- Table structure for table `table_student_profile_contact`
 --
 
-DROP TABLE IF EXISTS `table_contactus`;
+DROP TABLE IF EXISTS `table_student_profile_contact`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `table_contactus` (
-  `contact_id` int(11) NOT NULL,
-  `contact_name` varchar(50) NOT NULL,
-  `contact_phone` varchar(10) DEFAULT NULL,
-  `contact_email` varchar(45) NOT NULL,
-  `contact_message` varchar(500) NOT NULL,
-  PRIMARY KEY (`contact_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='contact_name \ncontact_phone\ncontact_email\ncontact_message';
+CREATE TABLE `table_student_profile_contact` (
+  `student_id` int(11) NOT NULL,
+  `student_email` varchar(45) NOT NULL,
+  `student_phone` varchar(45) NOT NULL,
+  `student_socialmedia1` varchar(45) NOT NULL,
+  `student_socialmedia2` varchar(45) NOT NULL,
+  PRIMARY KEY (`student_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `table_contactus`
+-- Dumping data for table `table_student_profile_contact`
 --
 
-LOCK TABLES `table_contactus` WRITE;
-/*!40000 ALTER TABLE `table_contactus` DISABLE KEYS */;
-INSERT INTO `table_contactus` VALUES (1,'Krishna Teja','9878987656','teja@gmail.com','Registration form is nopt working.'),(2,'Ravi Varma','9645678765','ravi@yahoo.co.in','I am not able to register for solo events. It shows error.'),(3,'Hari Krishna','8907656564','hari@gmail.com','Upcoming events are not updated.'),(4,'Paul','9877612342','paul@amrita.edu','Can students from other colleges, register?'),(6,'msd','1235432','hkfd@j.c','nkfjsdhj');
-/*!40000 ALTER TABLE `table_contactus` ENABLE KEYS */;
+LOCK TABLES `table_student_profile_contact` WRITE;
+/*!40000 ALTER TABLE `table_student_profile_contact` DISABLE KEYS */;
+/*!40000 ALTER TABLE `table_student_profile_contact` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -53,4 +52,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-11-27 23:39:56
+-- Dump completed on 2020-11-27 23:39:50
