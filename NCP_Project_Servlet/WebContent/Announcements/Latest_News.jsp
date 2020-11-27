@@ -1,3 +1,4 @@
+<%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -10,7 +11,9 @@
     <script src="https://use.fontawesome.com/releases/v5.1.0/js/all.js"></script>
     <link rel="stylesheet" href="style.css">
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
-  	<script src="../js/adminPageNavbar.js"></script>
+  	<script>$(function(){
+  	  $("#nav-placeholder").load("<%=request.getContextPath()%>/Navbar/adminPageNavbar.jsp");
+  	});</script>  
 </head>	
 <body>
 	<div id="nav-placeholder"></div>
@@ -29,7 +32,32 @@
       </p>
     </div>
     <section class="container">
-      <div class="columns features">
+      <div class="columns features" style="overflow-x: auto;">
+      	<%  
+			ArrayList<ArrayList<String>> listNews = (ArrayList<ArrayList<String>>) request.getAttribute("latestNews");
+			
+			// print the information about every category of the list
+			for(ArrayList<String> news : listNews) {%>
+			<div class="column is-4">
+	          <div class="card is-dark">
+	            <div class="card-image">
+	              <figure class="image is-4by3">
+	                <img src="https://www.amrita.edu/sites/default/files/news-images/new/news-events/images/k-oct/swim1.jpg">
+	              </figure>
+	            </div>
+	            <div class="card-content">
+	              <div class="content">
+	                <h4><%=news.get(1)%></h4>
+	                <p><%=news.get(2)%></p>
+	                <a href=<%=news.get(3)%>><input type=button value='FULL DETAILS..'></a> 
+	              </div>
+	            </div>
+	          </div>
+	        </div>
+				
+				<%
+			}
+			%>
         <div class="column is-4">
           <div class="card is-dark">
             <div class="card-image">
