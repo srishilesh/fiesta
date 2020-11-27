@@ -78,14 +78,12 @@ public class AdminHomeServlet extends HttpServlet {
 			System.out.println(e);
 			System.exit(1);
 		}
-<<<<<<< HEAD
 //		request.setAttribute("announcements", anns);
 		request.setAttribute("announcements", "ann");
 //		getServletConfig().getServletContext().getRequestDispatcher("Admin/admin_home.jsp").forward(request,response);
 //		request.setAttribute("announcements", anns); 
 		// response.sendRedirect("Admin/admin_home.jsp");
 		request.getRequestDispatcher("Admin/admin_home.jsp").include(request, response); 
-=======
 		request.setAttribute("announcements", anns);
 		request.setAttribute("upcomingEvents", events);
 //		request.setAttribute("announcements", "ann");
@@ -93,7 +91,6 @@ public class AdminHomeServlet extends HttpServlet {
 //		request.setAttribute("announcements", anns); 
 //		response.sendRedirect("Admin/admin_home.jsp");
 		request.getRequestDispatcher("Admin/admin_home.jsp").forward(request, response); 
->>>>>>> 6206ef3545640f931e66ff52880d49ee8380acce
 	}
 
 	/**
