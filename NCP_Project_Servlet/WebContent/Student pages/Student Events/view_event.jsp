@@ -1,3 +1,4 @@
+<%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -18,16 +19,19 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
     <script src="https://use.fontawesome.com/releases/v5.1.0/js/all.js"></script>
       <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
-  <script src="../../js/studentPageNavbar.js"></script>
+  <script>$(function(){
+  	  $("#nav-placeholder").load("<%=request.getContextPath()%>/Navbar/studentPageNavbar.jsp");
+  	});</script> 
 </head>
 
 <body>
-    <div id="nav-placeholder"></div>
+    <%ArrayList<String> listEventDetails = (ArrayList<String>) request.getAttribute("eventDetails"); %>
+   <div id="nav-placeholder"></div>
     <section class="hero is-info  is-bold">
         <div class="hero-body has-background-primary-dark">
             <div class="container has-text-centered">
                 <h1 class="title has-text-black">
-                    Anokha, National level techfest
+                   <%=listEventDetails.get(1)%>
                 </h1>
             </div>
             <figure class="image mt-3">
@@ -46,11 +50,7 @@
                     <div class="card-content">
                         <div class="content">
                             <h4 class="title has-text-link">Event Descrription </h4>
-                            <p>OLabs is officially evaluated and endorsed by the CBSE. OLabs is available free of cost
-                                to all schools. OLabs includes theory, procedure, animations, interactive simulations
-                                and videos to demonstrate and understand science practical skills. Students can practice
-                                these experiments at their leisure and may use this for revising the concept at the
-                                comfort of their home as</p>
+                            <p><%=listEventDetails.get(2) %></p>
 
                         </div>
                     </div>
@@ -65,12 +65,11 @@
                         <div class="content">
                             <h4 class="title has-text-link">Event Details.</h4>
                             <p><strong>Type of partition: </strong> Team event <br>
-                                <strong>Start Date: </strong> 22-08-2020 03:31<br>
-                                <strong>End Date: </strong> 26-11-2020 23:28 <br>
-                                <strong>Venue: </strong> Amrita, Main ground <br>
-                                <strong>Team Size: </strong> 5 <br>
-                                <strong>Other Details:</strong> accumsan sit amet nulla facilisi morbi. Fusce ut
-                                placerat <br>
+                                <strong>Start Date: </strong> <%=listEventDetails.get(15) %><br>
+                                <strong>End Date: </strong> <%=listEventDetails.get(16) %><br>
+                                <strong>Venue: </strong> <%=listEventDetails.get(5) %> <br>
+                                <strong>Team Size: </strong> <%=listEventDetails.get(6) %> <br>
+                                <strong>Event tags:</strong>  <%=listEventDetails.get(3) %> <br>
 
                             </p>
                         </div>
@@ -85,14 +84,12 @@
                     <div class="card-content">
                         <div class="content">
                             <h4 class="title has-text-link"> Contact Details</h4>
-                            <p><strong>Organizer: </strong> Amrita Vishwa Vidyapeetham <br>
-                                <strong>Place: </strong> Coimbatore<br>
-                                <strong>Name: </strong> Srishilesh P S <br>
-                                <strong>Email: </strong> srishilesh@gmail.com <br>
-                                <strong>Phone: </strong> +91 9087676754 <br>
-                                <strong>Other Details:</strong> accumsan sit amet nulla facilisi morbi. Fusce ut
-                                placerat <br>
-
+                            <p><strong>Organizer: </strong> <%=listEventDetails.get(7) %> <br>
+                                <strong>Place: </strong> <%=listEventDetails.get(8) %><br>
+                                <strong>Name: </strong> <%=listEventDetails.get(9) %> <br>
+                                <strong>Email: </strong> <%=listEventDetails.get(10) %> <br>
+                                <strong>Phone: </strong> <%=listEventDetails.get(11) %> <br>
+                                <strong>Other Details:</strong> <%=listEventDetails.get(12) %> <br>
                             </p>
                         </div>
                     </div>
@@ -103,6 +100,7 @@
     <section class="container has-text-centered mt-5 mb-3">
         <button class="button is-success">Register for the event</button>
     </section>
+    
     
     
 </body>
