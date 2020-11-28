@@ -1,9 +1,6 @@
 
 
 import java.io.IOException;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -59,7 +56,7 @@ public class AddAnnouncement extends HttpServlet {
 			Connection con = DriverManager.getConnection(path_to_db, username, password);
 			
 			PreparedStatement stmt = con.prepareStatement("INSERT INTO  table_announcement VALUES(?,?,?,?)");
-			stmt.setInt(1, Integer.parseInt(event_id)+13); 
+			stmt.setInt(1, announcementIDTrigger()); 
 			stmt.setString(2, announcement); 
 			stmt.setString(3, title); 
 			stmt.setInt(4, Integer.parseInt(event_id));
@@ -75,6 +72,36 @@ public class AddAnnouncement extends HttpServlet {
 			System.out.println(e);
 		} 
 //		doGet(request, response);
+	}
+	
+	public static int announcementIDTrigger() {
+		ResultSet rst = null;
+		int announcement_id = 0;
+		try {
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			Connection con = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/sys","root","root");
+			
+			String select_announcement_id = "SELECT announcement_id FROM fiesta.table_id_counter_new WHERE id='1'";
+			PreparedStatement stmt = con.prepareStatement(select_announcement_id);
+			rst = stmt.executeQuery();
+			while (rst.next()) {
+				announcement_id = rst.getInt(1);
+			}
+			System.out.println("Retrieved the announcement_id: "+announcement_id);
+			
+			String update_query = "UPDATE fiesta.table_id_counter_new SET announcement_id=? WHERE id='1'";
+			PreparedStatement update_stmt = con.prepareStatement(update_query);
+			
+			update_stmt.setInt(1, announcement_id + 1);
+			int row = update_stmt.executeUpdate();
+			System.out.println("Updated the new announcement_id: "+(announcement_id + 1));
+
+		}
+		catch(Exception e) {
+			System.out.println(e);
+			System.exit(1);
+		}
+		return announcement_id + 1;
 	}
 
 }
