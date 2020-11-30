@@ -14,10 +14,8 @@
   </script>
   <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.12/jquery-ui.min.js" type="text/javascript"
     charset="utf-8"></script>
-  <script src="js/tag-it.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../js/tag-it.js" type="text/javascript" charset="utf-8"></script>
   <link href="../_static/master.css" rel="stylesheet" type="text/css">
-  <link href="../_static/subpage.css" rel="stylesheet" type="text/css">
-  <link href="../_static/examples.css" rel="stylesheet" type="text/css">
   <link href="../css/jquery.tagit.css" rel="stylesheet" type="text/css">
   <link href="../css/tagit.ui-zendesk.css" rel="stylesheet" type="text/css">
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" type="text/javascript" charset="utf-8">
@@ -76,7 +74,6 @@
 
     });
   </script>
-  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
   	<script src="../js/adminPageNavbar.js"></script>
 </head>
 
@@ -124,7 +121,7 @@
         <div class="column">
           <label class="label">Type of participation</label>
           <div class="select">
-            <select name="event_type_participation" style="width:370px;">
+            <select id="event_type_participation" name="event_type_participation" style="width:370px;" onchange="validateParticipationType()">
               <option value="0">Solo participation</option>
               <option value="1">Team participation</option>
             </select>
@@ -150,8 +147,8 @@
 
         <div class="column">
           <label class="label">Max. No. of Participants in a team</label>
-          <input class="input" name="event_max_participants" type="number" value="100"
-            placeholder="Number of participants" required>
+          <input class="input" name="event_max_participants" id="event_max_participants" type="number" value="1"
+            placeholder="Number of participants" required disabled="True">
         </div>
 
         <div class="column">
@@ -316,9 +313,23 @@
   </form>
 
   <script>
+  	function validateParticipationType() {
+  		var participation_type = document.getElementById('event_type_participation')
+        var team_size = document.getElementsByName('event_max_participants')
+        
+        if ((participation_type.value).toString() === "0") {
+        	console.log(participation_type.value)
+      	  document.getElementById('event_max_participants').innerHTML = "1";
+      	  document.getElementById('event_max_participants').disabled = true;
+         }
+        else {
+        	document.getElementById('event_max_participants').disabled = false;
+        }
+  	}
     function validSubmission() {
       var email = document.getElementsByName('event_organizer_email')
       var phone = document.getElementsByName('event_organizer_phone')
+    	  
       if (validateEmailAddress(email)) {
         if (validPhone(phone)) {
           alert('Event Created')
