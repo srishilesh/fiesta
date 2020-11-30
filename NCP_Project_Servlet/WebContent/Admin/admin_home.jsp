@@ -281,7 +281,7 @@
 							<p> <%=ann.get(1)%></p>
 							<p> Event ID:<%=ann.get(3)%></p>
 							<br>
-							<a href="../Events/view_event.html"><span class="tag is-warning">Go to Event</span></a>
+							<a href="<%= request.getContextPath() %>/viewEvent?event_id=<%=ann.get(3) %>"><span class="tag is-warning">Go to Event</span></a>
 							<span class="is-primary is-link is-light ann_id "><%=ann.get(0)%></span>
 	
 						</div>
