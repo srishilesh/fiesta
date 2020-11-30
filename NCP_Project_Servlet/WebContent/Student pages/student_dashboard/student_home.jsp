@@ -66,7 +66,8 @@
 					</div>
 				</div>
 				<footer class="card-footer">
-					<a href="../Students Event Registration/event_registration_team.html" class="card-footer-item has-text-success has-text-weight-bold">Apply</a>
+				
+					<a href="<%= request.getContextPath() %>/studentTeamRegistration?event_id=<%=event.get(0) %>&team_max=<%=event.get(4)%>" class="card-footer-item has-text-success has-text-weight-bold">Apply</a>
 					<a href="<%= request.getContextPath() %>/studentViewEvent?event_id=<%=event.get(0) %>" class="card-footer-item has-text-success has-text-weight-bold">View Event</a>
 				</footer>
 			</div>
