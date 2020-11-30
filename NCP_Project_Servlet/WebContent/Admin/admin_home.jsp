@@ -61,7 +61,7 @@
 								<span class="has-text-weight-bold has-text-link">Organizer College: </span> <%=event.get(7)%>
 							</div>
 							<div class="column">
-								<span class="has-text-weight-bold has-text-link">Event Size: </span> <%=event.get(4)%>
+								<span class="has-text-weight-bold has-text-link">Team Size: </span> <%=event.get(4)%>
 							</div>
 							<div class="column">
 								<span class="has-text-weight-bold has-text-link">Event ID: </span> <%=event.get(0)%>

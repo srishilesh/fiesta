@@ -149,7 +149,7 @@
                   </div>
                   
                   <div class="column">
-                    <label class="label">Max. No. of Participants</label>
+                    <label class="label">Max. No. of Participants in a team</label>
                     <input class="input" name="event_max_participants" type="number" placeholder="Number of participants" required>
                   </div>
                   
