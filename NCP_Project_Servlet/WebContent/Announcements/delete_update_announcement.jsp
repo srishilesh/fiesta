@@ -1,3 +1,4 @@
+<%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -47,7 +48,9 @@
         }
     </script>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
-  	<script src="../js/adminPageNavbar.js"></script>
+  	<script>$(function(){
+	  	  $("#nav-placeholder").load("<%=request.getContextPath()%>/Navbar/adminPageNavbar.jsp");
+	  	});</script>  
 </head>
 <body>
     <div id="nav-placeholder"></div>
@@ -57,7 +60,22 @@
             <div class="field">
                 <label class="label">Announcement ID</label>
                 <div>
-                    <input class="input" name="announce_id" id="announce_id" placeholder="132" required>
+                    
+                    <div class="select">
+				  <select class="input" name="announce_id" id="announce_id">
+				  <option>Select Annoucement ID</option>
+				<%  
+				ArrayList<String> list_ids = (ArrayList<String>) request.getAttribute("ann_ids");
+				
+				// print the information about every category of the list
+				for(String id : list_ids) {%>
+					 <option value="<%=id%>"><%=id %></option>
+					 <%
+				}
+				%>
+				
+				  </select>
+				</div>
                 </div>
             </div>
             <div class="field">

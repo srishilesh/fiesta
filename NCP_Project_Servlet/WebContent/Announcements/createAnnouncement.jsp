@@ -1,4 +1,5 @@
 <%@page import="java.util.ArrayList"%>
+
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -40,7 +41,7 @@
 				  <select name="event_id" id="event_id">
 				  <option>Select Event ID</option>
 				<%  
-				ArrayList<String> list_ids = (ArrayList<String>) request.getAttribute("ann_ids");
+				ArrayList<String> list_ids = (ArrayList<String>) request.getAttribute("event_ids");
 				
 				// print the information about every category of the list
 				for(String id : list_ids) {%>

@@ -32,7 +32,30 @@ public class DeleteUpdateAnnouncement extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		response.getWriter().append("Served at: ").append(request.getContextPath());
-		response.sendRedirect("Announcements/delete_update_announcement.jsp");
+		
+		try {  
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			String path_to_db = "jdbc:mysql://localhost:3306/fiesta";
+			String username = "root";
+			String password = "root";
+			Connection con = DriverManager.getConnection(path_to_db, username, password);
+			
+			ArrayList<String> ann_ids = new ArrayList<String>();
+			PreparedStatement stmt = con.prepareStatement("select announcement_id from fiesta.table_announcement");
+			ResultSet rst = stmt.executeQuery();
+			while (rst.next()) {
+				ann_ids.add(rst.getInt(1)+"");
+			}				
+			
+			con.close();
+			request.setAttribute("ann_ids", ann_ids);
+			System.out.println(ann_ids);
+			request.getRequestDispatcher("Announcements/delete_update_announcement.jsp").forward(request, response); 
+		}
+		catch(Exception e) {
+			System.out.println(e);
+		} 
+		
 	}
 
 	/**

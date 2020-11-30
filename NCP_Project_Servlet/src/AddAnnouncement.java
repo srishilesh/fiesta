@@ -42,16 +42,16 @@ public class AddAnnouncement extends HttpServlet {
 			String password = "root";
 			Connection con = DriverManager.getConnection(path_to_db, username, password);
 			
-			ArrayList<String> ann_ids = new ArrayList<String>();
-			PreparedStatement stmt = con.prepareStatement("select announcement_id from fiesta.table_announcement");
+			ArrayList<String> event_ids = new ArrayList<String>();
+			PreparedStatement stmt = con.prepareStatement("select event_id from fiesta.table_event");
 			ResultSet rst = stmt.executeQuery();
 			while (rst.next()) {
-				ann_ids.add(rst.getInt(1)+"");
+				event_ids.add(rst.getInt(1)+"");
 			}				
 			
 			con.close();
-			request.setAttribute("ann_ids", ann_ids);
-			System.out.println(ann_ids);
+			request.setAttribute("event_ids", event_ids);
+			System.out.println(event_ids);
 			request.getRequestDispatcher("Announcements/createAnnouncement.jsp").forward(request, response); 
 		}
 		catch(Exception e) {
