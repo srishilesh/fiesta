@@ -4,6 +4,8 @@ import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.ArrayList;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -33,7 +35,34 @@ public class AddContactServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		response.getWriter().append("Served at: ").append(request.getContextPath());
-		response.sendRedirect("Student%20pages/profile/contact.jsp");
+		int student_id = getStudentID(request);
+		ResultSet rst = null;
+		ArrayList<String> contactDetails = new ArrayList<String>();
+		try {
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			Connection con = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/sys","root","root");				
+			String query = "select * from fiesta.table_student_profile_contact where student_id=?";
+			PreparedStatement stmt = con.prepareStatement(query);
+			stmt.setInt(1, student_id);
+			rst = stmt.executeQuery();
+			System.out.println("Queried Contact Details successfully!");
+			
+			while(rst.next()) {
+				contactDetails.add(rst.getInt(1)+"");
+				contactDetails.add(rst.getString(2));
+				contactDetails.add(rst.getString(3));
+				contactDetails.add(rst.getString(4));
+				contactDetails.add(rst.getString(5));
+			}
+			con.close();
+		}
+		catch(Exception e) {
+			System.out.println(e);
+			System.exit(1);
+		}
+		request.setAttribute("contactDetails", contactDetails);
+		request.getRequestDispatcher("Student%20pages/profile/contact.jsp").forward(request, response); 
+//		response.sendRedirect("Student%20pages/profile/contact.jsp");
 	}
 
 	/**
@@ -46,7 +75,28 @@ public class AddContactServlet extends HttpServlet {
 		String phone= request.getParameter("phone");
 		String media1= request.getParameter("media1");
 		String media2= request.getParameter("media2");
+		int student_id = getStudentID(request);
 		
+		try {
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			Connection con = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/sys","root","root");
+			String query = "delete from fiesta.table_student_profile_contact where student_id=?";
+			PreparedStatement stmt = con.prepareStatement(query);		
+			stmt.setInt(1, student_id);
+			int i = stmt.executeUpdate();
+			System.out.println("Deleted Contact Details successfully!");
+			con.close();
+		}
+		catch(Exception e) {
+			System.out.println(e);
+			System.exit(1);
+		}
+		
+		insertIntoDatabase(student_id, email, phone, media1, media2);
+		response.sendRedirect(request.getContextPath() +"/studentHome");
+	}
+	
+	public static int getStudentID(HttpServletRequest request) {
 		Cookie cookie = null;
 		Cookie[] cookies = null;
 		  
@@ -59,8 +109,6 @@ public class AddContactServlet extends HttpServlet {
 				cookie = cookies[i];
 				if (cookie.getName().equals("student_id"))
 					student_id_str = cookie.getValue();
-//				System.out.print("Name : " + cookie.getName( ) + ",  ");
-//				System.out.print("Value: " + cookie.getValue( ) + "\n");
 			}
 		} 
 		else {
@@ -71,11 +119,9 @@ public class AddContactServlet extends HttpServlet {
 			student_id = 0;
 		else
 			student_id = Integer.parseInt(student_id_str);
+		return student_id;
 		
-		insertIntoDatabase(student_id, email, phone, media1, media2);
-		response.sendRedirect(request.getContextPath() +"/studentHome");
 	}
-	
 	public static void insertIntoDatabase(int student_id, String email, String phone, String media1, String media2) {
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
@@ -84,6 +130,7 @@ public class AddContactServlet extends HttpServlet {
 			System.out.println("-------------- STUDENT - ADD CONTACT DETAILS -------------------"); 
 					
 			String query = "insert into fiesta.table_student_profile_contact values (?,?,?,?,?)";
+		
 			PreparedStatement stmt = con.prepareStatement(query);
 			
 			

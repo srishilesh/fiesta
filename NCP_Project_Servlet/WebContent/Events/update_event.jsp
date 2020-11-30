@@ -108,7 +108,7 @@
               <div class="field">
                 <label class="label">Event Description</label>
                 <div class="control">
-                  <textarea class="textarea" placeholder="Description" name="event_desc" required></textarea>
+                  <textarea class="textarea" placeholder="Description" name="event_desc"  required></textarea>
                 </div>
               </div>
 
