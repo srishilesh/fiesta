@@ -67,7 +67,7 @@
 				</div>
 				<footer class="card-footer">
 					<a href="../Students Event Registration/event_registration_team.html" class="card-footer-item has-text-success has-text-weight-bold">Apply</a>
-					<a href="../Events/view_event.html" class="card-footer-item has-text-success has-text-weight-bold">View Event</a>
+					<a href="<%= request.getContextPath() %>/studentViewEvent?event_id=<%=event.get(0) %>" class="card-footer-item has-text-success has-text-weight-bold">View Event</a>
 				</footer>
 			</div>
 				 <%
@@ -275,7 +275,7 @@
 							<p> <%=ann.get(1)%></p>
 							<p> Event ID:<%=ann.get(3)%></p>
 							<br>
-							<a href="../Events/view_event.html"><span class="tag is-warning">Go to Event</span></a>
+							<a href="<%= request.getContextPath() %>/studentViewEvent?event_id=<%=ann.get(3) %>"><span class="tag is-warning">Go to Event</span></a>
 							<span class="is-primary is-link is-light ann_id "><%=ann.get(0)%></span>
 	
 						</div>
