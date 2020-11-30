@@ -71,8 +71,8 @@
 					</div>
 				</div>
 				<footer class="card-footer">
-					
-					<a href="../Events/view_event.html" class="card-footer-item has-text-success has-text-weight-bold">View Event</a>
+					<a href="<%= request.getContextPath() %>/viewEvent?event_id=<%=event.get(0) %>" class="card-footer-item has-text-success has-text-weight-bold">View Event</a>
+					<!-- <a href="../Events/view_event.html" class="card-footer-item has-text-success has-text-weight-bold">View Event</a> -->
 				</footer>
 			</div>
 				 <%

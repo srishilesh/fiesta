@@ -35,7 +35,8 @@ public class ViewEventServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 		
-		int event_id = 6;
+//		int event_id = 6;
+		int event_id = Integer.parseInt(request.getParameter("event_id"));
 		ArrayList<String> eventDetails = new ArrayList<String>();
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
