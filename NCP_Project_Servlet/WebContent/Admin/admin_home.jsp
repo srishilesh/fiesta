@@ -30,7 +30,7 @@
 	<div class="columns container">
 		<div class="column is-9 ml-4">
 			<h1 class="title is-1">Upcoming events</h1>
-			
+
 			<%  
 			ArrayList<ArrayList<String>> listEvents = (ArrayList<ArrayList<String>>) request.getAttribute("upcomingEvents");
 			

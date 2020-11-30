@@ -34,7 +34,29 @@ public class AddAnnouncement extends HttpServlet {
 		// TODO Auto-generated method stub
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 		System.out.println("Sanjay");
-		response.sendRedirect("Announcements/createAnnouncement.jsp");
+		
+		try {  
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			String path_to_db = "jdbc:mysql://localhost:3306/fiesta";
+			String username = "root";
+			String password = "root";
+			Connection con = DriverManager.getConnection(path_to_db, username, password);
+			
+			ArrayList<String> ann_ids = new ArrayList<String>();
+			PreparedStatement stmt = con.prepareStatement("select announcement_id from fiesta.table_announcement");
+			ResultSet rst = stmt.executeQuery();
+			while (rst.next()) {
+				ann_ids.add(rst.getInt(1)+"");
+			}				
+			
+			con.close();
+			request.setAttribute("ann_ids", ann_ids);
+			System.out.println(ann_ids);
+			request.getRequestDispatcher("Announcements/createAnnouncement.jsp").forward(request, response); 
+		}
+		catch(Exception e) {
+			System.out.println(e);
+		} 
 	}
 
 	/**
@@ -45,6 +67,7 @@ public class AddAnnouncement extends HttpServlet {
 		String announcement = request.getParameter("ann");
 		String event_id = request.getParameter("event_id");
 		String title = request.getParameter("title");
+
 		System.out.println(announcement);
 		System.out.println(event_id);
 		System.out.println(title);
