@@ -41,7 +41,7 @@
       <div class="navbar-end">
 				<div class="navbar-item">
 					<div class="buttons">
-						<p id="ha"><b>Hello Sanjay:) &ensp;&ensp; </b></p>
+						<p id="ha"><b>Hello User:) &ensp;&ensp; </b></p>
 						<a href="<%= request.getContextPath() %>/home" id="ab1" class="button is-danger">
 							<strong>LOG OUT</strong>
 						</a>

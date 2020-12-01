@@ -45,7 +45,7 @@
 						<a class="navbar-item" href="<%= request.getContextPath() %>/updateWinners">
 							Update Event Winners
 						</a>
-						<a class="navbar-item" href="<%= request.getContextPath() %>/updateEvent">
+						<a class="navbar-item" href="<%= request.getContextPath() %>/updateEventID">
 							Update Event Details
 						</a>
 						<a class="navbar-item" href="<%= request.getContextPath() %>/adminViewAllEvents">

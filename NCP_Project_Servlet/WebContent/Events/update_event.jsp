@@ -93,36 +93,27 @@
               </div>
             </div>
           </section>
+          <%ArrayList<String> lst = (ArrayList<String>) request.getAttribute("eventDetails");%>
         <form action="<%= request.getContextPath() %>/updateEvent" method="post">
         <div class="container mb-4">
-            <div class="field">
-				<div class="select">
-				  <select name="event_name" id="event_name">
-				  <option>Select Event ID</option>
-				<%  
-				ArrayList<ArrayList<String>> list_ids = (ArrayList<ArrayList<String>>) request.getAttribute("event_ids");
-				
-				// print the information about every category of the list
-				for(ArrayList<String> list : list_ids) {%>
-					 <option value="<%=list.get(0)%>"><%=list.get(0) %> - <%=list.get(1) %></option>
-					 <%
-				}
-				%>
-				  </select>
-				</div>
-			</div>
-
+        		<div class="field">
+                <label class="label">Event Name</label>
+                <div class="control">
+                  <input class="input" type="text" placeholder="Event Name" name="event_name"  value="<%=lst.get(1) %>" required></input>
+                </div>
+              </div>
+              
               <div class="field">
                 <label class="label">Event Description</label>
                 <div class="control">
-                  <textarea class="textarea" placeholder="Description" name="event_desc"  required></textarea>
+                  <textarea class="textarea" placeholder="Description" name="event_desc"  required><%=lst.get(2) %></textarea>
                 </div>
               </div>
 
               <div class="field">
                   <label class="label">Add Event Tags</label>
                     <div class="control" id="wrapper">
-                        <input hidden name="event_tags" id="mySingleField" required>
+                        <input hidden name="event_tags" id="mySingleField" value="<%=lst.get(3) %>" required>
                         <ul id="singleFieldTags"></ul>
                     </div>
               </div>
@@ -131,7 +122,7 @@
                 <div class="column">
                     <label class="label">Type of participation</label>
                     <div class="select">
-                        <select name="event_type_participation" id="event_type_participation" style="width:370px;" onchange="validateParticipationType()" required>
+                        <select name="event_type_participation" id="event_type_participation" style="width:370px;" value="<%=lst.get(4) %>" onchange="validateParticipationType()" required>
                         <option value="0">Solo participation</option>
                         <option value="1">Team participation</option>
                         </select>
@@ -140,29 +131,29 @@
                   
                   <div class="column">
                     <label class="label">Start Date of Event</label>
-                    <input class="input" name="event_start_datetime" type="datetime-local" id="start_date_time" required>                    
+                    <input class="input" name="event_start_datetime" type="datetime-local" value="<%=lst.get(16) %>" id="start_date_time" required>                    
                   </div>
                  
                   <div class="column">
                     <label class="label">End Date of Event</label>
-                    <input class="input" name="event_end_datetime" type="datetime-local" id="end_date_time" required>
+                    <input class="input" name="event_end_datetime" type="datetime-local" value="<%=lst.get(17) %>" id="end_date_time" required>
                   </div>
               </div>
 
               <div class="columns">
                   <div class="column">
                     <label class="label">Venue of Event</label>
-                    <input class="input" name="event_venue" type="text" placeholder="Venue" required>
+                    <input class="input" name="event_venue" type="text" placeholder="Venue" value="<%=lst.get(5) %>" required>
                   </div>
                   
                   <div class="column">
                     <label class="label">Max. No. of Participants in a team</label>
-                    <input class="input" name="event_max_participants" type="number" id="event_max_participants" value="1" disabled="True" placeholder="Number of participants" required>
+                    <input class="input" name="event_max_participants" type="number" id="event_max_participants" value="<%=lst.get(6) %>" disabled="True" placeholder="Number of participants" required>
                   </div>
                   
                   <div class="column">
                     <label class="label">Registration Link</label>
-                    <input class="input" name="event_registration_link" type="url" placeholder="Enter URL here">
+                    <input class="input" name="event_registration_link" type="url" value="<%=lst.get(15) %>" placeholder="Enter URL here">
                   </div>
               </div>
               
@@ -176,7 +167,7 @@
                       <div class="field">
                         <p class="control has-icons-left">
                             <span class="select">
-                            <select name="event_organizer_college" required>
+                            <select name="event_organizer_college" value="<%=lst.get(7) %>" required>
                                 <option selected>Amrita Vishwa Vidyapeetham</option>
                                 <option>Others</option>
                             </select>
@@ -190,7 +181,7 @@
                       <div class="field">
                         <p class="control has-icons-left">
                             <span class="select">
-                            <select name="event_organizer_campus">
+                            <select name="event_organizer_campus" value="<%=lst.get(8) %>">
                                 <option selected>Coimbatore</option>
                                 <option>Amritapuri</option>
                                 <option>Bangalore</option>
@@ -212,7 +203,7 @@
                         <div class="field">
                             <p class="control has-icons-left">
                                 <div class="control has-icons-left">
-                                    <input class="input" name="event_organizer_other" type="text" placeholder="Address">
+                                    <input class="input" name="event_organizer_other" value="<%=lst.get(14) %>" type="text" placeholder="Address">
                                     <span class="icon is-small is-left">
                                         <i class="fas fa-address-card"></i>
                                     </span>
@@ -227,7 +218,7 @@
                       </div>
                       <div class="field-body">
                           <div class="field control has-icons-left">
-                            <input class="input" name="event_organizer_name" type="text" placeholder="Contact Name" required multiple>
+                            <input class="input" name="event_organizer_name" type="text" placeholder="Contact Name" value="<%=lst.get(9) %>" required multiple>
                             <span class="icon is-small is-left">
                                 <i class="fas fa-user-circle"></i>
                             </span>
@@ -241,7 +232,7 @@
                     <div class="field-body">
                         <div class="field">
                             <div class="control has-icons-left has-icons-right">
-                              <input class="input" type="email" name="event_organizer_email" placeholder="Contact Email" multiple required>
+                              <input class="input" type="email" name="event_organizer_email" value="<%=lst.get(10) %>" placeholder="Contact Email" multiple required>
                               <span class="icon is-small is-left">
                                 <i class="fas fa-envelope"></i>
                               </span>
@@ -262,7 +253,7 @@
                                 </a>
                               </p>
                               <p class="control is-expanded">
-                                <input class="input" type="tel" name="event_organizer_phone" pattern="[0-9]{10}" placeholder="Contact Number" required>
+                                <input class="input" type="tel" value="<%=lst.get(11) %>" name="event_organizer_phone" pattern="[0-9]{10}" placeholder="Contact Number" required>
                               </p>
                             </div>
                         </div>
@@ -275,7 +266,9 @@
                     <div class="field-body">
                         <div class="field">
                             <div class="control">
-                              <textarea class="textarea" name="event_organizer_details" placeholder="Details" required></textarea>
+                              <textarea class="textarea" name="event_organizer_details" placeholder="Details" required>
+                              	<%=lst.get(12) %>
+                              </textarea>
                             </div>
                           </div>
                     </div>
@@ -286,7 +279,7 @@
                   <label class="label">Upload Poster</label>
                   <div class="file has-name">
                     <label class="file-label">
-                      <input class="file-input" type="file" name="event_organizer_poster">
+                      <input class="file-input" type="file" value="<%=lst.get(13) %>" name="event_organizer_poster">
                       <span class="file-cta">
                         <span class="file-icon">
                           <i class="fas fa-upload"></i>
