@@ -48,7 +48,7 @@
   <div class="field">
     <p class="control is-expanded has-icons-left ">
       <input class="input primary_mail" name="email" type="email" 
-      placeholder="Primary E-mail" value=<%=lst.get(1) %>required>
+      placeholder="Primary E-mail" value="<%=lst.get(1) %>" required>
       <span class="icon is-small is-left">
         <i class="fas fa-envelope"></i>
       </span>
@@ -73,7 +73,7 @@
       <p class="control is-expanded">
         <input class="input primary_phone" name="phone" type="tel" 
         placeholder="Your phone number[10 digits]" 
-        pattern="[0-9]{9}[0-9]{1}" maxlength="10" value=<%=lst.get(2) %> required>
+        pattern="[0-9]{9}[0-9]{1}" maxlength="10" value="<%=lst.get(2) %>" required>
       </p>
     </div>
     <p class="help">Do not enter the first zero. Enter ten digits number.</p>
@@ -92,7 +92,7 @@
   <div class="field">
     <p class="control is-expanded has-icons-left">
           <input class="input media1" name="media1" type="url" 
-          placeholder="copy & paste the link of your profile" value=<%=lst.get(3) %>
+          placeholder="copy & paste the link of your profile" value="<%=lst.get(3) %>"
           required>
       <span class="icon is-small is-left">
         <i class="fas fa-user-circle"></i>
@@ -110,7 +110,7 @@
   <div class="field">
     <p class="control is-expanded has-icons-left">
           <input class="input media2" name="media2" type="url" 
-          placeholder="copy & paste the link of your profile" value=<%=lst.get(4) %>
+          placeholder="copy & paste the link of your profile" value="<%=lst.get(4) %>"
           >
       <span class="icon is-small is-left">
         <i class="fas fa-user-circle"></i>

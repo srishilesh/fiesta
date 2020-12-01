@@ -4,6 +4,8 @@ import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.ArrayList;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -33,7 +35,41 @@ public class AddPersonalServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		response.getWriter().append("Served at: ").append(request.getContextPath());
-		response.sendRedirect("Student%20pages/profile/personal.jsp");
+		int student_id = getStudentID(request);
+		ResultSet rst = null;
+		ArrayList<String> personalDetails = new ArrayList<String>();
+		try {
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			Connection con = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/sys","root","root");				
+			String query = "select * from fiesta.table_student_profile_personal where student_id=?";
+			PreparedStatement stmt = con.prepareStatement(query);
+			stmt.setInt(1, student_id);
+			rst = stmt.executeQuery();
+			System.out.println("Queried Personal Details successfully!");
+			
+			while(rst.next()) {
+				personalDetails.add(rst.getInt(1)+"");
+				personalDetails.add(rst.getString(2));
+				personalDetails.add(rst.getString(3));
+				personalDetails.add(rst.getString(4));
+				personalDetails.add(rst.getString(5));
+				personalDetails.add(rst.getString(6));
+				personalDetails.add(rst.getString(7));
+				personalDetails.add(rst.getString(8));
+				personalDetails.add(rst.getString(9));
+				personalDetails.add(rst.getString(10));
+				personalDetails.add(rst.getString(11));
+				personalDetails.add(rst.getString(12));
+			}
+			con.close();
+		}
+		catch(Exception e) {
+			System.out.println(e);
+			System.exit(1);
+		}
+		request.setAttribute("personalDetails", personalDetails);
+		request.getRequestDispatcher("Student%20pages/profile/personal.jsp").forward(request, response);
+//		response.sendRedirect("Student%20pages/profile/personal.jsp");
 	}
 
 	/**
@@ -54,7 +90,29 @@ public class AddPersonalServlet extends HttpServlet {
 		String skill2_rating = request.getParameter("skill2_rating");
 		String address = request.getParameter("address");
 		String aboutme = request.getParameter("aboutme");
+		int student_id = getStudentID(request);
 		
+		try {
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			Connection con = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/sys","root","root");
+			String query = "DELETE from fiesta.table_student_profile_personal where student_id=?";
+			PreparedStatement stmt = con.prepareStatement(query);		
+			stmt.setInt(1, student_id);
+			int i = stmt.executeUpdate();
+			System.out.println("Deleted Personal Details successfully!");
+			con.close();
+		}
+		catch(Exception e) {
+			System.out.println(e);
+			System.exit(1);
+		}
+		
+		insertIntoDatabase(student_id, name, regno, graduation, dept, dob, school, skill1, skill2, skill1_rating, skill2_rating, address, aboutme);
+		response.sendRedirect(request.getContextPath() +"/studentHome");
+		
+	}
+	
+	public static int getStudentID(HttpServletRequest request) {
 		Cookie cookie = null;
 		Cookie[] cookies = null;
 		  
@@ -62,13 +120,11 @@ public class AddPersonalServlet extends HttpServlet {
 		String student_id_str = "";
 		cookies = request.getCookies();
 		if( cookies != null ) {
-			System.out.println("Found Cookies Name and Value");
+			// System.out.println("Found Cookies Name and Value");
 			for (int i = 0; i < cookies.length; i++) {
 				cookie = cookies[i];
 				if (cookie.getName().equals("student_id"))
 					student_id_str = cookie.getValue();
-				System.out.print("Name : " + cookie.getName( ) + ",  ");
-				System.out.print("Value: " + cookie.getValue( ) + "\n");
 			}
 		} 
 		else {
@@ -79,9 +135,7 @@ public class AddPersonalServlet extends HttpServlet {
 			student_id = 0;
 		else
 			student_id = Integer.parseInt(student_id_str);
-		
-		insertIntoDatabase(student_id, name, regno, graduation, dept, dob, school, skill1, skill2, skill1_rating, skill2_rating, address, aboutme);
-		response.sendRedirect(request.getContextPath() +"/studentHome");
+		return student_id;
 		
 	}
 	

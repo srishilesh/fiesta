@@ -1,3 +1,4 @@
+<%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -9,8 +10,13 @@
         <title>Edit Profile - Personal</title>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
         <script src="https://use.fontawesome.com/releases/v5.1.0/js/all.js"></script>
-          <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
-  <script src="../../js/studentPageNavbar.js"></script>
+         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+          
+  <script>
+  $(function(){
+  	  $("#nav-placeholder").load("<%=request.getContextPath()%>/Navbar/studentPageNavbar.jsp");
+  	});
+  </script>
         <!-- <style type="text/css">
           .name:invalid, .stu_id:invalid, .reg_no:invalid, .year_of_stud:invalid,
           .dept:invalid, .dob:invalid, .no_of_skills:invalid, .about_myself:invalid {
@@ -51,27 +57,8 @@
     <!-- STUDENT DETAILS -->
     <section id="details" class="section container is-centered ">
       <div class="notification" style="margin: 3% 5% 0.1% 5%;"><h2 class="subtitle is-2">Student details</h2>
-
+<%ArrayList<String> lst = (ArrayList<String>) request.getAttribute("personalDetails");%>
 <form name="personal_details" method="post" action="<%=request.getContextPath()%>/addPersonal">
-
-<div class="field is-horizontal">
-<div class="field-label is-normal">
-  <label class="label">Student</label>
-</div>
-<div class="field-body">
-
-  <div class="field">
-    <p class="control is-expanded has-icons-left">
-      <input class="input name" id="name" name="name" type="text" placeholder="Name" 
-      pattern="[a-zA-Z\s]+" required="true">
-      <span class="icon is-small is-left">
-        <i class="fas fa-user"></i>
-      </span>
-    </p>
-  </div>
-</div>
-</div>
-
 
 <div class="field is-horizontal">
     <div class="field-label is-normal">
@@ -82,7 +69,7 @@
         <div class="control">
           <p class="control is-expanded has-icons-left">
             <input class="input reg_no" name="reg_no" type="text" placeholder="Registration number"
-            pattern="CB.EN.U4CSE[0-9][0-9][0-9][0-9][0-9]" required="true">
+            pattern="CB.EN.U4CSE[0-9][0-9][0-9][0-9][0-9]" value="<%=lst.get(7) %>" required="true">
             <span class="icon is-small is-left">
               <i class="fas fa-id-card"></i>
             </span>
@@ -101,7 +88,7 @@
       <div class="field">
         <div class="control">
           <p class="control is-expanded">
-            <input class="input year_of_stud" name="graduation"type="month" placeholder="Select the month and year of graduation"
+            <input class="input year_of_stud" name="graduation"type="month" value="<%=lst.get(2) %>" placeholder="Select the month and year of graduation"
             required="true">
           </p>
         </div>
@@ -119,14 +106,14 @@
   <div class="field is-narrow">
     <div class="control">
       <div class="select is-fullwidth">
-        <select class="dept" name="dept" required="true">
-          <option value="">Select one department</option>
-          <option>Computer Science & Engineering</option>
-          <option>Electrical & Electronics Engineering </option>
-          <option>Electronics & Communication Engineering</option>
-          <option>Mechanical Engineering</option>
-          <option>Chemical Engineering</option>
-          <option>Aerospace Engineering</option>
+        <select class="dept" name="dept" required="true" value="<%=lst.get(3) %>">
+          <option value="Select one department">Select one department</option>
+          <option value="Computer Science & Engineering">Computer Science & Engineering</option>
+          <option value="Electrical & Electronics Engineering">Electrical & Electronics Engineering</option>
+          <option value="Electronics & Communication Engineering">Electronics & Communication Engineering</option>
+          <option value="Mechanical Engineering">Mechanical Engineering</option>
+          <option value="Chemical Engineering">Chemical Engineering</option>
+          <option value="Aerospace Engineering">Aerospace Engineering</option>
         </select>
       </div>
     </div>
@@ -134,7 +121,7 @@
 
   <div class="field">
     <p class="control is-expanded has-icons-left ">
-      <input class="input dob" name="dob" type="date" placeholder="Date of brith" required="true">
+      <input class="input dob" name="dob" type="date" placeholder="Date of brith" value="<%=lst.get(1) %>" required="true">
       <span class="icon is-small is-left">
         <i class="fas fa-birthday-cake"></i>
       </span>
@@ -151,7 +138,7 @@
 <div class="field-body">
   <div class="field">
     <div class="control level-item">
-      <input name="school" class="input" type="text" id="school" required>
+      <input name="school" class="input" type="text" id="school" value="<%=lst.get(5) %>"  required>
       </div>
     </div>
   </div>
@@ -165,8 +152,8 @@
   <div class="field">
     <div class="control level-item">
       <!--<input class="input" type="text" placeholder="e.g. Tennis Football Basketball (Enter with spaces)">-->
-      <input name="skill1" class="input" type="text" id="skill1" required>
-      <input type="range" id="skill1_rating" name="skill1_rating" min="0" max="5">
+      <input name="skill1" class="input" type="text" id="skill1" value="<%=lst.get(8) %>" required>
+      <input type="range" id="skill1_rating" name="skill1_rating" min="0" max="5" value="<%=lst.get(10) %>">
       </div>
     </div>
   </div>
@@ -180,8 +167,8 @@
   <div class="field">
     <div class="control level-item">
       <!--<input class="input" type="text" placeholder="e.g. Tennis Football Basketball (Enter with spaces)">-->
-      <input name="skill2" class="input" type="text" id="skill2" required>
-      <input type="range" id="skill2_rating" name="skill2_rating" min="0" max="5">
+      <input name="skill2" class="input" type="text" id="skill2" value="<%=lst.get(9) %>" required>
+      <input type="range" id="skill2_rating" name="skill2_rating" min="0" max="5" value="<%=lst.get(11) %>">
       </div>
     </div>
   </div>
@@ -196,7 +183,7 @@
 <div class="field-body">
   <div class="field">
     <div class="control level-item">
-      <input name="address" class="input" type="text" id="address" required>
+      <input name="address" class="input" type="text" id="address" value="<%=lst.get(6) %>" required>
       </div>
     </div>
   </div>
@@ -209,7 +196,7 @@
 <div class="field-body">
   <div class="field">
     <div class="control">
-      <textarea class="textarea" name="aboutme" placeholder="Tell us more about you :) " required></textarea>
+      <textarea class="textarea" name="aboutme" placeholder="Tell us more about you :)" required><%=lst.get(4) %></textarea>
     </div>
   </div>
 </div>
