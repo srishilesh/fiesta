@@ -12,7 +12,11 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
     <script src="https://use.fontawesome.com/releases/v5.1.0/js/all.js"></script>
       <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
-  <script src="../../js/studentPageNavbar.js"></script>
+  <script>
+  $(function(){
+  	  $("#nav-placeholder").load("<%=request.getContextPath()%>/Navbar/studentPageNavbar.jsp");
+  	});
+  </script>
 </head>
 
 <body>

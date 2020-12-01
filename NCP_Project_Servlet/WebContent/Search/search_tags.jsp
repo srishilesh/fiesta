@@ -1,3 +1,4 @@
+<%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -11,7 +12,11 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
     <script src="https://use.fontawesome.com/releases/v5.1.0/js/all.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
-  	<script src="../js/adminPageNavbar.js"></script>
+  	<script>
+  	$(function(){
+	  	  $("#nav-placeholder").load("<%=request.getContextPath()%>/Navbar/adminPageNavbar.jsp");
+	  	});
+  	</script>
 </head>
 
 <body>
@@ -56,6 +61,23 @@
                 <th style="width:40%;">Student ID</th>
                 <th style="width:30%;">Tags</th>
             </tr>
+            <%  
+			ArrayList<ArrayList<String>> listLeads = (ArrayList<ArrayList<String>>) request.getAttribute("search");
+			
+			// print the information about every category of the list
+			for(ArrayList<String> lead : listLeads) {%>
+				<tr>
+		            <td><%=lead.get(1) %></td>
+		            <td><%=lead.get(0) %></td>
+		            <td>
+		                <span class="tag"><%=lead.get(3) %></span>
+		                <span class="tag"><%=lead.get(4) %></span>
+		            </td>
+		        </tr>
+				 
+				 <%
+			}
+			%>
             <tr>
                 <td>Sanjay Tharagesh R S</td>
                 <td>@sanjay</td>
