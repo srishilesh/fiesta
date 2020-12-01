@@ -6,6 +6,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.ArrayList;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -34,7 +35,29 @@ public class UpdateEventServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		response.getWriter().append("Served at: ").append(request.getContextPath());
-		response.sendRedirect("Events/update_event.jsp");
+		try {  
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			String path_to_db = "jdbc:mysql://localhost:3306/fiesta";
+			String username = "root";
+			String password = "root";
+			Connection con = DriverManager.getConnection(path_to_db, username, password);
+			
+			ArrayList<String> event_ids = new ArrayList<String>();
+			PreparedStatement stmt = con.prepareStatement("select event_id from fiesta.table_event");
+			ResultSet rst = stmt.executeQuery();
+			while (rst.next()) {
+				event_ids.add(rst.getInt(1)+"");
+			}				
+			
+			con.close();
+			request.setAttribute("event_ids", event_ids);
+			System.out.println(event_ids);
+			request.getRequestDispatcher("Events/update_event.jsp").forward(request, response); 
+		}
+		catch(Exception e) {
+			System.out.println(e);
+		} 
+//		response.sendRedirect("Events/update_event.jsp");
 	}
 
 	/**

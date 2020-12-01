@@ -1,3 +1,4 @@
+<%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -11,15 +12,13 @@
         <script src="https://use.fontawesome.com/releases/v5.1.0/js/all.js"></script>
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js" type="text/javascript" charset="utf-8"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.12/jquery-ui.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="js/tag-it.js" type="text/javascript" charset="utf-8"></script>
-        <link href="../_static/master.css" rel="stylesheet" type="text/css">
-        <link href="../_static/subpage.css" rel="stylesheet" type="text/css">
-        <link href="../_static/examples.css" rel="stylesheet" type="text/css">
-        <link href="../css/jquery.tagit.css" rel="stylesheet" type="text/css">
-        <link href="../css/tagit.ui-zendesk.css" rel="stylesheet" type="text/css">
+        <script src="<%= request.getContextPath() %>/js/tag-it.js" type="text/javascript" charset="utf-8"></script>
+        <link href="<%= request.getContextPath() %>/_static/master.css" rel="stylesheet" type="text/css">
+        <link href="<%= request.getContextPath() %>/css/jquery.tagit.css" rel="stylesheet" type="text/css">
+        <link href="<%= request.getContextPath() %>/css/tagit.ui-zendesk.css" rel="stylesheet" type="text/css">
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" type="text/javascript" charset="utf-8"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="../js/tag-it.js" type="text/javascript" charset="utf-8"></script>
+        <script src="<%= request.getContextPath() %>/js/tag-it.js" type="text/javascript" charset="utf-8"></script>
         <script>
             $(function(){
                 var sampleTags = ['singing','dancing','sports','cultural','drama','indoor','outdoor','drawing'];
@@ -71,7 +70,11 @@
                 
             });
         </script>  
-  	<script src="../js/adminPageNavbar.js"></script>  
+  	<script>
+  	$(function(){
+	  	  $("#nav-placeholder").load("<%=request.getContextPath()%>/Navbar/adminPageNavbar.jsp");
+	  	});
+  	</script>  
     </head>
 
     <body>
@@ -93,16 +96,21 @@
         <form action="<%= request.getContextPath() %>/updateEvent" method="post">
         <div class="container mb-4">
             <div class="field">
-                <label class="label">Event ID</label>
-                <div class="control">
-                  <!-- <input class="input" type="text" placeholder="132" name="event_name"> -->
-                  <select class="input" name="event_name">
-                      <option>123</option>
-                      <option>234</option>
-                      <option>345</option>
-                  </select>
-                </div>
-              </div>
+				<div class="select">
+				  <select name="event_name" id="event_name">
+				  <option>Select Event ID</option>
+				<%  
+				ArrayList<String> list_ids = (ArrayList<String>) request.getAttribute("event_ids");
+				
+				// print the information about every category of the list
+				for(String id : list_ids) {%>
+					 <option value="<%=id%>"><%=id %></option>
+					 <%
+				}
+				%>
+				  </select>
+				</div>
+			</div>
 
               <div class="field">
                 <label class="label">Event Description</label>
