@@ -1,3 +1,4 @@
+<%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -7,6 +8,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>View All Events</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+    <script>
+    $(function(){
+    	  $("#nav-placeholder").load("<%=request.getContextPath()%>/Navbar/adminPageNavbar.jsp");
+    	});
+    </script>
     <script src="https://use.fontawesome.com/releases/v5.1.0/js/all.js"></script>
     <script type="text/javascript">
           document.addEventListener('DOMContentLoaded', function() {
@@ -58,6 +65,74 @@
 <section class="section" id="events">
   <h4 class="title has-text-centered">Event details</h4>
   <div class="container">
+  	<%ArrayList<ArrayList<String>> lists = (ArrayList<ArrayList<String>>) request.getAttribute("eventDetails");%>
+  	<%for(ArrayList<String> list : lists) {%>
+  	<div class="card is-fullwidth">
+      <header class="card-header">
+        <p class="card-header-title">Event #<%= list.get(0) %> - <%= list.get(1) %></p>
+        <a class="card-header-icon card-toggle">
+          <i class="fa fa-angle-down"></i>
+        </a>
+      </header>
+      <div class="card-content is-hidden event_table">
+        <div class="content">
+          
+
+            <div class="table-container">
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th>Event ID</th>
+                      <th>Event Name</th>
+                      <th>Event Description</th>
+                      <th>Tags</th>
+                      <th>Participation type</th>
+                      <th>Venue</th>
+                      <th>Team size</th>
+                      <th>Organizing College</th>
+                      <th>Organizing Campus</th>
+                      <th>Organizer Name</th>
+                      <th>Organizer Email</th>
+                      <th>Organizer Phone</th>
+                      <th>Organizer Details</th>
+                      <th>Poster</th>
+                      <th>Organizer Other</th>
+                      <th>Registration Link</th>
+                      <th>Start Date</th>
+                      <th>End Date</th>
+                    </tr>
+                  </thead>
+                  
+                  <tbody> 
+                    <tr>
+                      <th><%= list.get(0) %></th>
+                      <td><%= list.get(1) %></td>
+                      <td><%= list.get(2) %></td>
+                      <td><%= list.get(3) %></td>
+                      <td><%= list.get(4) %></td>
+                      <td><%= list.get(5) %></td>
+                      <td><%= list.get(6) %></td>
+                      <td><%= list.get(7) %></td>
+                      <td><%= list.get(8) %></td>
+                      <td><%= list.get(9) %></td>
+                      <td><%= list.get(10) %></td>
+                      <td><%= list.get(11) %></td>
+                      <td><%= list.get(12) %></td>
+                      <td><%= list.get(13) %></td>
+                      <td><%= list.get(14) %></td>
+                      <td><%= list.get(15) %></td>
+                      <td><%= list.get(16) %></td>
+                      <td><%= list.get(17) %></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+
+        </div>
+      </div>
+    </div>
+  	<%} %>
     <div class="card is-fullwidth">
       <header class="card-header">
         <p class="card-header-title">Event #1 - eventname</p>
@@ -91,7 +166,6 @@
                       <th><abbr title="event_registration_link">e_reg_link</abbr></th>
                       <th><abbr title="event_start_datetime">e_start_date</abbr></th>
                       <th><abbr title="event_end_datetime">e_end_date</abbr></th>
-                      <th><abbr title="event_timings">e_time</abbr></th>
                     </tr>
                   </thead>
                   
@@ -115,7 +189,6 @@
                       <td><a href = "www.google.com">Registration Link</a></td>
                       <td>2020-12-12</td>
                       <td>2020-12-13</td>
-                      <td>4:00 - 8:00 pm</td>
                     </tr>
                   </tbody>
                 </table>
@@ -158,7 +231,6 @@
                       <th><abbr title="event_registration_link">e_reg_link</abbr></th>
                       <th><abbr title="event_start_datetime">e_start_date</abbr></th>
                       <th><abbr title="event_end_datetime">e_end_date</abbr></th>
-                      <th><abbr title="event_timings">e_time</abbr></th>
                     </tr>
                   </thead>
                   
@@ -182,7 +254,6 @@
                       <td><a href = "www.google.com">Registration Link</a></td>
                       <td>2020-12-12</td>
                       <td>2020-12-13</td>
-                      <td>4:00 - 8:00 pm</td>
                     </tr>
                   </tbody>
                 </table>
