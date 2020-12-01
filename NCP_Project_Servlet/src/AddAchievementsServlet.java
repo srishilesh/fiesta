@@ -4,6 +4,8 @@ import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.ArrayList;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -33,7 +35,82 @@ public class AddAchievementsServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		response.getWriter().append("Served at: ").append(request.getContextPath());
-		response.sendRedirect("Student%20pages/profile/achievements.jsp");
+		int student_id = getStudentID(request);
+		ResultSet rst = null;
+		ArrayList<String> achievementDetails = new ArrayList<String>();
+		try {
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			Connection con = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/sys","root","root");				
+			String query = "select * from fiesta.table_student_profile_achievements where student_id=?";
+			PreparedStatement stmt = con.prepareStatement(query);
+			stmt.setInt(1, student_id);
+			rst = stmt.executeQuery();
+			System.out.println("Queried Contact Details successfully!");
+			System.out.println(rst);
+			if (rst == null) {
+				System.out.println("Inside loop");
+				for (int i = 0; i < 10; i ++) {
+					achievementDetails.add("");
+				}
+				System.out.println(achievementDetails);
+			}
+			else {
+			while(rst.next()) {
+				if ((rst.getInt(1)+"").equals(""))
+					achievementDetails.add("");
+				else
+					achievementDetails.add(rst.getInt(1)+"");
+				if (rst.getString(2).equals(""))
+					achievementDetails.add("");
+				else
+					achievementDetails.add(rst.getString(2));
+				if (rst.getString(3).equals(""))
+					achievementDetails.add("");
+				else
+					achievementDetails.add(rst.getString(3));
+				if (rst.getString(4).equals(""))
+					achievementDetails.add("");
+				else
+					achievementDetails.add(rst.getString(4));
+				if (rst.getString(5).equals(""))
+					achievementDetails.add("");
+				else
+					achievementDetails.add(rst.getString(5));
+				if (rst.getString(6).equals(""))
+					achievementDetails.add("");
+				else
+					achievementDetails.add(rst.getString(6));
+				if (rst.getString(2).equals(""))
+					achievementDetails.add("");
+				else
+					achievementDetails.add(rst.getString(2));
+				if (rst.getString(7).equals(""))
+					achievementDetails.add("");
+				else
+					achievementDetails.add(rst.getString(7));
+				if (rst.getString(8).equals(""))
+					achievementDetails.add("");
+				else
+					achievementDetails.add(rst.getString(8));
+				if (rst.getString(9).equals(""))
+					achievementDetails.add("");
+				else
+					achievementDetails.add(rst.getString(9));
+				if (rst.getString(10).equals(""))
+					achievementDetails.add("");
+				else
+					achievementDetails.add(rst.getString(10));
+			}
+			}
+			con.close();
+		}
+		catch(Exception e) {
+			System.out.println(e);
+			 System.exit(1);
+		}
+		System.out.println(achievementDetails);
+		request.setAttribute("achievementDetails", achievementDetails);
+		request.getRequestDispatcher("Student%20pages/profile/achievements.jsp").forward(request, response);
 	}
 
 	/**
@@ -52,7 +129,28 @@ public class AddAchievementsServlet extends HttpServlet {
 		String skill = request.getParameter("skill");
 		String team_leader = request.getParameter("team_leader");
 		String desc = request.getParameter("desc");
+		int student_id = getStudentID(request);
 		
+		try {
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			Connection con = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/sys","root","root");
+			String query = "delete from fiesta.table_student_profile_achievements where student_id=?";
+			PreparedStatement stmt = con.prepareStatement(query);		
+			stmt.setInt(1, student_id);
+			int i = stmt.executeUpdate();
+			System.out.println("Deleted Achievment Details successfully!");
+			con.close();
+		}
+		catch(Exception e) {
+			System.out.println(e);
+			System.exit(1);
+		}
+		
+		insertIntoDatabase(student_id, name, date, location, size, participation, proof, skill, team_leader, desc);
+		response.sendRedirect(request.getContextPath() +"/studentHome");
+	}
+	
+	public static int getStudentID(HttpServletRequest request) {
 		Cookie cookie = null;
 		Cookie[] cookies = null;
 		  
@@ -65,8 +163,6 @@ public class AddAchievementsServlet extends HttpServlet {
 				cookie = cookies[i];
 				if (cookie.getName().equals("student_id"))
 					student_id_str = cookie.getValue();
-//				System.out.print("Name : " + cookie.getName( ) + ",  ");
-//				System.out.print("Value: " + cookie.getValue( ) + "\n");
 			}
 		} 
 		else {
@@ -77,9 +173,8 @@ public class AddAchievementsServlet extends HttpServlet {
 			student_id = 0;
 		else
 			student_id = Integer.parseInt(student_id_str);
+		return student_id;
 		
-		insertIntoDatabase(student_id, name, date, location, size, participation, proof, skill, team_leader, desc);
-		response.sendRedirect(request.getContextPath() +"/studentHome");
 	}
 	
 	public static void insertIntoDatabase(int student_id, String name, String date, String location, String size, String participation,

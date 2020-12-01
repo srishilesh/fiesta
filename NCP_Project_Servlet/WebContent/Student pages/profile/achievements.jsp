@@ -1,3 +1,4 @@
+<%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -21,7 +22,11 @@
         </style> -->
   <!-- After connecting backend, show red boxes only after submit button gets clicked -->
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
-  <script src="../../js/studentPageNavbar.js"></script>
+  <script>
+  $(function(){
+  	  $("#nav-placeholder").load("<%=request.getContextPath()%>/Navbar/studentPageNavbar.jsp");
+  	});
+  </script>
 </head>
 
 <body class="has-background-info">
@@ -33,7 +38,7 @@
   <section id="achievements" class="section container is-centered">
     <div class="notification" style="margin: 3% 5% 1% 5%;">
       <h2 class="subtitle is-2"> Achievements</h2>
-
+		<%ArrayList<String> lst = (ArrayList<String>) request.getAttribute("achievementDetails");%>
       <form name="achievement_details" method="post" action="<%= request.getContextPath()%>/addAchievements">
 
         <div class="field is-horizontal">
@@ -45,7 +50,7 @@
             <div class="field">
               <p class="control is-expanded has-icons-left">
                 <input class="input event_name" name="event_name" type="text" placeholder="Name of the event"
-                  pattern="[a-zA-Z0-9\s]+" required="true">
+                  pattern="[a-zA-Z0-9\s]+" value="<%= lst.get(1) %>" required="true">
                 <span class="icon is-small is-left">
                   <i class="fas fa-file-signature"></i>
                 </span>
@@ -56,7 +61,7 @@
             </div>
             <div class="field">
               <p class="control is-expanded has-icons-left ">
-                <input class="input event_date" name="event_date" type="date" required="true">
+                <input class="input event_date" name="event_date" type="date" value="<%= lst.get(2) %>" required="true">
                 <span class="icon is-small is-left">
                   <i class="fas fa-calendar-alt"></i>
                 </span>
@@ -75,7 +80,7 @@
 
             <div class="field">
               <p class="control is-expanded has-icons-left">
-                <input class="input location" name="location" type="text" placeholder="Where did it take place?"
+                <input class="input location" name="location" type="text" value="<%= lst.get(3) %>" placeholder="Where did it take place?"
                   pattern="[a-zA-Z\s]+" required="true">
 
                 <span class="icon is-small is-left">
@@ -88,7 +93,7 @@
             </div>
             <div class="field">
               <p class="control is-expanded has-icons-left ">
-                <input class="input team_size" name="team_size" type="number" min="1" max="15" required="true">
+                <input class="input team_size" name="team_size" type="number" min="1" max="15" value="<%= lst.get(4) %>" required="true">
                 <span class="icon is-small is-left">
                   <i class="fas fa-user-friends"></i>
                 </span>
@@ -133,7 +138,7 @@
 
                   <input class="input proof_link" name="proof" type="url"
                     placeholder="Enter the link here (Eg: Upload certificates to your Google drive and paste link)"
-                    required="true">
+                    required="true" value="<%= lst.get(6) %>">
                   <span class="icon is-small is-left">
                     <i class="fas fa-globe"></i>
                   </span>
@@ -157,7 +162,7 @@
             <div class="field">
               <p class="control is-expanded has-icons-left ">
                 <input class="input specialization" name="skill" type="text"
-                  placeholder="Eg: Football/ Cricket/ Basketball" pattern="[A-Za-z]+" required="true">
+                  placeholder="Eg: Football/ Cricket/ Basketball" pattern="[A-Za-z]+" required="true" value="<%= lst.get(7) %>">
                 <span class="icon is-small is-left">
                   <i class="fas fa-chess-queen"></i>
                 </span>
@@ -176,7 +181,7 @@
             <div class="field">
               <p class="control is-expanded has-icons-left ">
                 <input class="input leader_name" name="team_leader" type="text"
-                  placeholder="Fill in your name if it's a solo participation" pattern="[A-Za-z\s]+" required="true">
+                  placeholder="Fill in your name if it's a solo participation" value="<%= lst.get(8) %>" pattern="[A-Za-z\s]+" required="true">
                 <span class="icon is-small is-left">
                   <i class="fas fa-user"></i>
                 </span>
@@ -193,7 +198,7 @@
           <div class="field-body">
             <div class="field">
               <div class="control">
-                <textarea class="textarea" name="desc" placeholder="Tell us more about the event :) " required="true"></textarea>
+                <textarea class="textarea" name="desc" placeholder="Tell us more about the event :) " required="true">value="<%= lst.get(9) %>"</textarea>
               </div>
             </div>
           </div>
