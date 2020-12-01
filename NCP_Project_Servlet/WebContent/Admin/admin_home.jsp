@@ -66,6 +66,9 @@
 							<div class="column">
 								<span class="has-text-weight-bold has-text-link">Event ID: </span> <%=event.get(0)%>
 							</div>
+							<div class="column">
+								<span class="has-text-weight-bold has-text-link">Participation type: </span> <%=event.get(8)%>
+							</div>
 						</div>
 
 					</div>

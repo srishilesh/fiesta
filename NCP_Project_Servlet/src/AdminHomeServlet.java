@@ -55,7 +55,7 @@ public class AdminHomeServlet extends HttpServlet {
 				cnt_anns += 1;
 			}			
 			
-			String select_events = "select event_id, event_name, event_desc, event_venue, event_max_participants, event_start_datetime, event_end_datetime, event_organizer_college from fiesta.table_event";
+			String select_events = "select event_id, event_name, event_desc, event_venue, event_max_participants, event_start_datetime, event_end_datetime, event_organizer_college, event_type_participation from fiesta.table_event";
 			stmt = con.prepareStatement(select_events);
 			rst = stmt.executeQuery();
 			int cnt_events = 0;
@@ -69,6 +69,12 @@ public class AdminHomeServlet extends HttpServlet {
 				temp.add(rst.getString(6));
 				temp.add(rst.getString(7));
 				temp.add(rst.getString(8));
+				String tmp = rst.getString(9);
+				if (tmp.equals("1"))
+					tmp = "Team";
+				else
+					tmp = "Solo";
+				temp.add(tmp);
 				events.add(temp);
 				cnt_events += 1;
 			}

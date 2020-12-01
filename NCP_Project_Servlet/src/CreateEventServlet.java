@@ -102,7 +102,7 @@ public class CreateEventServlet extends HttpServlet {
 
 		}
 		catch(Exception e) {
-			System.out.println(e);
+			System.out.println("Error during ID trigger: " + e);
 			System.exit(1);
 		}
 		return event_id + 1;
@@ -123,7 +123,11 @@ public class CreateEventServlet extends HttpServlet {
 			PreparedStatement stmt = con.prepareStatement(query);
 			
 			int participationType = Integer.parseInt(eventTypeParticipation);
-			int maxParticipants = Integer.parseInt(eventMaxParticipants);
+			int maxParticipants = 1;
+			if (eventMaxParticipants == null)
+				maxParticipants = 1;
+			else
+				maxParticipants = Integer.parseInt(eventMaxParticipants);
 			
 			stmt.setInt(1, event_id);
 			stmt.setString(2, eventName);
@@ -149,7 +153,7 @@ public class CreateEventServlet extends HttpServlet {
 			con.close();
 		}
 		catch(Exception e) {
-			System.out.println(e);
+			System.out.println("Error during insertion: "+e);
 			System.exit(1);
 		}
 	}

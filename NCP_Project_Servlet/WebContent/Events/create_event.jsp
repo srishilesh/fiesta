@@ -326,12 +326,12 @@
         	document.getElementById('event_max_participants').disabled = false;
         }
   	}
-    function validSubmission() {
+    function validateSubmission() {
       var email = document.getElementById('event_organizer_email').value
       var phone = document.getElementById('event_organizer_phone').value
     	  
       if (validateEmailAddress(email)) {
-        if (validPhone(phone)) {
+        if (validatePhone(phone)) {
         	console.log("Event Created")
           alert("Event Created Successfully!!")
           return true;
