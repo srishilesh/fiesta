@@ -93,7 +93,7 @@
     </div>
   </section>
 
-  <form action="<%= request.getContextPath() %>/addEvent" method="post" onSubmit="return validateSubmission()">
+  <form action="<%= request.getContextPath() %>/addEvent" method="post" onsubmit="return validateSubmission()">
     <div class="container mb-3">
       <div class="field">
         <label class="label">Event Name</label>
@@ -232,7 +232,7 @@
           <div class="field-body">
             <div class="field">
               <div class="control has-icons-left has-icons-right">
-                <input class="input" name="event_organizer_email" type="email" placeholder="Contact Email" multiple
+                <input class="input" name="event_organizer_email" id="event_organizer_email" type="email" placeholder="Contact Email" multiple
                   required>
                 <span class="icon is-small is-left">
                   <i class="fas fa-envelope"></i>
@@ -254,7 +254,7 @@
                   </a>
                 </p>
                 <p class="control is-expanded">
-                  <input class="input" name="event_organizer_phone" type="tel" pattern="[0-9]{10}"
+                  <input class="input" name="event_organizer_phone" id="event_organizer_phone" type="tel" pattern="[0-9]{10}"
                     placeholder="Contact Number" required>
                 </p>
               </div>
@@ -300,7 +300,7 @@
           <!-- <a class="button is-primary">
             Create
           </a> -->
-          <input type="submit" class="button is-primary" value="Create" onclick="validSubmission()">
+          <input type="submit" class="button is-primary" value="Create">
         </p>
         <p class="control">
           <!-- <a class="button is-light">
@@ -327,16 +327,18 @@
         }
   	}
     function validSubmission() {
-      var email = document.getElementsByName('event_organizer_email')
-      var phone = document.getElementsByName('event_organizer_phone')
+      var email = document.getElementById('event_organizer_email').value
+      var phone = document.getElementById('event_organizer_phone').value
     	  
       if (validateEmailAddress(email)) {
         if (validPhone(phone)) {
-          alert('Event Created')
+        	console.log("Event Created")
+          alert("Event Created Successfully!!")
           return true;
         }
       }
       else {
+    	  alert("Cannot create new event!! Retry")
     	  return false;
       }
     }
