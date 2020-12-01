@@ -1,3 +1,4 @@
+<%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -56,6 +57,23 @@
                 <th style="width:40%;">Student ID</th>
                 <th style="width:30%;">Tags</th>
             </tr>
+            <%  
+			ArrayList<ArrayList<String>> listLeads = (ArrayList<ArrayList<String>>) request.getAttribute("search");
+			
+			// print the information about every category of the list
+			for(ArrayList<String> lead : listLeads) {%>
+				<tr>
+		            <td><%=lead.get(1) %></td>
+		            <td><%=lead.get(0) %></td>
+		            <td>
+		                <span class="tag"><%=lead.get(3) %></span>
+		                <span class="tag"><%=lead.get(4) %></span>
+		            </td>
+		        </tr>
+				 
+				 <%
+			}
+			%>
             <tr>
                 <td>Sanjay Tharagesh R S</td>
                 <td>@sanjay</td>
