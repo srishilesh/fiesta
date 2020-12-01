@@ -1,3 +1,4 @@
+<%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -8,6 +9,12 @@
     <title>View All Registrations</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
     <script src="https://use.fontawesome.com/releases/v5.1.0/js/all.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+    <script>
+    $(function(){
+    	  $("#nav-placeholder").load("<%=request.getContextPath()%>/Navbar/adminPageNavbar.jsp");
+    	});
+    </script>
     <script type="text/javascript">
           document.addEventListener('DOMContentLoaded', function() {
         let cardToggles = document.getElementsByClassName('card-toggle');
@@ -58,6 +65,52 @@
 <section class="section" id="events">
   <h4 class="title has-text-centered">Student registrations - Event wise</h4>
   <div class="container">
+  
+  	<%ArrayList<ArrayList<String>> lists = (ArrayList<ArrayList<String>>) request.getAttribute("registrationDetails");%>
+  	<%for(ArrayList<String> list : lists) {%>
+  	<div class="card is-fullwidth">
+      <header class="card-header">
+        <p class="card-header-title">Event #<%= list.get(0) %> - <%= list.get(1) %></p>
+        <a class="card-header-icon card-toggle">
+          <i class="fa fa-angle-down"></i>
+        </a>
+      </header>
+      <div class="card-content is-hidden event_table">
+        <div class="content">
+          
+
+            <div class="table-container">
+                <table class="table">
+                  <thead>
+                    <tr>
+
+                      <th>Event ID</th>
+                      <th>Event Name</th>
+                      <th>Team ID</th>
+                      <th>Registration date time</th>
+                  
+                    </tr>
+                  </thead>
+                  
+                  <tbody> 
+                    <tr>
+
+                      <th><%= list.get(0) %></th>
+                      <td><%= list.get(1) %></td>
+                      <th><%= list.get(2) %></th>
+                      <td><%= list.get(3) %></td>
+                    
+                    </tr>
+
+                  </tbody>
+                </table>
+              </div>
+
+
+        </div>
+      </div>
+    </div>
+  	<%} %>
     <div class="card is-fullwidth">
       <header class="card-header">
         <p class="card-header-title">Event #1 - eventname</p>
