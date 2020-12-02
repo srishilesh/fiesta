@@ -67,7 +67,7 @@
 						<a class="navbar-item" href="<%= request.getContextPath() %>/generateReportInput">
 							Based on Input
 						</a>
-						<a class="navbar-item" href="<%= request.getContextPath() %>/generateReportDuration">
+						<a class="navbar-item" href="<%= request.getContextPath() %>/generateReportDurationForm">
 							Based on Duration
 						</a>
 						

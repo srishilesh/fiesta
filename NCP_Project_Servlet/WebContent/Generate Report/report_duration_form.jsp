@@ -49,44 +49,14 @@
 <body>
 	<div id="nav-placeholder"></div>     
 </body>
-<h1 id="ahe1"> <b>Generate Report Based on Duration</b> </h1>
-
-<br>
-<h2 id="ahe2"> <b>Report Generated</b> </h2>
-<br>
-<table style="width: 70%;">
-    <tr>
-        <th>Event ID</th>
-        <th>Event name</th>
-        <th>Student Name</th>
-        <th>Student's University</th>
-        <th>Game</th>
-         <th>Event ID</th>
-        <th>Event name</th>
-        <th>Student Name</th>
-        <th>Student's University</th>
-    </tr>
-<%  
-			ArrayList<ArrayList<String>> listReport = (ArrayList<ArrayList<String>>) request.getAttribute("report");
-			
-			// print the information about every category of the list
-			for(ArrayList<String> report : listReport) {%>
-				<tr>
-		        <td><%=report.get(0) %></td>
-		        <td><%=report.get(1) %></td>
-		        <td><%=report.get(2) %></td>
-		        <td><%=report.get(3) %></td>
-		        <td><%=report.get(4) %></td>
-		        <td><%=report.get(5) %></td>
-		        <td><%=report.get(6) %></td>
-		        <td><%=report.get(7) %></td>
-		        <td><%=report.get(8) %></td>
-		
-		    </tr>
-			
-				 <%
-			}
-			%>
-			
-</table>
+	<h1 id="ahe1"> <b>Generate Report Based on Duration</b> </h1>
+	<form id="for" action="<%=request.getContextPath()%>/generateReportDuration" method="post">
+	  <label for="entrydate">From:</label>
+	  <input type="date" name="entrydate" id="entrydate">
+	  <label for="closedate">To:</label>
+	  <input type="date" name="closedate" id="closedate">
+	  <br>
+	  <br>
+	  <button class="button is-success">Generate Report</button>
+	</form>
 </html>
