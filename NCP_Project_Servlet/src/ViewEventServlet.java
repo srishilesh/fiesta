@@ -41,41 +41,57 @@ public class ViewEventServlet extends HttpServlet {
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			Connection con = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/sys","root","root");
-			String select_eventDetails = "select * from fiesta.table_event where event_id=?";
 			
-			PreparedStatement stmt = con.prepareStatement(select_eventDetails);
-			stmt.setInt(1, event_id); 
+			//check if winners are available for the event
+			PreparedStatement stmt = con.prepareStatement("select count(event_id) from fiesta.table_event_winners where event_id=?;");
+			stmt.setInt(1, event_id);
 			ResultSet rst = stmt.executeQuery();
-			int cnt_eventDetails = 0;
-			while (rst.next()) {
-				eventDetails.add(rst.getInt(1)+"");
-				eventDetails.add(rst.getString(2));
-				eventDetails.add(rst.getString(3));
-				eventDetails.add(rst.getString(4));
-				eventDetails.add(rst.getInt(5)+"");
-				eventDetails.add(rst.getString(6));
-				eventDetails.add(rst.getInt(7)+"");
-				eventDetails.add(rst.getString(8));
-				eventDetails.add(rst.getString(9));
-				eventDetails.add(rst.getString(10));
-				eventDetails.add(rst.getString(11));
-				eventDetails.add(rst.getString(12));
-				eventDetails.add(rst.getString(13));
-				eventDetails.add(rst.getString(15));
-				eventDetails.add(rst.getString(16));
-				eventDetails.add(rst.getString(17));
-				eventDetails.add(rst.getString(18));
-				cnt_eventDetails += 1;
-			}					
+			int cnt;
+			System.out.println(rst);
+			if(!rst.next()) {
+				cnt = rst.getInt(1);
+			}
+			if(rst.getInt(1) > 0) {
+				request.setAttribute("event_id", event_id);
+				request.getRequestDispatcher("/viewEventWinners").forward(request, response);					
+			}
+			else {
+				String select_eventDetails = "select * from fiesta.table_event where event_id=?";
+				stmt = con.prepareStatement(select_eventDetails);
+				stmt.setInt(1, event_id); 
+				rst = stmt.executeQuery();
+				int cnt_eventDetails = 0;
+				while (rst.next()) {
+					eventDetails.add(rst.getInt(1)+"");
+					eventDetails.add(rst.getString(2));
+					eventDetails.add(rst.getString(3));
+					eventDetails.add(rst.getString(4));
+					eventDetails.add(rst.getInt(5)+"");
+					eventDetails.add(rst.getString(6));
+					eventDetails.add(rst.getInt(7)+"");
+					eventDetails.add(rst.getString(8));
+					eventDetails.add(rst.getString(9));
+					eventDetails.add(rst.getString(10));
+					eventDetails.add(rst.getString(11));
+					eventDetails.add(rst.getString(12));
+					eventDetails.add(rst.getString(13));
+					eventDetails.add(rst.getString(15));
+					eventDetails.add(rst.getString(16));
+					eventDetails.add(rst.getString(17));
+					eventDetails.add(rst.getString(18));
+					cnt_eventDetails += 1;
+				}					
+				System.out.println(eventDetails);
+				request.setAttribute("eventDetails", eventDetails);
+				request.getRequestDispatcher("Events/view_event.jsp").forward(request, response); 
+			}
+			
+			
 		}
 		catch(Exception e) {
 			System.out.println(e);
 			System.exit(1);
 		}
-		System.out.println(eventDetails);
-		request.setAttribute("eventDetails", eventDetails);
-		request.getRequestDispatcher("Events/view_event.jsp").forward(request, response); 
-
 //		response.sendRedirect("Events/view_event.jsp");
 	}
 
