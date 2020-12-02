@@ -45,9 +45,10 @@ public class AddAchievementsServlet extends HttpServlet {
 			PreparedStatement stmt = con.prepareStatement(query);
 			stmt.setInt(1, student_id);
 			rst = stmt.executeQuery();
-			System.out.println("Queried Contact Details successfully!");
-			System.out.println(rst);
-			if (rst == null) {
+			System.out.println("Queried Achievement Details successfully!");
+//			System.out.println(rst);
+
+			if (rst.next() == false) {
 				System.out.println("Inside loop");
 				for (int i = 0; i < 10; i ++) {
 					achievementDetails.add("");
@@ -55,52 +56,53 @@ public class AddAchievementsServlet extends HttpServlet {
 				System.out.println(achievementDetails);
 			}
 			else {
-			while(rst.next()) {
-				if ((rst.getInt(1)+"").equals(""))
-					achievementDetails.add("");
-				else
-					achievementDetails.add(rst.getInt(1)+"");
-				if (rst.getString(2).equals(""))
-					achievementDetails.add("");
-				else
-					achievementDetails.add(rst.getString(2));
-				if (rst.getString(3).equals(""))
-					achievementDetails.add("");
-				else
-					achievementDetails.add(rst.getString(3));
-				if (rst.getString(4).equals(""))
-					achievementDetails.add("");
-				else
-					achievementDetails.add(rst.getString(4));
-				if (rst.getString(5).equals(""))
-					achievementDetails.add("");
-				else
-					achievementDetails.add(rst.getString(5));
-				if (rst.getString(6).equals(""))
-					achievementDetails.add("");
-				else
-					achievementDetails.add(rst.getString(6));
-				if (rst.getString(2).equals(""))
-					achievementDetails.add("");
-				else
-					achievementDetails.add(rst.getString(2));
-				if (rst.getString(7).equals(""))
-					achievementDetails.add("");
-				else
-					achievementDetails.add(rst.getString(7));
-				if (rst.getString(8).equals(""))
-					achievementDetails.add("");
-				else
-					achievementDetails.add(rst.getString(8));
-				if (rst.getString(9).equals(""))
-					achievementDetails.add("");
-				else
-					achievementDetails.add(rst.getString(9));
-				if (rst.getString(10).equals(""))
-					achievementDetails.add("");
-				else
-					achievementDetails.add(rst.getString(10));
-			}
+				
+//				while(rst.next()) {
+					if ((rst.getInt(1)+"").equals(""))
+						achievementDetails.add("");
+					else
+						achievementDetails.add(rst.getInt(1)+"");
+					if (rst.getString(2).equals(""))
+						achievementDetails.add("");
+					else
+						achievementDetails.add(rst.getString(2));
+					if (rst.getString(3).equals(""))
+						achievementDetails.add("");
+					else
+						achievementDetails.add(rst.getString(3));
+					if (rst.getString(4).equals(""))
+						achievementDetails.add("");
+					else
+						achievementDetails.add(rst.getString(4));
+					if (rst.getString(5).equals(""))
+						achievementDetails.add("");
+					else
+						achievementDetails.add(rst.getString(5));
+					if (rst.getString(6).equals(""))
+						achievementDetails.add("");
+					else
+						achievementDetails.add(rst.getString(6));
+					if (rst.getString(2).equals(""))
+						achievementDetails.add("");
+					else
+						achievementDetails.add(rst.getString(2));
+					if (rst.getString(7).equals(""))
+						achievementDetails.add("");
+					else
+						achievementDetails.add(rst.getString(7));
+					if (rst.getString(8).equals(""))
+						achievementDetails.add("");
+					else
+						achievementDetails.add(rst.getString(8));
+					if (rst.getString(9).equals(""))
+						achievementDetails.add("");
+					else
+						achievementDetails.add(rst.getString(9));
+					if (rst.getString(10).equals(""))
+						achievementDetails.add("");
+					else
+						achievementDetails.add(rst.getString(10));
+//				}
 			}
 			con.close();
 		}
