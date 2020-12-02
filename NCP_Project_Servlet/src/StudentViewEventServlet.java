@@ -41,7 +41,7 @@ public class StudentViewEventServlet extends HttpServlet {
 		ArrayList<String> eventDetails = new ArrayList<String>();
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			Connection con = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/sys","root","root");
+			Connection con = DriverManager.getConnection("jdbc:mysql://database-1.c4hq5iosxryf.us-east-1.rds.amazonaws.com/fiesta","admin","nithin_aakash");
 			
 			//check if winners are available for the event
 			PreparedStatement stmt = con.prepareStatement("select count(event_id) from fiesta.table_event_winners where event_id=?;");

@@ -76,9 +76,9 @@ public class StudentTeamRegistrationServlet extends HttpServlet {
 		
 		try {  
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			String path_to_db = "jdbc:mysql://localhost:3306/fiesta";
-			String username = "root";
-			String password = "root";
+			String path_to_db = "jdbc:mysql://database-1.c4hq5iosxryf.us-east-1.rds.amazonaws.com/fiesta";
+			String username = "admin";
+			String password = "nithin_aakash";
 			Connection con = DriverManager.getConnection(path_to_db, username, password);
 			
 			PreparedStatement stmt = con.prepareStatement("INSERT INTO fiesta.table_event_registrations VALUES(?,?,?)");
@@ -116,7 +116,7 @@ public class StudentTeamRegistrationServlet extends HttpServlet {
 		int team_id = 0;
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			Connection con = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/sys","root","root");
+			Connection con = DriverManager.getConnection("jdbc:mysql://database-1.c4hq5iosxryf.us-east-1.rds.amazonaws.com/fiesta","admin","nithin_aakash");
 			
 			String select_team_id = "SELECT team_id FROM fiesta.table_id_counter_new WHERE id='1'";
 			PreparedStatement stmt = con.prepareStatement(select_team_id);

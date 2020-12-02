@@ -42,7 +42,7 @@ public class ViewEventWinnersServlet extends HttpServlet {
 		
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			Connection con = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/sys","root","root");
+			Connection con = DriverManager.getConnection("jdbc:mysql://database-1.c4hq5iosxryf.us-east-1.rds.amazonaws.com/fiesta","admin","nithin_aakash");
 			String select_winners = "select distinct t.team_id , team_name, event_id, position \r\n" + 
 					"from fiesta.table_team_details t inner join fiesta.table_event_winners w on t.team_id = w.team_id \r\n" + 
 					"where w.event_id=? \r\n" + 

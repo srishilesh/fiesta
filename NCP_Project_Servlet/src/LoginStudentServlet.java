@@ -69,7 +69,7 @@ public class LoginStudentServlet extends HttpServlet {
 		String pass = "";
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			Connection con = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/sys","root","root");
+			Connection con = DriverManager.getConnection("jdbc:mysql://database-1.c4hq5iosxryf.us-east-1.rds.amazonaws.com/fiesta","admin","nithin_aakash");
 			
 			String select_student_id = "SELECT student_id, student_password FROM fiesta.table_student_registration WHERE student_email=?";
 			PreparedStatement stmt = con.prepareStatement(select_student_id);

@@ -39,7 +39,7 @@ public class AdminLeaderboardServlet extends HttpServlet {
 		ArrayList<ArrayList<String>> leads = new ArrayList<ArrayList<String>>();
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			Connection con = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/sys","root","root");
+			Connection con = DriverManager.getConnection("jdbc:mysql://database-1.c4hq5iosxryf.us-east-1.rds.amazonaws.com/fiesta","admin","nithin_aakash");
 			String select_leads = "select r.student_id, student_name, student_score, student_skill1, student_skill2\r\n" + 
 					"from fiesta.table_student_registration r inner join fiesta.table_student_scores s on r.student_id = s.student_id\r\n" + 
 					"inner join fiesta.table_student_profile_personal pp on pp.student_id = r.student_id;";

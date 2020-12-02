@@ -37,9 +37,9 @@ public class AddAnnouncement extends HttpServlet {
 		
 		try {  
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			String path_to_db = "jdbc:mysql://localhost:3306/fiesta";
-			String username = "root";
-			String password = "root";
+			String path_to_db = "jdbc:mysql://database-1.c4hq5iosxryf.us-east-1.rds.amazonaws.com/fiesta";
+			String username = "admin";
+			String password = "nithin_aakash";
 			Connection con = DriverManager.getConnection(path_to_db, username, password);
 			
 			ArrayList<String> event_ids = new ArrayList<String>();
@@ -73,9 +73,9 @@ public class AddAnnouncement extends HttpServlet {
 		System.out.println(title);
 		try {  
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			String path_to_db = "jdbc:mysql://localhost:3306/fiesta";
-			String username = "root";
-			String password = "root";
+			String path_to_db = "jdbc:mysql://database-1.c4hq5iosxryf.us-east-1.rds.amazonaws.com/fiesta";
+			String username = "admin";
+			String password = "nithin_aakash";
 			Connection con = DriverManager.getConnection(path_to_db, username, password);
 			
 			PreparedStatement stmt = con.prepareStatement("INSERT INTO  table_announcement VALUES(?,?,?,?)");
@@ -102,7 +102,7 @@ public class AddAnnouncement extends HttpServlet {
 		int announcement_id = 0;
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			Connection con = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/sys","root","root");
+			Connection con = DriverManager.getConnection("jdbc:mysql://database-1.c4hq5iosxryf.us-east-1.rds.amazonaws.com/fiesta","admin","nithin_aakash");
 			
 			String select_announcement_id = "SELECT announcement_id FROM fiesta.table_id_counter_new WHERE id='1'";
 			PreparedStatement stmt = con.prepareStatement(select_announcement_id);

@@ -63,9 +63,9 @@ public class ContactUsServlet extends HttpServlet {
 		int contact_id = 0;
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			String path_to_db = "jdbc:mysql://localhost:3306/fiesta";
-			String username = "root";
-			String password = "root";
+			String path_to_db = "jdbc:mysql://database-1.c4hq5iosxryf.us-east-1.rds.amazonaws.com/fiesta";
+			String username = "admin";
+			String password = "nithin_aakash";
 			Connection con = DriverManager.getConnection(path_to_db, username, password);
 			
 			String select_contact_id = "SELECT contact_id FROM table_id_counter_new WHERE id='1'";
@@ -94,9 +94,9 @@ public class ContactUsServlet extends HttpServlet {
 	public static void insertIntoDatabase(int contact_id, String contactName, String contactEmail, String contactPhone, String contactMessage) {
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			String path_to_db = "jdbc:mysql://localhost:3306/fiesta";
-			String username = "root";
-			String password = "root";
+			String path_to_db = "jdbc:mysql://database-1.c4hq5iosxryf.us-east-1.rds.amazonaws.com/fiesta";
+			String username = "admin";
+			String password = "nithin_aakash";
 			Connection con = DriverManager.getConnection(path_to_db, username, password);
 					
 			String query = "insert into table_contactus values (?,?,?,?,?)";

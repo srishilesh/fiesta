@@ -40,7 +40,7 @@ public class AdminHomeServlet extends HttpServlet {
 		ArrayList<ArrayList<String>> events = new ArrayList<ArrayList<String>>();
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			Connection con = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/sys","root","root");
+			Connection con = DriverManager.getConnection("jdbc:mysql://database-1.c4hq5iosxryf.us-east-1.rds.amazonaws.com/fiesta","admin","nithin_aakash");
 			String select_announcements = "select * from fiesta.table_announcement";
 			PreparedStatement stmt = con.prepareStatement(select_announcements);
 			ResultSet rst = stmt.executeQuery();

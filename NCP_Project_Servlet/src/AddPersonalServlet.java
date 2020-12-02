@@ -40,7 +40,7 @@ public class AddPersonalServlet extends HttpServlet {
 		ArrayList<String> personalDetails = new ArrayList<String>();
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			Connection con = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/sys","root","root");				
+			Connection con = DriverManager.getConnection("jdbc:mysql://database-1.c4hq5iosxryf.us-east-1.rds.amazonaws.com/fiesta","admin","nithin_aakash");				
 			String query = "select * from fiesta.table_student_profile_personal where student_id=?";
 			PreparedStatement stmt = con.prepareStatement(query);
 			stmt.setInt(1, student_id);
@@ -137,7 +137,7 @@ public class AddPersonalServlet extends HttpServlet {
 		
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			Connection con = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/sys","root","root");
+			Connection con = DriverManager.getConnection("jdbc:mysql://database-1.c4hq5iosxryf.us-east-1.rds.amazonaws.com/fiesta","admin","nithin_aakash");
 			String query = "DELETE from fiesta.table_student_profile_personal where student_id=?";
 			PreparedStatement stmt = con.prepareStatement(query);		
 			stmt.setInt(1, student_id);
@@ -187,7 +187,7 @@ public class AddPersonalServlet extends HttpServlet {
 			String address, String aboutme) {
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			Connection con = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/sys","root","root");
+			Connection con = DriverManager.getConnection("jdbc:mysql://database-1.c4hq5iosxryf.us-east-1.rds.amazonaws.com/fiesta","admin","nithin_aakash");
 			
 			System.out.println("-------------- STUDENT - ADD PERSONAL DETAILS -------------------"); 
 					

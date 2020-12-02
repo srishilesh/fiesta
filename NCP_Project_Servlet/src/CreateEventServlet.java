@@ -83,7 +83,7 @@ public class CreateEventServlet extends HttpServlet {
 		int event_id = 0;
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			Connection con = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/sys","root","root");
+			Connection con = DriverManager.getConnection("jdbc:mysql://database-1.c4hq5iosxryf.us-east-1.rds.amazonaws.com/fiesta","admin","nithin_aakash");
 			
 			String select_event_id = "SELECT event_id FROM fiesta.table_id_counter_new WHERE id='1'";
 			PreparedStatement stmt = con.prepareStatement(select_event_id);
@@ -115,7 +115,7 @@ public class CreateEventServlet extends HttpServlet {
 			String organizerPhone, String organizerDetails) {
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			Connection con = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/sys","root","root");
+			Connection con = DriverManager.getConnection("jdbc:mysql://database-1.c4hq5iosxryf.us-east-1.rds.amazonaws.com/fiesta","admin","nithin_aakash");
 			
 			System.out.println("-------------- ADMIN - CREATE EVENT -------------------"); 
 					

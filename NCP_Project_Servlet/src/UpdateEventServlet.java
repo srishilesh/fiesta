@@ -40,9 +40,9 @@ public class UpdateEventServlet extends HttpServlet {
 		System.out.println("Inside Update Event - GET | Event ID: " + eventID);
 		try {  
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			String path_to_db = "jdbc:mysql://localhost:3306/fiesta";
-			String username = "root";
-			String password = "root";
+			String path_to_db = "jdbc:mysql://database-1.c4hq5iosxryf.us-east-1.rds.amazonaws.com/fiesta";
+			String username = "admin";
+			String password = "nithin_aakash";
 			Connection con = DriverManager.getConnection(path_to_db, username, password);
 			
 			ArrayList<String> eventDetails = new ArrayList<String>();
@@ -110,7 +110,7 @@ public class UpdateEventServlet extends HttpServlet {
 			
 			try {
 				Class.forName("com.mysql.cj.jdbc.Driver");
-				Connection con = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/sys","root","root");
+				Connection con = DriverManager.getConnection("jdbc:mysql://database-1.c4hq5iosxryf.us-east-1.rds.amazonaws.com/fiesta","admin","nithin_aakash");
 				String query = "delete from fiesta.table_event where event_id=?";
 				PreparedStatement stmt = con.prepareStatement(query);		
 				stmt.setInt(1, Integer.parseInt(eventID));
@@ -143,7 +143,7 @@ public class UpdateEventServlet extends HttpServlet {
 			String organizerPhone, String organizerDetails) {
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			Connection con = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/sys","root","root");
+			Connection con = DriverManager.getConnection("jdbc:mysql://database-1.c4hq5iosxryf.us-east-1.rds.amazonaws.com/fiesta","admin","nithin_aakash");
 			
 			System.out.println("-------------- ADMIN - CREATE EVENT -------------------"); 
 					

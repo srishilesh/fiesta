@@ -54,9 +54,9 @@ public class UpdateWinners extends HttpServlet {
 		}
 		try {  
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			String path_to_db = "jdbc:mysql://localhost:3306/fiesta";
-			String username = "root";
-			String password = "root";
+			String path_to_db = "jdbc:mysql://database-1.c4hq5iosxryf.us-east-1.rds.amazonaws.com/fiesta";
+			String username = "admin";
+			String password = "nithin_aakash";
 			Connection con = DriverManager.getConnection(path_to_db, username, password);
 			for(int i=0; i<count; i++) {
 				PreparedStatement stmt = con.prepareStatement("INSERT INTO  table_event_winners VALUES(?,?,?)");

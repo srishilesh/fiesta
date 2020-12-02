@@ -37,9 +37,9 @@ public class AdminViewAllStudentsServlet extends HttpServlet {
 		
 		try {  
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			String path_to_db = "jdbc:mysql://localhost:3306/fiesta";
-			String username = "root";
-			String password = "root";
+			String path_to_db = "jdbc:mysql://database-1.c4hq5iosxryf.us-east-1.rds.amazonaws.com/fiesta";
+			String username = "admin";
+			String password = "nithin_aakash";
 			Connection con = DriverManager.getConnection(path_to_db, username, password);
 			
 			ArrayList<ArrayList<String>> registrationDetails = new ArrayList<ArrayList<String>>();

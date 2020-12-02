@@ -40,7 +40,7 @@ public class AddContactServlet extends HttpServlet {
 		ArrayList<String> contactDetails = new ArrayList<String>();
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			Connection con = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/sys","root","root");				
+			Connection con = DriverManager.getConnection("jdbc:mysql://database-1.c4hq5iosxryf.us-east-1.rds.amazonaws.com/fiesta","admin","nithin_aakash");				
 			String query = "select * from fiesta.table_student_profile_contact where student_id=?";
 			PreparedStatement stmt = con.prepareStatement(query);
 			stmt.setInt(1, student_id);
@@ -101,7 +101,7 @@ public class AddContactServlet extends HttpServlet {
 		
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			Connection con = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/sys","root","root");
+			Connection con = DriverManager.getConnection("jdbc:mysql://database-1.c4hq5iosxryf.us-east-1.rds.amazonaws.com/fiesta","admin","nithin_aakash");
 			String query = "delete from fiesta.table_student_profile_contact where student_id=?";
 			PreparedStatement stmt = con.prepareStatement(query);		
 			stmt.setInt(1, student_id);
@@ -147,7 +147,7 @@ public class AddContactServlet extends HttpServlet {
 	public static void insertIntoDatabase(int student_id, String email, String phone, String media1, String media2) {
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			Connection con = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/sys","root","root");
+			Connection con = DriverManager.getConnection("jdbc:mysql://database-1.c4hq5iosxryf.us-east-1.rds.amazonaws.com/fiesta","admin","nithin_aakash");
 			
 			System.out.println("-------------- STUDENT - ADD CONTACT DETAILS -------------------"); 
 					
