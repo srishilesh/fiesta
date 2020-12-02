@@ -297,16 +297,12 @@
 
       <div class="field is-grouped is-grouped-centered">
         <p class="control">
-          <!-- <a class="button is-primary">
-            Create
-          </a> -->
-          <input type="submit" class="button is-primary" value="Create">
+          <div class="field">
+            <input class="button is-fullwidth is-rounded is-success" type="submit" value="Submit"></input>
+          </div>
         </p>
         <p class="control">
-          <!-- <a class="button is-light">
-            Reset
-          </a> -->
-          <input type="reset" class="button is-light" value="Reset">
+          <input type="reset" class="button is-light is-fullwidth is-rounded is-success" value="Reset">
         </p>
       </div>
     </div>
@@ -327,22 +323,45 @@
         }
   	}
     function validateSubmission() {
-      var email = document.getElementById('event_organizer_email').value
-      var phone = document.getElementById('event_organizer_phone').value
+      var email = document.getElementById('event_organizer_email')
+      var phone = document.getElementById('event_organizer_phone')
+      var startdt = document.getElementById('start_date_time').value
+      var enddt = document.getElementById('end_date_time').value
     	  
       if (validateEmailAddress(email)) {
+    	  console.log("Email validated")
         if (validatePhone(phone)) {
-        	console.log("Event Created")
-          alert("Event Created Successfully!!")
-          return true;
+        	console.log("Phone validated")
+        	if (validateDate(startdt, enddt)) {
+        		console.log("Date validated")
+        		console.log("Event Created")
+                alert("Event Created Successfully!!")
+        	}
+        	else {
+          	  alert("Cannot create new event!! Retry")
+          	  return false
+            }
         }
+        else {
+      	  alert("Cannot create new event!! Retry")
+      	  return false
+        }
+    	
       }
       else {
     	  alert("Cannot create new event!! Retry")
-    	  return false;
+    	  return false
       }
     }
-
+	function validateDate(datetimeStart, datetimeEnd) {
+		if(Date.parse(datetimeStart) < Date.parse(datetimeEnd)){
+			return true
+			}else{
+			   alert("End datetime is greater than Start datetime")
+			   return false
+			}
+		return true
+	}
     function validateEmailAddress(email) {
       var re =
         /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
