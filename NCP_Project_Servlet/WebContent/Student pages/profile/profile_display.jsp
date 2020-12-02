@@ -1,3 +1,4 @@
+<%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -10,8 +11,13 @@
     <script src="https://use.fontawesome.com/releases/v5.1.0/js/all.js"></script>
     <link rel="stylesheet" href="style.css">
       <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
-  <script src="../../js/studentPageNavbar.js"></script>
+  <script>
+  $(function(){
+  	  $("#nav-placeholder").load("<%=request.getContextPath()%>/Navbar/studentPageNavbar.jsp");
+  	});
+  </script>
 </head>	
+
 <body>
   <div id="nav-placeholder"></div>
   <section class="hero is-info is-primary">
@@ -25,16 +31,15 @@
     </section>
     <div class="box cta is-light">
       <p class="has-text-centered">
-        This Is the public Profile Page.
+        This is a Public Profile Page.
       </p>
     </div>
+    <%ArrayList<String> lst = (ArrayList<String>) request.getAttribute("profile");%>
     <section class="container" id="about">
     <div class="has-background-info-light box cta section-heading">
-      <h3 class="title is-3">About Michael Phelps</h3>
-      <h4 class="subtitle is-5">Most decorated Olympian of all time, with a total of 28 medals.</h4>
+      <h3 class="title is-3">About <%= lst.get(0) %></h3>
       <div class="has-background-white-bis container box">
-        <h5 class="subtitle is-6">Short Info:</h5>
-        <p class="container has-text-centered">Michael Fred Phelps <strong>(born June 30, 1985)</strong>is an American former competitive swimmer and the most <strong>successful and most decorated Olympian</strong> of all time, with a total of <strong>28 medals</strong>. Phelps also holds the all-time records for <strong>[23 Olympic gold medals]</strong></p>
+        <p class="container has-text-centered"><%= lst.get(1) %></p>
       </div>
     </div>
 
@@ -51,16 +56,16 @@
                   <th colspan="2"></th>
                 </tr>
                 <tr>
-                  <td>Address:</td>
-                  <td>Michael Phelps Foundation, 7 Ocean Street, 2nd Floor, South Portland Maine 04106</td>
+                  <td><strong>Address:</strong></td>
+                  <td><%= lst.get(2) %></td>
                 </tr>
                 <tr>
-                  <td>Phone:</td>
-                  <td>+1 972 385 1021</td>
+                  <td><strong>Phone:</strong></td>
+                  <td><%= lst.get(8) %></td>
                 </tr>
                 <tr>
-                  <td>Email:</td>
-                  <td>@michaelphelpsfoundation.org</td>
+                  <td><strong>Email:</strong></td>
+                  <td><%= lst.get(7) %></td>
                 </tr>
               </table>
             </div>
@@ -87,9 +92,9 @@
                 <div class="media-content">
                   <div class="content">
                     <p>
-                      <strong>Swimming:</strong>
+                      <strong><%= lst.get(3) %></strong>
                       <br>
-                      <progress class="progress is-primary" value="100" max="100"></progress>
+                      <progress class="progress is-primary" value="<%= lst.get(5) %>" max="5"></progress>
                     </p>
                   </div>
                 </div>
@@ -98,20 +103,9 @@
                 <div class="media-content">
                   <div class="content">
                     <p>
-                      <strong>Golf:</strong>
+                      <strong><%= lst.get(4) %></strong>
                       <br>
-                      <progress class="progress is-primary" value="70" max="100"></progress>
-                    </p>
-                  </div>
-                </div>
-              </article>
-              <article class="media">
-                <div class="media-content">
-                  <div class="content">
-                    <p>
-                      <strong>Diving:</strong>
-                      <br>
-                      <progress class="progress is-primary" value="55" max="100"></progress>
+                      <progress class="progress is-primary" value="<%= lst.get(6) %>" max="5"></progress>
                     </p>
                   </div>
                 </div>
@@ -124,26 +118,19 @@
   </section>
   <section class="has-background-info-light container section" id="about">
     <div class="box section-heading">
-      <h3 class="title is-3">Previous Achievements:</h3>
+      <h3 class="title is-3">Top Achievement</h3>
     </div>
     <div class="container">
       <div class="columns">
         <div class="column">
           <div class="box">
             <div class="content">
-              <h4 class="title is-5">Achievement 1</h4>
-              Enter Details.
+              <h4 class="title is-5"><%= lst.get(9) %></h4>
+              <%= lst.get(10) %>
             </div>
           </div>
         </div>
-        <div class="column">
-          <div class="box">
-            <div class="content">
-              <h4 class="title is-5">Achievement 2</h4>
-              Enter Details.
-              </div>
-          </div>
-        </div>
+        
       </div>
 </body>
 </html>
