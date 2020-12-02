@@ -47,19 +47,62 @@ public class AddPersonalServlet extends HttpServlet {
 			rst = stmt.executeQuery();
 			System.out.println("Queried Personal Details successfully!");
 			
-			while(rst.next()) {
-				personalDetails.add(rst.getInt(1)+"");
-				personalDetails.add(rst.getString(2));
-				personalDetails.add(rst.getString(3));
-				personalDetails.add(rst.getString(4));
-				personalDetails.add(rst.getString(5));
-				personalDetails.add(rst.getString(6));
-				personalDetails.add(rst.getString(7));
-				personalDetails.add(rst.getString(8));
-				personalDetails.add(rst.getString(9));
-				personalDetails.add(rst.getString(10));
-				personalDetails.add(rst.getString(11));
-				personalDetails.add(rst.getString(12));
+			if (rst.next() == false) {
+				System.out.println("Inside loop");
+				for (int i = 0; i < 12; i ++) {
+					personalDetails.add("");
+				}
+				System.out.println(personalDetails);
+			}
+			else {
+				if ((rst.getInt(1)+"").equals(""))
+					personalDetails.add("");
+				else
+					personalDetails.add(rst.getInt(1)+"");
+				if (rst.getString(2).equals(""))
+					personalDetails.add("");
+				else
+					personalDetails.add(rst.getString(2));
+				if (rst.getString(3).equals(""))
+					personalDetails.add("");
+				else
+					personalDetails.add(rst.getString(3));
+				if (rst.getString(4).equals(""))
+					personalDetails.add("");
+				else
+					personalDetails.add(rst.getString(4));
+				if (rst.getString(5).equals(""))
+					personalDetails.add("");
+				else
+					personalDetails.add(rst.getString(5));
+				if (rst.getString(6).equals(""))
+					personalDetails.add("");
+				else
+					personalDetails.add(rst.getString(6));
+				if (rst.getString(7).equals(""))
+					personalDetails.add("");
+				else
+					personalDetails.add(rst.getString(7));
+				if (rst.getString(8).equals(""))
+					personalDetails.add("");
+				else
+					personalDetails.add(rst.getString(8));
+				if (rst.getString(9).equals(""))
+					personalDetails.add("");
+				else
+					personalDetails.add(rst.getString(9));
+				if (rst.getString(10).equals(""))
+					personalDetails.add("");
+				else
+					personalDetails.add(rst.getString(10));
+				if (rst.getString(10).equals(""))
+					personalDetails.add("");
+				else
+					personalDetails.add(rst.getString(11));
+				if (rst.getString(10).equals(""))
+					personalDetails.add("");
+				else
+					personalDetails.add(rst.getString(12));
 			}
 			con.close();
 		}

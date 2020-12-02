@@ -47,12 +47,34 @@ public class AddContactServlet extends HttpServlet {
 			rst = stmt.executeQuery();
 			System.out.println("Queried Contact Details successfully!");
 			
-			while(rst.next()) {
-				contactDetails.add(rst.getInt(1)+"");
-				contactDetails.add(rst.getString(2));
-				contactDetails.add(rst.getString(3));
-				contactDetails.add(rst.getString(4));
-				contactDetails.add(rst.getString(5));
+			if (rst.next() == false) {
+				System.out.println("Inside loop");
+				for (int i = 0; i < 5; i ++) {
+					contactDetails.add("");
+				}
+				System.out.println(contactDetails);
+			}
+			else {
+				if ((rst.getInt(1)+"").equals(""))
+					contactDetails.add("");
+				else
+					contactDetails.add(rst.getInt(1)+"");
+				if (rst.getString(2).equals(""))
+					contactDetails.add("");
+				else
+					contactDetails.add(rst.getString(2));
+				if (rst.getString(3).equals(""))
+					contactDetails.add("");
+				else
+					contactDetails.add(rst.getString(3));
+				if (rst.getString(4).equals(""))
+					contactDetails.add("");
+				else
+					contactDetails.add(rst.getString(4));
+				if (rst.getString(5).equals(""))
+					contactDetails.add("");
+				else
+					contactDetails.add(rst.getString(5));
 			}
 			con.close();
 		}

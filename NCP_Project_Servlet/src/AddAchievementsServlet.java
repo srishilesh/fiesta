@@ -82,10 +82,6 @@ public class AddAchievementsServlet extends HttpServlet {
 						achievementDetails.add("");
 					else
 						achievementDetails.add(rst.getString(6));
-					if (rst.getString(2).equals(""))
-						achievementDetails.add("");
-					else
-						achievementDetails.add(rst.getString(2));
 					if (rst.getString(7).equals(""))
 						achievementDetails.add("");
 					else

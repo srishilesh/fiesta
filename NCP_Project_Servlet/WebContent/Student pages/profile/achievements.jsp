@@ -198,7 +198,7 @@
           <div class="field-body">
             <div class="field">
               <div class="control">
-                <textarea class="textarea" name="desc" placeholder="Tell us more about the event :) " required="true">value="<%= lst.get(9) %>"</textarea>
+                <textarea class="textarea" name="desc" placeholder="Tell us more about the event :) " required="true"><%= lst.get(9) %></textarea>
               </div>
             </div>
           </div>
