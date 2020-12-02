@@ -64,7 +64,7 @@
 
 					<div class="navbar-dropdown">
 						
-						<a class="navbar-item" href="<%= request.getContextPath() %>/generateReportInput">
+						<a class="navbar-item" href="<%= request.getContextPath() %>/generateReportInputForm">
 							Based on Input
 						</a>
 						<a class="navbar-item" href="<%= request.getContextPath() %>/generateReportDurationForm">

@@ -58,13 +58,13 @@
     <tr>
         <th>Event ID</th>
         <th>Event name</th>
-        <th>Student Name</th>
-        <th>Student's University</th>
-        <th>Game</th>
-         <th>Event ID</th>
-        <th>Event name</th>
-        <th>Student Name</th>
-        <th>Student's University</th>
+        <th>Event Description</th>
+        <th>Event Organizing University</th>
+        <th>Event Location</th>
+         <th>Event Organizer Email</th>
+        <th>Event Organizer Phone</th>
+        <th>Start Date</th>
+        <th>End Date</th>
     </tr>
 <%  
 			ArrayList<ArrayList<String>> listReport = (ArrayList<ArrayList<String>>) request.getAttribute("report");

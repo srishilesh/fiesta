@@ -1,3 +1,4 @@
+<%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -8,10 +9,14 @@
     <title>Report Generation - Input</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
-  	<script src="../js/adminPageNavbar.js"></script>
+  	<script>$(function(){
+  	  $("#nav-placeholder").load("<%=request.getContextPath()%>/Navbar/adminPageNavbar.jsp");
+  	});</script>
 
   </head>
   <style>
+  body {
+  overflow-x: auto;}
     .for {
         background-color: rgba(0, 0, 0, 0.3) !important;
         font-size: 100% !important;
@@ -58,7 +63,7 @@
     }
     table{
         border: 1px solid black;
-        margin-left: 15%;
+        
     }
     table, th, td {
      border: 1px solid black;
@@ -76,74 +81,81 @@
   <body>
     <div id="nav-placeholder"></div>
         <h1 id="ahe1"> <b>Generating report based on Input</b> </h1>
-        <br>
-          <form class="for">
-            
-            <br>
-              <label for="inputop">Select Input:</label>
-            <select name="inputop" id="inputop">
-                <option value="audi">----Select input----</option>
-                <option value="student_name">Student name</option>
-                <option value="game">Game</option>
-                <option value="university">University</option>
-                <option value="university">Event ID</option>
-
-              </select>
-              <br>
-              <label for="inp">Input:</label>
-              <input type="text" name="inp" id="inp" placeholder="Enter the input">
-              <br>
-              <br>
-              <button class="button is-success">Generate Report</button>                        
-           </form>
-           <br>
+        
            <h2 id="ahe2"> <b>Report Generated</b> </h2>
            <br>
+           
            <table style="width: 70%;">
-               <tr>
-                   <th>Event ID</th>
-                   <th>Event name</th>
-                   <th>Student Name</th>
-                   <th>Student's University</th>
-                   <th>Game</th>
-               </tr>
-               <tr>
-                   <td>101</td>
-                   <td>Inter Campus Championship</td>
-                   <td>Ram</td>
-                   <td>PSG</td>
-                   <td>Football</td>
-
-               </tr>
-               <tr>
-                <td>102</td>
-                <td>State Level</td>
-                <td>Jose</td>
-                <td>Sri Krishna</td>
-                <td>Basket Ball</td>
-
-            </tr>
-            <tr>
-                    <td>103</td>
-                    <td>National Level</td>
-                    <td>Krishna</td>
-                    <td>Amrita</td>
-                    <td>Volleyball</td>
-            </tr>
-            <tr>
-                <tr>
-                    <td>104</td>
-                    <td>Inter Campus Championship</td>
-                    <td>Teja</td>
-                    <td>PSG</td>
-                    <td>Football</td>
- 
-                </tr>
-            </tr>
-
-
-           </table>
-      
+    <tr>
+        <th>Event ID</th>
+        <th>Event name</th>
+        <th>Student Name</th>
+        <th>Student's University</th>
+        <th>Game</th>
+         <th>Event ID</th>
+        <th>Event name</th>
+        <th>Student Name</th>
+        <th>Student's University</th>
+        <th>Event name</th>
+        <th>Student Name</th>
+        <th>Student's University</th>
+        <th>Game</th>
+         <th>Event ID</th>
+        <th>Event name</th>
+        <th>Student Name</th>
+        <th>Student's University</th>
+        <th>Event name</th>
+        <th>Student Name</th>
+        <th>Student's University</th>
+        <th>Game</th>
+         <th>Event ID</th>
+        <th>Event name</th>
+        <th>Student Name</th>
+        <th>Student's University</th>
+        <th>Student's University</th>
+        <th>Student's University</th>
+    </tr>
+<%  
+			ArrayList<ArrayList<String>> listReport = (ArrayList<ArrayList<String>>) request.getAttribute("report");
+			
+			// print the information about every category of the list
+			for(ArrayList<String> report : listReport) {%>
+				<tr>
+		        <td><%=report.get(0) %></td>
+		        <td><%=report.get(1) %></td>
+		        <td><%=report.get(2) %></td>
+		        <td><%=report.get(3) %></td>
+		        <td><%=report.get(4) %></td>
+		        <td><%=report.get(5) %></td>
+		        <td><%=report.get(6) %></td>
+		        <td><%=report.get(7) %></td>
+		        <td><%=report.get(8) %></td>
+		        <td><%=report.get(9) %></td>
+		        <td><%=report.get(10) %></td>
+		        <td><%=report.get(11) %></td>
+		        <td><%=report.get(12) %></td>
+		        <td><%=report.get(13) %></td>
+		        <td><%=report.get(14) %></td>
+		        <td><%=report.get(15) %></td>
+		        <td><%=report.get(16) %></td>
+		        <td><%=report.get(17) %></td>
+		        <td><%=report.get(18) %></td>
+		        <td><%=report.get(19) %></td>
+		        <td><%=report.get(20) %></td>
+		        <td><%=report.get(21) %></td>
+		        <td><%=report.get(22) %></td>
+		        <td><%=report.get(23) %></td>
+		        <td><%=report.get(24) %></td>
+		        <td><%=report.get(25) %></td>
+		        <td><%=report.get(26) %></td>
+		
+		    </tr>
+			
+				 <%
+			}
+			%>
+			
+</table>    
           
   </body>
 </html>
