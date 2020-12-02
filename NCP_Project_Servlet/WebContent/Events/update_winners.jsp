@@ -1,3 +1,4 @@
+<%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -66,7 +67,11 @@
 		}
 	</script>
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
-  	<script src="../js/adminPageNavbar.js"></script>
+  	<script>
+  	$(function(){
+	  	  $("#nav-placeholder").load("<%=request.getContextPath()%>/Navbar/adminPageNavbar.jsp");
+	  	});
+  	</script>
 </head>
 <body>
 	<div id="nav-placeholder"></div>
@@ -99,7 +104,21 @@
 				<form id="myForm" action="<%= request.getContextPath() %>/updateWinners" method="post" onsubmit="return validate()">
 					<div class="field">
 						<label class="label" for="event_id">Enter Event ID</label>
-						<input type="text" name="event_id" id="event_id" class="input" required>
+						<!-- <input type="text" name="event_id" id="event_id" class="input" required>  -->
+						<div class="select">
+						  <select name="event_id" id="event_id">
+						  <option>Select Event ID</option>
+						<%  
+						ArrayList<ArrayList<String>> list_ids = (ArrayList<ArrayList<String>>) request.getAttribute("event_ids");
+						
+						// print the information about every category of the list
+						for(ArrayList<String> list : list_ids) {%>
+							 <option value="<%=list.get(0)%>"><%=list.get(0) %></option>
+							 <%
+						}
+						%>
+						  </select>
+						</div>
 					</div>
 					<div class="field">
 						<label class="label" for="count">Enter Number of Winners (Press Enter)</label>
