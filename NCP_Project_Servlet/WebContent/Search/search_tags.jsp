@@ -80,7 +80,7 @@
 			%>
             <tr>
                 <td>Sanjay Tharagesh R S</td>
-                <td>@sanjay</td>
+                <td>10</td>
                 <td>
                     <span class="tag">Competitive coding</span>
                     <span class="tag">Football</span>
@@ -88,14 +88,14 @@
             </tr>
             <tr>
                 <td>Neeraj Kumar</td>
-                <td>@Neeraj</td>
+                <td>11</td>
                 <td>
                     <span class="tag">Web designing</span>
                 </td>
             </tr>
             <tr>
                 <td>Gayathri</td>
-                <td>@Gayathri</td>
+                <td>12</td>
                 <td>
                     <span class="tag">PHP</span>
                     <span class="tag">Drawing</span>
@@ -103,14 +103,14 @@
             </tr>
             <tr>
                 <td>Prathyusha</td>
-                <td>@Prathyusha</td>
+                <td>13</td>
                 <td>
                     <span class="tag">Competitive Coding</span>
                 </td>
             </tr>
             <tr>
                 <td>Srishilesh</td>
-                <td>@Srishilesh</td>
+                <td>14</td>
                 <td>
                     <span class="tag">Karate</span>
                 </td>
