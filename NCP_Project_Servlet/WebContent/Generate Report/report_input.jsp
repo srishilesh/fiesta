@@ -89,31 +89,31 @@
     <tr>
         <th>Event ID</th>
         <th>Event name</th>
+        <th>Start Date</th>
+        <th>Venue</th>
+        <th>Participation</th>
+        <th>Type</th>
+         <th>Registration link</th>
+        <th>Skills</th>
         <th>Student Name</th>
-        <th>Student's University</th>
-        <th>Game</th>
-         <th>Event ID</th>
-        <th>Event name</th>
-        <th>Student Name</th>
-        <th>Student's University</th>
-        <th>Event name</th>
-        <th>Student Name</th>
-        <th>Student's University</th>
-        <th>Game</th>
-         <th>Event ID</th>
-        <th>Event name</th>
-        <th>Student Name</th>
-        <th>Student's University</th>
-        <th>Event name</th>
-        <th>Student Name</th>
-        <th>Student's University</th>
-        <th>Game</th>
-         <th>Event ID</th>
-        <th>Event name</th>
-        <th>Student Name</th>
-        <th>Student's University</th>
-        <th>Student's University</th>
-        <th>Student's University</th>
+        <th>Winner</th>
+        <th>Student ID</th>
+        <th>Student Email</th>
+        <th>Student Phone</th>
+        <th>Social media link 1</th>
+         <th>Social media link 2</th>
+        <th>Student ID</th>
+        <th>Student DOB</th>
+        <th>Year of Study</th>
+        <th>Department</th>
+        <th>Details</th>
+        <th>School</th>
+        <th>Address</th>
+         <th>Registration Number</th>
+        <th>Skill 1</th>
+        <th>Skill 2</th>
+        <th>Skill 1 Rating</th>
+        <th>Skill 2 Rating</th>
     </tr>
 <%  
 			ArrayList<ArrayList<String>> listReport = (ArrayList<ArrayList<String>>) request.getAttribute("report");
