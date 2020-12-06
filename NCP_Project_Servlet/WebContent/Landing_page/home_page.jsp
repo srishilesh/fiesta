@@ -90,7 +90,7 @@
           <div class="column is-8 is-4-widescreen mb-5">
             <div class="block image is-5by4">
 
-              <img src="https://lisadancedubai.com/wp-content/uploads/2019/10/s5230-oboi2.jpg" alt="">
+              <img src="https://s1.1zoom.me/big0/928/Brown_haired_Dance_Hands_Dress_550022_864x1024.jpg" alt="">
             </div>
             <h4 class="title"><small class="number">2</small> Dance</h4>
             <p>Group/Solo Contemporary, Ballet, Hip Hop, Jazz, Ballroom, Folk Dance, Split dance </p>
