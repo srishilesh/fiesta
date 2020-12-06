@@ -84,7 +84,7 @@ public class UpdateWinners extends HttpServlet {
 			String password = "nithin_aakash";
 			Connection con = DriverManager.getConnection(path_to_db, username, password);
 			for(int i=0; i<count; i++) {
-				PreparedStatement stmt = con.prepareStatement("INSERT INTO  table_event_winners VALUES(?,?,?)");
+				PreparedStatement stmt = con.prepareStatement("INSERT INTO fiesta.table_event_winners VALUES(?,?,?)");
 				stmt.setInt(1, Integer.parseInt(event_id));
 				stmt.setInt(2, i+1);
 				stmt.setInt(3, Integer.parseInt(winners[i]));
@@ -92,6 +92,34 @@ public class UpdateWinners extends HttpServlet {
 				System.out.println(rows_updated + " records inserted"); 
 			}
 					
+			for(int i=0; i<count; i++) {
+				PreparedStatement stmt = con.prepareStatement("select student_id from fiesta.table_team_details where team_id=?");
+				stmt.setInt(1, Integer.parseInt(winners[i]));
+				ResultSet rst = stmt.executeQuery();
+				ArrayList<Integer> stu_ids = new ArrayList<Integer>();
+				while (rst.next()) {
+					Integer stu_id = rst.getInt(1);
+					stu_ids.add(stu_id);
+				}
+				for(int j=0; j<stu_ids.size(); j++) {
+					stmt = con.prepareStatement("select student_id from fiesta.table_student_scores where student_id=?");
+					stmt.setInt(1, stu_ids.get(j));
+					rst = stmt.executeQuery();
+					int rows_updated;
+					if(rst.next() == true) {
+						stmt = con.prepareStatement("update fiesta.table_student_scores set student_score=student_score+? where student_id=?");	
+					}
+					else {
+						stmt = con.prepareStatement("INSERT INTO fiesta.table_student_scores (`student_score`, `student_id`) VALUES(?,?)");
+					}
+					stmt.setInt(1, 20-i-1);
+					stmt.setInt(2, stu_ids.get(j));
+					rows_updated = stmt.executeUpdate();
+					System.out.println(rows_updated + " records inserted"); 
+				}
+				
+			}
+	
 			con.close();
 			
 //			response.getWriter().append("Served at: ").append(request.getContextPath());

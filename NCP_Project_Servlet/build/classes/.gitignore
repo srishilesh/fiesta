@@ -31,6 +31,3 @@
 /ViewEventServlet.class
 /ViewEventWinnersServlet.class
 /WinnersUpdateServlet.class
-/GenerateReportDurationFormServlet.class
-/GenerateReportInputFormServlet.class
-/UpdateEventIntermediateServlet.class
