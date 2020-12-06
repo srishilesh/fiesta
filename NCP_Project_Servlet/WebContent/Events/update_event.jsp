@@ -318,7 +318,7 @@
             
             if ((participation_type.value).toString() === "0") {
             	console.log(participation_type.value)
-          	  document.getElementById('event_max_participants').innerHTML = "1";
+          	  document.getElementById('event_max_participants').value = "1";
           	  document.getElementById('event_max_participants').disabled = true;
              }
             else {

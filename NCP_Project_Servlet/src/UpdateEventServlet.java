@@ -122,6 +122,7 @@ public class UpdateEventServlet extends HttpServlet {
 				System.out.println(e);
 				System.exit(1);
 			}
+			 
 			insertIntoDatabase(eventID, eventName, eventDesc, eventTags, eventTypeParticipation, eventStartDT, eventEndDT, eventVenue,
 					 eventMaxParticipants, eventRegistrationLink, organizerCollege, organizerCampus, organizerOther, organizerName, organizerEmail,
 					 organizerPhone, organizerDetails);
