@@ -41,11 +41,11 @@
 				  <select name="event_id" id="event_id">
 				  <option>Select Event ID</option>
 				<%  
-				ArrayList<String> list_ids = (ArrayList<String>) request.getAttribute("event_ids");
+				ArrayList<ArrayList<String>> list_ids = (ArrayList<ArrayList<String>>) request.getAttribute("event_ids");
 				
 				// print the information about every category of the list
-				for(String id : list_ids) {%>
-					 <option value="<%=id%>"><%=id %></option>
+				for(ArrayList<String> lst : list_ids) {%>
+					 <option value="<%=lst.get(0)%>"><%=lst.get(0)%> - <%=lst.get(1) %></option>
 					 <%
 				}
 				%>

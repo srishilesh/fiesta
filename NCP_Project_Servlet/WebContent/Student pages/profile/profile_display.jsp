@@ -78,7 +78,7 @@
         <div class="card">
           <div class="card-image">
             <figure class="image is-4by3">
-              <img src="phelps.PNG" alt="Placeholder image">
+              <img src="<%=request.getContextPath()%>/octocat.png" alt="Placeholder image">
             </figure>
           </div>
         </div>

@@ -42,11 +42,14 @@ public class AddAnnouncement extends HttpServlet {
 			String password = "nithin_aakash";
 			Connection con = DriverManager.getConnection(path_to_db, username, password);
 			
-			ArrayList<String> event_ids = new ArrayList<String>();
-			PreparedStatement stmt = con.prepareStatement("select event_id from fiesta.table_event");
+			ArrayList<ArrayList<String>> event_ids = new ArrayList<ArrayList<String>>();
+			PreparedStatement stmt = con.prepareStatement("select event_id,event_name from fiesta.table_event");
 			ResultSet rst = stmt.executeQuery();
 			while (rst.next()) {
-				event_ids.add(rst.getInt(1)+"");
+				ArrayList<String> tmp = new ArrayList<String>();
+				tmp.add(rst.getInt(1)+"");
+				tmp.add(rst.getString(2));
+				event_ids.add(tmp);
 			}				
 			
 			con.close();
