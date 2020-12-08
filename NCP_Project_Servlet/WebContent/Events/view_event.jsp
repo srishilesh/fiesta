@@ -36,7 +36,7 @@
             </div>
             <figure class="image mt-3">
                 <img
-                    src="https://www.amrita.edu/sites/default/files/amrita-olabs-orientation-cbse-gulf-sahodaya-scholl-banner.jpg">
+                    src="https://www.metabuild.io/wp-content/uploads/competition-1366x488.jpg">
             </figure>
         </div>
     </section>
