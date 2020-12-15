@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+    <xs:element name="root" type="rootType" />
+
+    <xs:complexType name="rootType">
+        <xs:sequence>
+            <xs:element name="student_id" type="IDType" />
+            <xs:element name="student_score" type="IDType" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:simpleType name="IDType">
+        <xs:restriction base="xs:integer">
+            <xs:minInclusive value="0"></xs:minInclusive>
+        </xs:restriction>
+    </xs:simpleType>
+
+</xs:schema>
+

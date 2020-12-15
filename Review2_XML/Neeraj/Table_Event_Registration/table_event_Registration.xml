@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!-- <!DOCTYPE root SYSTEM "table_event_registration_dtd.dtd">  -->
-<?xml-stylesheet type="text/xsl" href="table_event_registration_xslt.xsl"?>
-<root xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="table_event_registration_xsd.xsd">
-    <event_id>0</event_id>
-    <team_id>0</team_id>
-    <registration_datetime>0</registration_datetime>
-</root>

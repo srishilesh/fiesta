@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+    <xs:element name="root" type="rootType" />
+
+    <xs:complexType name="rootType">
+        <xs:sequence minOccurs="0" maxOccurs="unbounded">
+            <xs:element name="profile-personal" type="profile-personalType"></xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="profile-personalType">
+        <xs:sequence maxOccurs="1">
+
+            <xs:element name="student_id" type="IDType" />
+            <xs:element name="student_dob" type="dateType"/>
+            <xs:element name="student_year_of_study" type="yearType" />
+            <xs:element name="student_dept" type="descType" />
+            <xs:element name="student_about_myself" type="descType" />
+            <xs:element name="student_phone" type="phoneType" />
+            <xs:element name="student_school" type="descType" />
+            <xs:element name="student_address" type="descType" />
+			<xs:element name="student_socialmedia" type="mediaType" />
+            
+        </xs:sequence>
+    </xs:complexType>
+
+
+
+    <xs:complexType name="mediaType">
+        <xs:sequence>
+
+            <xs:element name="student_socialmedia_1" type="urlType" />
+            <xs:element name="student_socialmedia_2" type="urlType" />
+            <xs:element name="student_socialmedia_3" type="urlType" />
+
+        </xs:sequence>
+    </xs:complexType>
+
+
+
+    <xs:simpleType name="phoneType">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[1-9][0-9]{9}"></xs:pattern>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="urlType">
+        <xs:restriction base="xs:anyURI">
+            <xs:pattern value='https?://.+'/>
+            <!-- accepts only http:// or https:// URIs. -->
+        </xs:restriction>
+    </xs:simpleType>
+
+
+    <xs:simpleType name="yearType">
+        <xs:restriction base="xs:integer">
+            <xs:pattern value="\d{4}"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+
+    <xs:simpleType name="dateType">
+        <xs:restriction base="xs:date" />
+    </xs:simpleType>
+
+        
+    <xs:simpleType name="IDType">
+        <xs:restriction base="xs:integer">
+            <xs:minInclusive value="0"></xs:minInclusive>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="nameType">
+        <xs:restriction base="xs:string" />
+    </xs:simpleType>
+
+    <xs:simpleType name="descType">
+        <xs:restriction base="xs:string">
+            <xs:minLength value="10"></xs:minLength>
+            <xs:maxLength value="1000"></xs:maxLength>
+        </xs:restriction>
+    </xs:simpleType>
+
+
+
+    <xs:simpleType name="yearType">
+        <xs:restriction base="xs:integer">
+            <xs:pattern value="\d{4}"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+</xs:schema>

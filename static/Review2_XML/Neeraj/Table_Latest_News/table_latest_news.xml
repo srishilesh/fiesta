@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- <!DOCTYPE root SYSTEM "table_latest_news_dtd.dtd">  -->
+<?xml-stylesheet type="text/xsl" href="table_latest_news_xslt.xsl"?>
+<root xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="table_latest_news_xsd.xsd">
+    <News_id>0</News_id>
+    <News_title>0</News_title>
+    <News_message>0</News_message>
+    <News_link>0</News_link>
+</root>

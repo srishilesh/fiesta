@@ -1,5 +1,0 @@
-<!ELEMENT root (student_id, student_score)>
-<!ELEMENT student_id (#PCDATA)>
-<!ELEMENT student_score (#PCDATA)>
-
-

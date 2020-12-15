@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!ELEMENT root (profile-personal*)>
+<!ELEMENT profile-personal (student_id, student_dob, student_year_of_study, student_dept, student_about_myself, student_phone, student_school, student_address, student_socialmedia_1, student_socialmedia_2, student_socialmedia_3)>
+
+<!ELEMENT student_socialmedia (student_socialmedia_1, student_socialmedia_2, student_socialmedia_3)>
+
+
+<!ELEMENT student_id (#PCDATA)>
+<!ELEMENT student_dob (#PCDATA)>
+<!ELEMENT student_year_of_study (#PCDATA)>
+<!ELEMENT student_dept (#PCDATA)>
+<!ELEMENT student_about_myself (#PCDATA)>
+<!ELEMENT student_phone (#PCDATA)>
+<!ELEMENT student_school (#PCDATA)>
+<!ELEMENT student_address (#PCDATA)>
+<!ELEMENT student_socialmedia_1 (#PCDATA)>
+<!ELEMENT student_socialmedia_2 (#PCDATA)>
+<!ELEMENT student_socialmedia_3 (#PCDATA)>

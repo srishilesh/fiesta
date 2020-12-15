@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE root[
+	 
+  <!ATTLIST root
+  xmlns CDATA #FIXED ''
+  xmlns:xsi CDATA #FIXED 'http://www.w3.org/2001/XMLSchema-instance'
+  xsi:noNamespaceSchemaLocation NMTOKEN #REQUIRED>
+		<!ELEMENT root (profile-personal*)>
+		<!ELEMENT profile-personal (student_id, student_dob, student_year_of_study, student_dept, student_about_myself, student_phone, student_school, student_address, student_socialmedia)>
+
+		<!ELEMENT student_socialmedia (student_socialmedia_1, student_socialmedia_2, student_socialmedia_3)>
+
+
+		<!ELEMENT student_id (#PCDATA)>
+		<!ELEMENT student_dob (#PCDATA)>
+		<!ELEMENT student_year_of_study (#PCDATA)>
+		<!ELEMENT student_dept (#PCDATA)>
+		<!ELEMENT student_about_myself (#PCDATA)>
+		<!ELEMENT student_phone (#PCDATA)>
+		<!ELEMENT student_school (#PCDATA)>
+		<!ELEMENT student_address (#PCDATA)>
+		<!ELEMENT student_socialmedia_1 (#PCDATA)>   
+		<!ELEMENT student_socialmedia_2 (#PCDATA)>
+		<!ELEMENT student_socialmedia_3 (#PCDATA)>
+		
+]>
+
+
+<root xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="student_profile_personal_xsd.xsd"> 
+    <profile-personal>
+        <student_id>1</student_id>
+        <student_dob>2001-01-02</student_dob>
+        <student_year_of_study> 1</student_year_of_study>
+        <student_dept> Computer Science</student_dept>
+        <student_about_myself> An athlete who competes in many sports that involve physical strength, speed or endurance. </student_about_myself>
+        <student_phone> 9498518293 </student_phone>
+        <student_school> Amrita School of Eng.</student_school>
+        <student_address> No.123, XYZ Flats, ABC City.</student_address>
+        <student_socialmedia>
+		
+            <student_socialmedia_1> https://twitter.com/dhanushkraja </student_socialmedia_1>
+            <student_socialmedia_2> https://www.instagram.com/dhanushkraja </student_socialmedia_2>
+            <student_socialmedia_3> https://www.facebook.com/DhanushKRaja </student_socialmedia_3>
+
+        </student_socialmedia>
+
+    </profile-personal>
+
+    
+    <profile-personal>
+
+        <student_id>2</student_id>
+        <student_dob>2000-11-02</student_dob>
+        <student_year_of_study> 2</student_year_of_study>
+        <student_dept> Mechanical Engineering</student_dept>
+        <student_about_myself> An artist who is passionate in making fresh innovative digital arts. </student_about_myself>
+        <student_phone> 9408058096 </student_phone>
+        <student_school> Amrita School of Eng.</student_school>
+        <student_address> No.432, MNO Flats, ABC City.</student_address>
+        <student_socialmedia>
+
+            <student_socialmedia_1> https://www.instagram.com/patrickdempsey </student_socialmedia_1>
+            <student_socialmedia_2> https://twitter.com/PatrickDempsey </student_socialmedia_2>
+            <student_socialmedia_3> https://www.facebook.com/patrickdempseyofficial </student_socialmedia_3>
+
+        </student_socialmedia>
+
+    </profile-personal>
+</root>

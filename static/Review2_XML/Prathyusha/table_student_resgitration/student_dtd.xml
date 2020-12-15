@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE student [
+	<!ELEMENT student (row)*>
+	<!ELEMENT row (id, name, rollnumber, gmail, password)>
+	<!ELEMENT id (#PCDATA)>
+	<!ELEMENT name (#PCDATA)>
+	<!ELEMENT rollnumber (#PCDATA)>
+	<!ELEMENT gmail (#PCDATA)>
+	<!ELEMENT password (#PCDATA)>	
+]>
+<student>
+<row>
+   <id>1</id>
+   <name>Gayu</name>
+   <rollnumber>20</rollnumber>
+   <gmail>gayu20@gmail.com</gmail>
+   <password>Egayu#120</password>
+</row>
+<row>
+   <id>2</id>
+   <name>Prathyusha</name>
+   <rollnumber>24</rollnumber>
+   <gmail>prathyusha24@gmail.com</gmail>
+   <password>Prathyusha#224</password>
+</row>
+<row>
+   <id>3</id>
+   <name>Neeraj</name>
+   <rollnumber>45</rollnumber>
+   <gmail>neeraj45@gmail.com</gmail>
+   <password>Neeraj#345</password>
+</row>
+<row>
+   <id>4</id>
+   <name>Sanjay</name>
+   <rollnumber>53</rollnumber>
+   <gmail>sanjay53@gmail.com</gmail>
+   <password>Sanjay#453</password>
+</row>
+<row>
+   <id>5</id>
+   <name>Shilesh</name>
+   <rollnumber>58</rollnumber>
+   <gmail>shilesh58@gmail.com</gmail>
+   <password>Shilesh#558</password>
+</row>
+</student>

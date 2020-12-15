@@ -1,4 +1,0 @@
-<!ELEMENT root (event_id, team_id, registration_datetime)>
-<!ELEMENT event_id (#PCDATA)>
-<!ELEMENT team_id (#PCDATA)>
-<!ELEMENT registration_datetime (#PCDATA)>
