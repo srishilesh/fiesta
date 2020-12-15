@@ -1,5 +1,11 @@
 # Fiesta
 
+Project done as a part of Net Centric Programming 15CSE376 
+
+[View Full Report](https://github.com/srishilesh/fiesta/blob/review3/docs/CSEE_Group2_Extracurricular_activites_Final.pdf)
+
+## Introduction
+
 In education institutions, managing various events manually can be hectic work for both organizers and students. There can be a lot of mismanagement and disorder in the information stored and retrieved. Moreover, it is a time-consuming process for organizers to monitor and integrate all the information to reduce data redundancy and generate reports from it. In some cases, it is also difficult for students to reach out to the organizers to check their registration status, upcoming events, and announcements. Thus, we developed an integrated platform called Fiesta, for organizers to help organize events very easily, keep track of student registrations, manage upcoming events, generate reports, search students based on skills and other numerous functionalities that support organizers to complete the essential tasks right from the web portal. This portal will act as a one-stop source for all of the event needs.
 
 A web based application which satisfies all the functionalities like student registrations for an event, winner announcement and lot more. Considering the functionalities that this application must contain, the whole application is divided into various modules which includes:
